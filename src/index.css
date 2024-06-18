@@ -52,6 +52,24 @@ li {
 }
 
 
+/* Extra Service */
+
+.theCard{
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+}
+
+.theCard:hover{
+    transform: rotateY(180deg);
+}
+
+.theFront{
+    backface-visibility: hidden;
+}
+.theBack{
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
 
 
 

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import PropTypes from "prop-types";
+import PrimaryDivider from "./PrimaryDivider";
 const BookingNow = ({ children }) => {
   const [room, setRoom] = useState(1);
   const [guest, setGuest] = useState(1);
@@ -56,6 +57,9 @@ const BookingNow = ({ children }) => {
           <p className="text-xl font-semibold text-white text-center mb-5 font-serif">
             {children}
           </p>
+
+          <PrimaryDivider></PrimaryDivider>
+
           <div className="w-full flex flex-col gap-5">
             <div className="relative">
               <label

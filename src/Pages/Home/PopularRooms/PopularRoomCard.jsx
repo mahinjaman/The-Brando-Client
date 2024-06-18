@@ -14,7 +14,7 @@ const PopularRoomCard = ({item}) => {
           </Link>
           <p className='text-slate-200'>{short_description}</p>
           <div>
-            <div className="flex justify-between my-5 border-b pb-5">
+            <div className="flex justify-between my-5 border-b pb-5 gap-2">
               <p className="flex gap-2 font-semibold items-center">
                 <span className="text-xl p-1 bg-orange-300 rounded-full text-gray-900">
                   <FaPerson />

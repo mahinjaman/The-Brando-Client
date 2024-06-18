@@ -1,9 +1,10 @@
 import { FaStar } from 'react-icons/fa';
 import popularBg from '../../../assets/popular/popular_bg.png'
-import { IoDiamondSharp } from 'react-icons/io5';
 import useSecureAxios from '../../../Hooks/useSecureAxios';
 import { useQuery } from '@tanstack/react-query';
 import RoomSlider from './RoomSlider';
+import PrimaryTitle from '../../../Components/Shared/PrimaryTitle';
+import PrimaryDivider from '../../../Components/Shared/PrimaryDivider';
 
 
 const PopularRooms = () => {
@@ -44,20 +45,11 @@ const PopularRooms = () => {
               <FaStar />
             </legend>
             <div className="mt-10">
-              <p className="text-[#fdba74] flex flex-col justify-center items-center gap-3 font-serif text-lg">
-                <hr className="border border-[#fdba74] w-16" />
-                Special Section
-              </p>
+              <PrimaryTitle>Special Section</PrimaryTitle>
               <h1 className="text-4xl text-center text-white  font-serif my-3">
                 Popular Rooms And Suites
               </h1>
-              <div className="flex justify-evenly items-center my-10">
-                <div className="w-20 h-[3px] bg-slate-700"></div>
-                <div className="text-[#fdba74] text-xl">
-                  <IoDiamondSharp />
-                </div>
-                <div className="w-20 h-[3px] bg-slate-700"></div>
-              </div>
+              <PrimaryDivider></PrimaryDivider>
 
               <div className="flex flex-col w-full items-center justify-center mt-5 gap-5">
                 <button className="custom-btn hover:bg-[#fdba74] hover:text-slate-900">
