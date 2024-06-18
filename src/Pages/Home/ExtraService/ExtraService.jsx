@@ -10,9 +10,9 @@ import { GrRestaurant } from 'react-icons/gr';
 import bg from '../../../assets/popular/popular_bg.png'
 const ExtraService = () => {
     return (
-      <div className=" p-10 border rounded-md mt-10 bg-slate-50 relative overflow-hidden">
+      <div className=" mx-5 p-10 border rounded-md mt-10 bg-slate-50 relative">
         {/* background */}
-        <div className='absolute top-0 -right-10 opacity-20'>
+        <div className='absolute top-0 lg:-right-5 opacity-20'>
           <img src={bg} alt="" />
         </div>
         {/* Content */}
@@ -27,9 +27,9 @@ const ExtraService = () => {
 
         {/* Card */}
 
-        <div className=" lg:w-11/12 mx-auto grid grid-cols-1 lg:grid-cols-3 text-center text-white gap-10 h-80">
+        <div className=" lg:w-11/12 mx-auto grid grid-cols-1 lg:grid-cols-3 text-center text-white gap-10 lg:h-80">
           {/* Card-1 */}
-          <div className="relative rounded-md overflow-hidden">
+          <div className="relative rounded-md overflow-hidden h-[355px] lg:h-80">
             <div className="theCard absolute w-full h-full">
               {/* font */}
               <div
@@ -78,7 +78,7 @@ const ExtraService = () => {
 
           {/* Card-2 */}
 
-          <div className="relative rounded-md overflow-hidden">
+          <div className="relative rounded-md overflow-hidden h-[355px] lg:h-80">
             <div className="theCard absolute w-full h-full">
               {/* font */}
               <div
@@ -124,7 +124,7 @@ const ExtraService = () => {
 
           {/* Card-3 */}
 
-          <div className="relative rounded-md overflow-hidden">
+          <div className="relative rounded-md overflow-hidden h-[355px] lg:h-80">
             <div className="theCard absolute w-full h-full ">
               {/* Font */}
               <div
@@ -170,14 +170,14 @@ const ExtraService = () => {
         </div>
 
         {/* GET IN TOUCH WITH US btn */}
-        <div className='flex justify-center my-10'>
+        <div className='flex flex-col  items-center justify-center mt-14'>
           <button className='custom-btn bg-gray-900 text-[#c4a676] border-gray-900 hover:bg-[#c4a676] hover:text-gray-900'> GET IN TOUCH WITH US </button>
-        </div>
-
-        {/* arrow */}
-
-        <div>
-          
+          <div className='mt-10 flex flex-col items-center relative'>
+            <div className='w-10 h-[2px] bg-slate-500 rotate-90 mb-5'></div>
+            <div className='absolute w-10 h-10 flex justify-center items-center rotate-45 top-10 border-4 bg-slate-50 border-gray-800 z-30 border-opacity-5'>
+              <p className='font-bold text-3xl text-[#c4a676] mb-5'>.</p>
+            </div>
+          </div>
         </div>
       </div>
     );

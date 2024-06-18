@@ -65,6 +65,7 @@ li {
 
 .theFront{
     backface-visibility: hidden;
+    
 }
 .theBack{
     backface-visibility: hidden;
