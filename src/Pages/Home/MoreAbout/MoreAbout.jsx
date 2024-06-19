@@ -69,7 +69,7 @@ const MoreAbout = () => {
                                     <source src={video} type="video/webm" />
                                 </video>
                                 <button
-                                    className="absolute top-2 right-2 px-2 py-1 bg-red-500 text-white rounded-full hover:bg-red-700 transition duration-300"
+                                    className="absolute top-2 right-2 px-2 py-1  text-white rounded-full border transition duration-300"
                                     onClick={handleCloseClick}
                                 >
                                     X

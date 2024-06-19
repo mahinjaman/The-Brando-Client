@@ -27,12 +27,12 @@ const Cooperation = () => {
                         </div>
                         <div className="flex justify-center ">
                             <Marquee
-                            pauseOnHover={true} className="lg:h-24 my-auto overflow-hidden">
-                                <img src={img1} alt="img" className="w-40 lg:w-60"/>
-                                <img src={img2} alt="img" className="w-40 lg:w-60"/>
-                                <img src={img3} alt="img" className="w-40 lg:w-60"/>
-                                <img src={img5} alt="img" className="w-40 lg:w-60"/>
-                                <img src={img4} alt="img" className="w-40 lg:w-60"/>
+                                pauseOnHover={true} className="lg:h-24 my-auto overflow-hidden">
+                                <img src={img1} alt="img" className="w-40 lg:w-60" />
+                                <img src={img2} alt="img" className="w-40 lg:w-60" />
+                                <img src={img3} alt="img" className="w-40 lg:w-60" />
+                                <img src={img5} alt="img" className="w-40 lg:w-60" />
+                                <img src={img4} alt="img" className="w-40 lg:w-60" />
                             </Marquee>
                         </div>
                     </div>
@@ -40,8 +40,22 @@ const Cooperation = () => {
             </Parallax>
 
             {/* More About Us */}
-            <div className="lg:w-10/12 left-36 lg:absolute top-3/4 bg-white rounded-xl overflow-hidden">
+            <div className="lg:w-10/12 left-[8.3%] lg:absolute top-3/4 bg-white rounded-xl overflow-hidden z-10">
                 <MoreAbout />
+            </div>
+
+            <div className='hidden lg:absolute lg:flex items-center gap-5 -top-[75%]'>
+                <div className='w-10 h-[1px] bg-slate-500'></div>
+                <div className='p-2 rounded-full border border-dashed border-[#c4a676]'>
+                    <div className='w-3 h-3 rotate-45 bg-[#c4a676]'></div>
+                </div>
+            </div>
+
+            <div className='hidden lg:absolute lg:flex items-center gap-5 -top-[75%] right-0'>
+                <div className='p-2 rounded-full border border-dashed border-[#c4a676]'>
+                    <div className='w-3 h-3 rotate-45 bg-[#c4a676]'></div>
+                </div>
+                <div className='w-10 h-[1px] bg-slate-500'></div>
             </div>
 
         </div>

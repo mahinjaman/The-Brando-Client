@@ -6,6 +6,7 @@ import PopularRooms from './PopularRooms/PopularRooms';
 import ExtraService from './ExtraService/ExtraService';
 import Cooperation from './Cooperation/Cooperation';
 import MoreAbout from './MoreAbout/MoreAbout';
+import RoomFacility from './RoomFacility/RoomFacility';
 
 const Home = () => {
     return (
@@ -14,22 +15,23 @@ const Home = () => {
                 <title>Home</title>
             </Helmet>
             {/* Hero */}
-            <Hero></Hero>
+            <Hero />
             
             {/* About */}
 
-            <About></About>
+            <About />
 
             {/* Popular Rooms */}
-            <PopularRooms></PopularRooms> 
+            <PopularRooms />
 
               {/* Extra Service  */}
-              <ExtraService></ExtraService>
+              <ExtraService />
 
               {/* Cooperation */}
-              <Cooperation></Cooperation>
+              <Cooperation />
 
-              
+              {/* Room Facility */}
+              <RoomFacility />
         </div>
     );
 };
