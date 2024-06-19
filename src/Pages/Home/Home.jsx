@@ -5,6 +5,7 @@ import About from './About/About';
 import PopularRooms from './PopularRooms/PopularRooms';
 import ExtraService from './ExtraService/ExtraService';
 import Cooperation from './Cooperation/Cooperation';
+import MoreAbout from './MoreAbout/MoreAbout';
 
 const Home = () => {
     return (
@@ -27,6 +28,8 @@ const Home = () => {
 
               {/* Cooperation */}
               <Cooperation></Cooperation>
+
+              
         </div>
     );
 };
