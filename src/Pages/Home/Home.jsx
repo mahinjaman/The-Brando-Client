@@ -5,8 +5,9 @@ import About from './About/About';
 import PopularRooms from './PopularRooms/PopularRooms';
 import ExtraService from './ExtraService/ExtraService';
 import Cooperation from './Cooperation/Cooperation';
-import MoreAbout from './MoreAbout/MoreAbout';
 import RoomFacility from './RoomFacility/RoomFacility';
+import LatestNews from './LatestNews/LatestNews';
+import NewsSlider from './LatestNews/NewsSlider';
 
 const Home = () => {
     return (
@@ -32,6 +33,10 @@ const Home = () => {
 
               {/* Room Facility */}
               <RoomFacility />
+
+              {/* Latest News */}
+              <LatestNews />
+
         </div>
     );
 };

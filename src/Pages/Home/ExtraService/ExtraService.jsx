@@ -7,7 +7,7 @@ import PrimaryTitle from '../../../Components/Shared/PrimaryTitle';
 import { MdOutlineSpa } from "react-icons/md";
 import { FaSwimmingPool } from "react-icons/fa";
 import { GrRestaurant } from 'react-icons/gr';
-import bg from '../../../assets/popular/popular_bg.png'
+import bg from '../../../assets/popular_bg.png'
 const ExtraService = () => {
     return (
       <div className=" mx-5 p-10 border rounded-md mt-10 bg-slate-50 relative">

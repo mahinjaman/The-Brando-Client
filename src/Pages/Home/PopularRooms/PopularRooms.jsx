@@ -1,5 +1,5 @@
 import { FaStar } from 'react-icons/fa';
-import popularBg from '../../../assets/popular/popular_bg.png'
+import popularBg from '../../../assets/popular_bg.png'
 import useSecureAxios from '../../../Hooks/useSecureAxios';
 import { useQuery } from '@tanstack/react-query';
 import RoomSlider from './RoomSlider';
