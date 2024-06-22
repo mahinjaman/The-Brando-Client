@@ -10,6 +10,7 @@ import Slider from "react-slick";
 import { Arrow } from '@egjs/flicking-plugins';
 import TestSlider from './TestSlider';
 import TestSlider2 from './TestSlider2';
+import TriangleIcon from '../../TriangleIcon';
 
 
 const Testimonial = () => {
@@ -86,10 +87,10 @@ const Testimonial = () => {
                 <TestSlider testimonials={data}></TestSlider>
             </div>
 
-            <div className='hidden lg:flex items-center justify-center mt-20 bg-white'>
-                <div className=' absolute w-8 mb-5 h-[1px] bg-slate-500 rotate-90'></div>
-                <div className=' absolute flex items-center justify-center bg-white bg-opacity-50 w-11 h-11 rotate-45 top-[97.5%]'>
-                    <div className='w-9 h-9 bg-white flex items-center justify-center'><h1 className='font-extrabold text-3xl text-[#C2A576] mb-4'>.</h1></div>
+            {/* Triangle Icon */}
+            <div className='relative flex justify-center'>
+                <div className='absolute top-10'>
+                    <TriangleIcon></TriangleIcon>
                 </div>
             </div>
         </div>

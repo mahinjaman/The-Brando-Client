@@ -14,7 +14,7 @@ const MoreAbout = () => {
 
     const handleCloseClick = () => {
         setShowVideo(false);
-      };
+    };
 
 
     return (
@@ -79,7 +79,7 @@ const MoreAbout = () => {
                     )}
                 </div>
             </div>
-            
+
         </div>
     );
 };

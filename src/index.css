@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.custom-btn{
+.custom-btn {
     color: #c4a676;
     padding: 10px 30px;
     border: 2px solid #c4a676;
@@ -12,7 +12,7 @@
     transition: all 0.5s ease;
 }
 
-.custom-btn::before{
+.custom-btn::before {
     content: "";
     position: absolute;
     border: 1px dotted #c4a676;
@@ -23,7 +23,7 @@
     left: -10px;
 }
 
-.custom-btn:hover::before{
+.custom-btn:hover::before {
     top: 0px;
     left: 0px;
     border: 1px solid #c4a676;
@@ -33,13 +33,13 @@ li {
     font-size: 15px;
 }
 
-.active{
+.active {
     background-color: transparent !important;
     color: #c4a676 !important;
     font-weight: 700;
 }
 
-.home_about{
+.home_about {
     background-image: url('../src/assets/About/map_bg.png');
     background-position: center;
     background-position-y: 0%;
@@ -54,22 +54,57 @@ li {
 
 /* Extra Service */
 
-.theCard{
+.theCard {
     transform-style: preserve-3d;
     transition: all 0.5s ease;
 }
 
-.theCard:hover{
+.theCard:hover {
     transform: rotateY(180deg);
 }
 
-.theFront{
+.theFront {
     backface-visibility: hidden;
-    
+
 }
-.theBack{
+
+.theBack {
     backface-visibility: hidden;
     transform: rotateY(180deg);
 }
 
 
+
+@media only screen and (min-width: 720px) {
+    .slick-prev:before {
+        margin-right: 50px !important;
+        position: absolute;
+        left: -50px;
+
+    }
+
+    .slick-next:before {
+        margin-left: 50px;
+    }
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: #C2A576 !important;
+    font-size: 35px !important;
+    font-family: 'Courier New', Courier, monospace !important;
+}
+
+
+.primary-font {
+    font-family: "Playfair Display";
+    font-style: normal;
+}
+
+
+
+@media only screen and (min-width: 1024px) {
+    .react-parallax img {
+        top: -80%;
+    }
+}

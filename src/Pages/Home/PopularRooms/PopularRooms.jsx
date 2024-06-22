@@ -1,5 +1,5 @@
 import { FaStar } from 'react-icons/fa';
-import popularBg from '../../../assets/popular_bg.png'
+import popularBg from '../../../assets/map_bg5.png'
 import useSecureAxios from '../../../Hooks/useSecureAxios';
 import { useQuery } from '@tanstack/react-query';
 import RoomSlider from './RoomSlider';
@@ -32,7 +32,7 @@ const PopularRooms = () => {
   return (
     <div className="grid grid-cols-1 p-5 lg:p-0 lg:grid-cols-4 gap-5 bg-slate-900 bg-opacity-95">
       <div className="lg:col-span-1 lg:p-5 bg-no-repeat bg-opacity-35 relative">
-        <div className="absolute opacity-30 w-full flex items-center justify-center mt-10">
+        <div className="absolute opacity-30 w-full flex items-center justify-center mt-20">
           <img src={popularBg} className="lg:w-56" alt="" />
         </div>
 
@@ -70,7 +70,6 @@ const PopularRooms = () => {
       {/* Slider */}
 
       <div className="lg:col-span-3 flex">
-        
           <RoomSlider rooms={data}></RoomSlider>
       </div>
     </div>
