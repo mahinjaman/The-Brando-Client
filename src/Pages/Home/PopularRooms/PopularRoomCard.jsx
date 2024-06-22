@@ -3,8 +3,9 @@ import { FaBedPulse, FaPerson } from 'react-icons/fa6';
 import { MdBathroom } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 const PopularRoomCard = ({item}) => {
-    console.log(item);
+
     const {img, title, short_description, price_per_night, bed, bath, guest} = item;
+
     return (
       <div className="text-white relative rounded-md overflow-hidden">
         <img src={img} alt="" className="rounded-md" />

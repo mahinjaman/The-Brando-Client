@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 const secureAxios = axios.create({
-    baseURL: 'http://localhost:3000',
+    baseURL: 'https://the-brando-server.vercel.app',
     // withCredentials: true
 })
 

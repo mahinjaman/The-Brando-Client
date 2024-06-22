@@ -1,13 +1,19 @@
 import React from 'react';
-import NewsCard from './NewsCard'
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-const newsSlider = ({newses}) => {
+import TestimonialCard from './TestimonialCard';
+
+const TestSlider = ({testimonials}) => {
     const settings = {
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        cssEase: "linear",
         infinite: true,
         speed: 500,
-        slidesToShow: 2,
+        slidesToShow: 3,
         slidesToScroll: 1,
         initialSlide: 0,
         responsive: [
@@ -38,16 +44,16 @@ const newsSlider = ({newses}) => {
         ]
       }
     return (
-        <div className='w-2/3 m-auto'>
-            <div className=''>
+        <div className='w-[400px] md:w-4/5 m-auto'>
                 <Slider {...settings}>
-                {newses?.map(news => {
-                    return <NewsCard news={news}></NewsCard>
+                {testimonials?.map(testimonial => {
+                    return <div className='p-5'>
+                        <TestimonialCard testimonial={testimonial}></TestimonialCard>
+                    </div>
                 })}
                 </Slider>
-            </div>
         </div>
     );
 };
 
-export default newsSlider;
+export default TestSlider;

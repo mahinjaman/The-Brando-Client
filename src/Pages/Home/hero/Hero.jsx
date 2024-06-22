@@ -49,6 +49,7 @@ const Hero = () => {
 
     return (
       <div
+      id="#"
         className="hero min-h-screen text-white"
         style={{
           background:

@@ -1,50 +1,54 @@
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
-
-// import required modules
-import { EffectCoverflow, Pagination , Autoplay} from 'swiper/modules';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import PopularRoomCard from "./PopularRoomCard";
 
-
 const RoomSlider = ({rooms}) => {
+  const settings = {
+    className: "center",
+    infinite: true,
+    centerPadding: "60px",
+    slidesToShow: 3,
+    swipeToSlide: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
+  return (
+    <div className="slider-container w-5/6 m-auto">
+      <Slider {...settings}>
+        {
+          rooms?.map(room => {
+            return <div className="p-2"><PopularRoomCard item={room}></PopularRoomCard></div>
+          })
+        }
+      </Slider>
+    </div>
+  );
+}
 
-   return (
-     <>
-       <Swiper
-         effect={"coverflow"}
-         grabCursor={true}
-         centeredSlides={true}
-         slidesPerView={"auto"}
-         autoplay={{
-           delay: 3000,
-           disableOnInteraction: false,
-         }}
-         coverflowEffect={{
-           rotate: 40,
-           stretch: 1,
-           depth: 100,
-           modifier: 5,
-           slideShadows: true,
-         }}
-         pagination={true}
-         modules={[EffectCoverflow, Pagination, Autoplay]}
-         className="mySwipe"
-       >
-         {rooms.map((room) => {
-           return (
-             <SwiperSlide key={room._id}>
-               <PopularRoomCard item={room}></PopularRoomCard>
-             </SwiperSlide>
-           );
-         })}
-       </Swiper>
-     </>
-   );
-};
 
 export default RoomSlider;
