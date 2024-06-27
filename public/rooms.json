@@ -1,0 +1,767 @@
+[
+    {
+        "title": "The Royal Suite, Burj Al Arab Jumeirah",
+        "thumb": "https://i.ibb.co/SKpg96N/1.jpg",
+        "description": "Experience ultimate luxury in the two-story Royal Suite at Burj Al Arab Jumeirah. This opulent suite features a private library, a state-of-the-art cinema room, and a lavish majlis style lounge. Guests can enjoy unparalleled privacy with a dedicated butler service and a private lift. The suite's interiors are adorned with gold, marble, and vibrant colors, reflecting the rich cultural heritage of Dubai. With a stunning view of the Arabian Gulf, this suite also includes a spacious dining room, a luxurious bathroom with a jacuzzi, and designer toiletries. Whether you're relaxing in the comfort of your suite or exploring the hotel's exclusive amenities, the Royal Suite promises an unforgettable stay.",
+        "short_description": "Lavish two-story suite with private cinema and lounge.",
+        "price": 299,
+        "photo_gallery": [
+            "https://i.ibb.co/j390L9R/2.jpg",
+            "https://i.ibb.co/N9FFDhG/3.jpg",
+            "https://i.ibb.co/xjX52Xg/4.jpg"
+        ],
+        "rating": 5,
+        "status": "Available",
+        "facility": [
+            {
+                "name": "Free Wi-Fi",
+                "icon_url": "https://i.ibb.co/ySJrtVd/008-wifi.png"
+            },
+            {
+                "name": "Air Conditioning",
+                "icon_url": "https://i.ibb.co/F4H9P4H/005-air-conditioning.png"
+            },
+            {
+                "name": "Television",
+                "icon_url": "https://i.ibb.co/tMwkhM0/003-smart-tv.png"
+            },
+            {
+                "name": "Washing Machine",
+                "icon_url": "https://i.ibb.co/8r7RJ6g/washing.png"
+            },
+            {
+                "name": "Coffee Maker",
+                "icon_url": "https://i.ibb.co/vv1KVKJ/coffee-machine.png"
+            },
+            {
+                "name": "Safe",
+                "icon_url": "https://i.ibb.co/ZTkwbvz/shield.png"
+            }
+        ],
+        "accessories": "Jacuzzi, designer toiletries, grand piano.",
+        "details": {
+            "room_size": "780 sqm",
+            "room_bed": "King bed",
+            "occupancy": 4,
+            "view": "Arabian Gulf",
+            "location": "Dubai, UAE",
+            "guest": 3,
+            "bed": 3,
+            "bath": 2
+        }
+    },
+    {
+        "title": "The Penthouse Suite, The Mark Hotel",
+        "thumb": "https://i.ibb.co/sJZxDQP/3.jpg",
+        "description": "Located in the heart of New York City, The Penthouse Suite at The Mark Hotel offers a blend of luxury and comfort. This expansive suite features five bedrooms, a rooftop terrace, and a grand living room. The interiors are elegantly designed with custom furnishings, high ceilings, and large windows that offer stunning views of Central Park. Guests can enjoy a dedicated butler service, ensuring personalized attention and convenience. The suite also includes a gourmet kitchen, a dining room, and luxurious bathrooms with premium toiletries. With its prime location and exceptional service, The Penthouse Suite provides a perfect retreat in the city.",
+        "short_description": "Expansive suite with rooftop terrace and Central Park views.",
+        "price": 599,
+        "photo_gallery": [
+            "https://i.ibb.co/dDdC6FJ/4.jpg",
+            "https://i.ibb.co/6b4pymz/1.jpg",
+            "https://i.ibb.co/HnLCh3S/2.jpg"
+        ],
+        "rating": 5,
+        "status": "Sold Out",
+        "facility": [
+            {
+                "name": "Free Wi-Fi",
+                "icon_url": "https://i.ibb.co/ySJrtVd/008-wifi.png"
+            },
+            {
+                "name": "Air Conditioning",
+                "icon_url": "https://i.ibb.co/F4H9P4H/005-air-conditioning.png"
+            },
+            {
+                "name": "Television",
+                "icon_url": "https://i.ibb.co/tMwkhM0/003-smart-tv.png"
+            },
+            {
+                "name": "Washing Machine",
+                "icon_url": "https://i.ibb.co/8r7RJ6g/washing.png"
+            },
+            {
+                "name": "Coffee Maker",
+                "icon_url": "https://i.ibb.co/vv1KVKJ/coffee-machine.png"
+            },
+            {
+                "name": "Safe",
+                "icon_url": "https://i.ibb.co/ZTkwbvz/shield.png"
+            }
+        ],
+        "accessories": "Custom furnishings, premium toiletries, grand piano.",
+        "details": {
+            "room_size": "1,115 sqm",
+            "room_bed": "Multiple beds",
+            "occupancy": 8,
+            "view": "Central Park",
+            "location": "Dubai, UAE",
+            "guest": 5,
+            "bed": 3,
+            "bath": 2
+        }
+    },
+    {
+        "title": "Shahi Mahal Suite, Raj Palace",
+        "thumb": "https://i.ibb.co/ynRH5VV/2.jpg",
+        "description": "The Shahi Mahal Suite at Raj Palace is a magnificent six-bedroom suite that offers a royal experience. This suite includes a private theatre, a bar, and a library. The interiors are richly decorated with gold leaf, stucco, and intricate mirror work, reflecting the grandeur of the royal heritage. Guests can enjoy a dedicated butler service and personalized dining experiences. The suite also features a spacious living area, a grand dining room, and luxurious bathrooms with premium amenities. With stunning views of the palace gardens and a serene ambiance, the Shahi Mahal Suite promises a regal stay.",
+        "short_description": "Magnificent suite with private theatre and royal decor.",
+        "price": 259,
+        "photo_gallery": [
+            "https://i.ibb.co/JkQ6Pt3/3.jpg",
+            "https://i.ibb.co/TLCWxkK/4.jpg",
+            "https://i.ibb.co/mvNn5Qw/1.jpg"
+        ],
+        "rating": 5,
+        "status": "Available",
+        "facility": [
+            {
+                "name": "Free Wi-Fi",
+                "icon_url": "https://i.ibb.co/ySJrtVd/008-wifi.png"
+            },
+            {
+                "name": "Air Conditioning",
+                "icon_url": "https://i.ibb.co/F4H9P4H/005-air-conditioning.png"
+            },
+            {
+                "name": "Television",
+                "icon_url": "https://i.ibb.co/tMwkhM0/003-smart-tv.png"
+            },
+            {
+                "name": "Washing Machine",
+                "icon_url": "https://i.ibb.co/8r7RJ6g/washing.png"
+            },
+            {
+                "name": "Coffee Maker",
+                "icon_url": "https://i.ibb.co/vv1KVKJ/coffee-machine.png"
+            },
+            {
+                "name": "Safe",
+                "icon_url": "https://i.ibb.co/ZTkwbvz/shield.png"
+            }
+        ],
+        "accessories": "Gold leaf decor, premium amenities, grand piano.",
+        "details": {
+            "room_size": "1,200 sqm",
+            "room_bed": "Multiple beds",
+            "occupancy": 10,
+            "view": "Palace gardens",
+            "location": "Dubai, UAE",
+            "guest": 3,
+            "bed": 2,
+            "bath": 1
+        }
+    },
+    {
+        "title": "The Peninsula Suite, The Peninsula Hong Kong",
+        "thumb": "https://i.ibb.co/XbXpKnr/1.jpg",
+        "description": "Luxuriate in the exquisite Peninsula Suite at The Peninsula Hong Kong. This suite offers a panoramic view of Victoria Harbour, complete with a private terrace and study. The interiors are elegantly designed with a blend of classic and modern decor, featuring luxurious furnishings and state-of-the-art amenities. Guests can enjoy a spacious living area, a grand bedroom with a king-size bed, and a lavish bathroom with premium toiletries. The suite also includes a personal chauffeur service, ensuring seamless travel throughout the city. With a 24-hour butler service, guests can experience unparalleled comfort and convenience during their stay.",
+        "short_description": "Exquisite suite with a private terrace and panoramic views.",
+        "price": 999,
+        "photo_gallery": [
+            "https://i.ibb.co/zVbhH0w/2.jpg",
+            "https://i.ibb.co/NsmyPDK/3.jpg",
+            "https://i.ibb.co/M7tWTH2/4.jpg"
+        ],
+        "rating": 5,
+        "status": "Available",
+        "facility": [
+            {
+                "name": "Free Wi-Fi",
+                "icon_url": "https://i.ibb.co/ySJrtVd/008-wifi.png"
+            },
+            {
+                "name": "Air Conditioning",
+                "icon_url": "https://i.ibb.co/F4H9P4H/005-air-conditioning.png"
+            },
+            {
+                "name": "Television",
+                "icon_url": "https://i.ibb.co/tMwkhM0/003-smart-tv.png"
+            },
+            {
+                "name": "Washing Machine",
+                "icon_url": "https://i.ibb.co/8r7RJ6g/washing.png"
+            },
+            {
+                "name": "Coffee Maker",
+                "icon_url": "https://i.ibb.co/vv1KVKJ/coffee-machine.png"
+            },
+            {
+                "name": "Safe",
+                "icon_url": "https://i.ibb.co/ZTkwbvz/shield.png"
+            }
+        ],
+        "accessories": "High-tech gadgets, premium toiletries, grand piano.",
+        "details": {
+            "room_size": "377 sqm",
+            "room_bed": "King bed",
+            "occupancy": 4,
+            "view": "Victoria Harbour",
+            "location": "Dubai, UAE",
+            "guest": 6,
+            "bed": 4,
+            "bath": 2
+        }
+    },
+    {
+        "title": "The Royal Bridge Suite, Atlantis The Palm",
+        "thumb": "https://i.ibb.co/0JzcYSq/1.jpg",
+        "description": "This spectacular suite spans the arch of the Atlantis, offering unique views and exceptional amenities. The Royal Bridge Suite features a private elevator, a grand dining room, and a luxurious living area. Guests can enjoy a 24-hour butler service and a dedicated team to cater to their every need. The interiors are designed with opulence in mind, featuring designer furnishings and luxury bath products. With stunning views of Palm Island and the Arabian Gulf, this suite provides a truly unforgettable experience. Whether you're relaxing in the spacious living area or exploring the hotel's exclusive amenities, the Royal Bridge Suite promises an extraordinary stay.",
+        "short_description": "Spectacular suite spanning the arch of Atlantis with private elevator.",
+        "price": 699,
+        "photo_gallery": [
+            "https://i.ibb.co/1nQp9FT/2.jpg",
+            "https://i.ibb.co/s1P762R/3.jpg",
+            "https://i.ibb.co/0XZyPck/4.jpg"
+        ],
+        "rating": 5,
+        "status": "Sold Out",
+        "facility": [
+            {
+                "name": "Free Wi-Fi",
+                "icon_url": "https://i.ibb.co/ySJrtVd/008-wifi.png"
+            },
+            {
+                "name": "Air Conditioning",
+                "icon_url": "https://i.ibb.co/F4H9P4H/005-air-conditioning.png"
+            },
+            {
+                "name": "Television",
+                "icon_url": "https://i.ibb.co/tMwkhM0/003-smart-tv.png"
+            },
+            {
+                "name": "Washing Machine",
+                "icon_url": "https://i.ibb.co/8r7RJ6g/washing.png"
+            },
+            {
+                "name": "Coffee Maker",
+                "icon_url": "https://i.ibb.co/vv1KVKJ/coffee-machine.png"
+            },
+            {
+                "name": "Safe",
+                "icon_url": "https://i.ibb.co/ZTkwbvz/shield.png"
+            }
+        ],
+        "accessories": "Designer furnishings, luxury bath products, piano.",
+        "details": {
+            "room_size": "924 sqm",
+            "room_bed": "Three bedrooms",
+            "occupancy": 6,
+            "view": "Palm Island and Arabian Gulf",
+            "location": "Dubai, UAE",
+            "guest": 3,
+            "bed": 3,
+            "bath": 2
+        }
+    },
+    {
+        "title": "The Grand Manor House Wing, Rosewood London",
+        "thumb": "https://i.ibb.co/9h5JkrL/1.jpg",
+        "description": "This exclusive wing at Rosewood London offers unparalleled privacy and luxury. The Grand Manor House Wing features a personal elevator, six beautifully appointed bedrooms, a grand dining room, and a library. Designed with a blend of classic and contemporary styles, this suite exudes elegance and sophistication. Guests can enjoy a bespoke service with a personal chef and dedicated butler at their disposal. The suite also includes a spacious living area with a high-end sound system and bespoke furniture, perfect for entertaining guests. With views overlooking the vibrant City of London, this suite provides a serene retreat amidst the bustling metropolis.",
+        "short_description": "Private wing with personal elevator and six bedrooms.",
+        "price": 555,
+        "photo_gallery": [
+            "https://i.ibb.co/DzGK2fG/2.jpg",
+            "https://i.ibb.co/jLTVzzT/3.jpg",
+            "https://i.ibb.co/ZHGDBhd/4.jpg"
+        ],
+        "rating": 5,
+        "status": "Sold Out",
+        "facility": [
+            {
+                "name": "Free Wi-Fi",
+                "icon_url": "https://i.ibb.co/ySJrtVd/008-wifi.png"
+            },
+            {
+                "name": "Air Conditioning",
+                "icon_url": "https://i.ibb.co/F4H9P4H/005-air-conditioning.png"
+            },
+            {
+                "name": "Television",
+                "icon_url": "https://i.ibb.co/tMwkhM0/003-smart-tv.png"
+            },
+            {
+                "name": "Washing Machine",
+                "icon_url": "https://i.ibb.co/8r7RJ6g/washing.png"
+            },
+            {
+                "name": "Coffee Maker",
+                "icon_url": "https://i.ibb.co/vv1KVKJ/coffee-machine.png"
+            },
+            {
+                "name": "Safe",
+                "icon_url": "https://i.ibb.co/ZTkwbvz/shield.png"
+            }
+        ],
+        "accessories": "High-end sound system, bespoke furniture, marble bathrooms.",
+        "details": {
+            "room_size": "585 sqm",
+            "room_bed": "Multiple beds",
+            "occupancy": 12,
+            "view": "City of London",
+            "location": "Dubai, UAE",
+            "guest": 4,
+            "bed": 2,
+            "bath": 2
+        }
+    },
+    {
+        "title": "Villa La Cupola Suite, The Westin Excelsior",
+        "thumb": "https://i.ibb.co/Jy1wTDw/1.jpg",
+        "description": "Situated in the heart of Rome, the Villa La Cupola Suite offers opulent Italian design, a private cinema, and a rooftop terrace with a jacuzzi. This suite features lavish interiors with frescoed ceilings, marble floors, and elegant furnishings. Guests can enjoy a 24-hour butler service, ensuring their every need is catered to. The suite includes a spacious living area, a grand bedroom with a king-size bed, and a luxurious bathroom with premium amenities. With stunning views of the city and easy access to Rome's iconic landmarks, the Villa La Cupola Suite provides a perfect blend of luxury and convenience.",
+        "short_description": "Opulent suite with private cinema and rooftop jacuzzi.",
+        "price": 444,
+        "photo_gallery": [
+            "https://i.ibb.co/xSndpCd/2.jpg",
+            "https://i.ibb.co/WG3ZdGw/3.jpg",
+            "https://i.ibb.co/48QJK14/4.jpg"
+        ],
+        "rating": 5,
+        "status": "Available",
+        "facility": [
+            {
+                "name": "Free Wi-Fi",
+                "icon_url": "https://i.ibb.co/ySJrtVd/008-wifi.png"
+            },
+            {
+                "name": "Air Conditioning",
+                "icon_url": "https://i.ibb.co/F4H9P4H/005-air-conditioning.png"
+            },
+            {
+                "name": "Television",
+                "icon_url": "https://i.ibb.co/tMwkhM0/003-smart-tv.png"
+            },
+            {
+                "name": "Washing Machine",
+                "icon_url": "https://i.ibb.co/8r7RJ6g/washing.png"
+            },
+            {
+                "name": "Coffee Maker",
+                "icon_url": "https://i.ibb.co/vv1KVKJ/coffee-machine.png"
+            },
+            {
+                "name": "Safe",
+                "icon_url": "https://i.ibb.co/ZTkwbvz/shield.png"
+            }
+        ],
+        "accessories": "Jacuzzi, frescoed ceilings, marble floors.",
+        "details": {
+            "room_size": "585 sqm",
+            "room_bed": "King bed",
+            "occupancy": 5,
+            "view": "City of Rome",
+            "location": "Dubai, UAE",
+            "guest": 3,
+            "bed": 2,
+            "bath": 1
+        }
+    },
+    {
+        "title": "Ty Warner Penthouse, Four Seasons Hotel",
+        "thumb": "https://i.ibb.co/Q9FLpFV/1.jpg",
+        "description": "Perched atop the Four Seasons Hotel in New York, the Ty Warner Penthouse offers 360-degree views of the city. This luxurious suite features floor-to-ceiling windows, a private spa, and a library. The interiors are designed with a blend of contemporary and classic styles, featuring custom furnishings and high-end amenities. Guests can enjoy a dedicated butler service, ensuring their stay is both comfortable and memorable. The suite also includes a spacious living area, a grand bedroom with a king-size bed, and a luxurious bathroom with premium toiletries. With its prime location and exceptional service, the Ty Warner Penthouse provides an unparalleled experience.",
+        "short_description": "Luxurious penthouse with 360-degree city views and private spa.",
+        "price": 333,
+        "photo_gallery": [
+            "https://i.ibb.co/QQw3k5x/2.jpg",
+            "https://i.ibb.co/47dgyZZ/3.jpg",
+            "https://i.ibb.co/B3KGZH0/4.jpg"
+        ],
+        "rating": 5,
+        "status": "Sold Out",
+        "facility": [
+            {
+                "name": "Free Wi-Fi",
+                "icon_url": "https://i.ibb.co/ySJrtVd/008-wifi.png"
+            },
+            {
+                "name": "Air Conditioning",
+                "icon_url": "https://i.ibb.co/F4H9P4H/005-air-conditioning.png"
+            },
+            {
+                "name": "Television",
+                "icon_url": "https://i.ibb.co/tMwkhM0/003-smart-tv.png"
+            },
+            {
+                "name": "Washing Machine",
+                "icon_url": "https://i.ibb.co/8r7RJ6g/washing.png"
+            },
+            {
+                "name": "Coffee Maker",
+                "icon_url": "https://i.ibb.co/vv1KVKJ/coffee-machine.png"
+            },
+            {
+                "name": "Safe",
+                "icon_url": "https://i.ibb.co/ZTkwbvz/shield.png"
+            }
+        ],
+        "accessories": "Custom furnishings, premium toiletries, grand piano.",
+        "details": {
+            "room_size": "400 sqm",
+            "room_bed": "King bed",
+            "occupancy": 3,
+            "view": "New York City",
+            "location": "Dubai, UAE",
+            "guest": 3,
+            "bed": 2,
+            "bath": 1
+        }
+    },
+    {
+        "title": "Maharajah’s Pavilion, The Raj Palace",
+        "thumb": "https://i.ibb.co/xL877vT/3.jpg",
+        "description": "This four-floor apartment at The Raj Palace offers unparalleled luxury and historical charm. Maharajah’s Pavilion features a private museum, a library, and a rooftop terrace with stunning views of the city and palace grounds. The interiors are adorned with antique furniture, intricate artwork, and opulent decor, reflecting the rich heritage of Jaipur. Guests can enjoy a dedicated butler service, ensuring personalized attention and comfort throughout their stay. The suite also includes a private elevator, providing seamless access to all floors. With luxurious amenities and a serene ambiance, Maharajah’s Pavilion promises a truly royal experience.",
+        "short_description": "Four-floor apartment with private museum and rooftop terrace.",
+        "price": 969,
+        "photo_gallery": [
+            "https://i.ibb.co/NpRshNz/4.jpg",
+            "https://i.ibb.co/QD69TCW/1.jpg",
+            "https://i.ibb.co/RT6rnZ6/2.jpg"
+        ],
+        "rating": 5,
+        "status": "Sold Out",
+        "facility": [
+            {
+                "name": "Free Wi-Fi",
+                "icon_url": "https://i.ibb.co/ySJrtVd/008-wifi.png"
+            },
+            {
+                "name": "Air Conditioning",
+                "icon_url": "https://i.ibb.co/F4H9P4H/005-air-conditioning.png"
+            },
+            {
+                "name": "Television",
+                "icon_url": "https://i.ibb.co/tMwkhM0/003-smart-tv.png"
+            },
+            {
+                "name": "Washing Machine",
+                "icon_url": "https://i.ibb.co/8r7RJ6g/washing.png"
+            },
+            {
+                "name": "Coffee Maker",
+                "icon_url": "https://i.ibb.co/vv1KVKJ/coffee-machine.png"
+            },
+            {
+                "name": "Safe",
+                "icon_url": "https://i.ibb.co/ZTkwbvz/shield.png"
+            }
+        ],
+        "accessories": "Antique furniture, luxury toiletries, private elevator.",
+        "details": {
+            "room_size": "1,500 sqm",
+            "room_bed": "Multiple beds",
+            "occupancy": 10,
+            "view": "City and palace grounds",
+            "location": "Dubai, UAE",
+            "guest": 5,
+            "bed": 3,
+            "bath": 2
+        }
+    },
+    {
+        "title": "Presidential Suite, The Ritz-Carlton, Tokyo",
+        "thumb": "https://i.ibb.co/0JzcYSq/1.jpg",
+        "description": "Positioned on the top floor of The Ritz-Carlton, Tokyo, the Presidential Suite offers sweeping views of Mount Fuji and Tokyo Tower. This luxurious suite features a spacious living area, a grand bedroom with a king-size bed, and a lavish bathroom with premium amenities. Guests can enjoy a private study, a dedicated concierge service, and a personal chef to cater to their culinary preferences. The suite also includes a grand piano, adding a touch of elegance to the sophisticated interiors. With a blend of contemporary and traditional Japanese design, the Presidential Suite provides a serene and luxurious retreat in the heart of Tokyo.",
+        "short_description": "Top floor suite with sweeping views and grand piano.",
+        "price": 499,
+        "photo_gallery": [
+            "https://i.ibb.co/jLTVzzT/3.jpg",
+            "https://i.ibb.co/Gdt1GH6/2.jpg",
+            "https://i.ibb.co/YL1DWm8/3.jpg"
+        ],
+        "rating": 5,
+        "status": "Available",
+        "facility": [
+            {
+                "name": "Free Wi-Fi",
+                "icon_url": "https://i.ibb.co/ySJrtVd/008-wifi.png"
+            },
+            {
+                "name": "Air Conditioning",
+                "icon_url": "https://i.ibb.co/F4H9P4H/005-air-conditioning.png"
+            },
+            {
+                "name": "Television",
+                "icon_url": "https://i.ibb.co/tMwkhM0/003-smart-tv.png"
+            },
+            {
+                "name": "Washing Machine",
+                "icon_url": "https://i.ibb.co/8r7RJ6g/washing.png"
+            },
+            {
+                "name": "Coffee Maker",
+                "icon_url": "https://i.ibb.co/vv1KVKJ/coffee-machine.png"
+            },
+            {
+                "name": "Safe",
+                "icon_url": "https://i.ibb.co/ZTkwbvz/shield.png"
+            }
+        ],
+        "accessories": "High-end audio system, luxury linens, grand piano.",
+        "details": {
+            "room_size": "307 sqm",
+            "room_bed": "King bed",
+            "occupancy": 3,
+            "view": "Mount Fuji and Tokyo Tower",
+            "location": "Dubai, UAE",
+            "guest": 3,
+            "bed": 2,
+            "bath": 1
+        }
+    },
+    {
+        "title": "Beachfront Bungalow",
+        "thumb": "https://i.ibb.co/HYHyrGx/cbab049d5bddb544bd9ba6617c420df9.jpg",
+        "description": "Experience ultimate luxury in the two-story Royal Suite at Burj Al Arab Jumeirah. This opulent suite features a private library, a state-of-the-art cinema room, and a lavish majlis style lounge. Guests can enjoy unparalleled privacy with a dedicated butler service and a private lift. The suite's interiors are adorned with gold, marble, and vibrant colors, reflecting the rich cultural heritage of Dubai. With a stunning view of the Arabian Gulf, this suite also includes a spacious dining room, a luxurious bathroom with a jacuzzi, and designer toiletries. Whether you're relaxing in the comfort of your suite or exploring the hotel's exclusive amenities, the Royal Suite promises an unforgettable stay.",
+        "short_description": "A charming bungalow right on the beach. Wake up to the sound of waves and enjoy direct access to the sandy shores. The bungalow features a cozy interior with nautical decor, a private patio, and all the comforts needed for a relaxing beach vacation.",
+        "price": 150,
+        "photo_gallery": [
+            "https://i.ibb.co/j390L9R/2.jpg",
+            "https://i.ibb.co/N9FFDhG/3.jpg",
+            "https://i.ibb.co/xjX52Xg/4.jpg"
+        ],
+        "rating": 5,
+        "status": "Available",
+        "facility": [
+            {
+                "name": "Free Wi-Fi",
+                "icon_url": "https://i.ibb.co/ySJrtVd/008-wifi.png"
+            },
+            {
+                "name": "Air Conditioning",
+                "icon_url": "https://i.ibb.co/F4H9P4H/005-air-conditioning.png"
+            },
+            {
+                "name": "Television",
+                "icon_url": "https://i.ibb.co/tMwkhM0/003-smart-tv.png"
+            },
+            {
+                "name": "Washing Machine",
+                "icon_url": "https://i.ibb.co/8r7RJ6g/washing.png"
+            },
+            {
+                "name": "Coffee Maker",
+                "icon_url": "https://i.ibb.co/vv1KVKJ/coffee-machine.png"
+            },
+            {
+                "name": "Safe",
+                "icon_url": "https://i.ibb.co/ZTkwbvz/shield.png"
+            }
+        ],
+        "accessories": "Jacuzzi, designer toiletries, grand piano.",
+        "details": {
+            "room_size": "780 sqm",
+            "room_bed": "King bed",
+            "occupancy": 4,
+            "view": "Arabian Gulf",
+            "location": "Dubai, UAE",
+            "guest": 2,
+            "bed": 1,
+            "bath": 1
+        }
+    },
+    {
+        "title": "Cozy Mountain Cabin",
+        "thumb": "https://i.ibb.co/8r047rH/4a7833ea72b2da39ee312ae4d8d65e48.jpg",
+        "description": "Located in the heart of New York City, The Penthouse Suite at The Mark Hotel offers a blend of luxury and comfort. This expansive suite features five bedrooms, a rooftop terrace, and a grand living room. The interiors are elegantly designed with custom furnishings, high ceilings, and large windows that offer stunning views of Central Park. Guests can enjoy a dedicated butler service, ensuring personalized attention and convenience. The suite also includes a gourmet kitchen, a dining room, and luxurious bathrooms with premium toiletries. With its prime location and exceptional service, The Penthouse Suite provides a perfect retreat in the city.",
+        "short_description": "A cozy cabin nestled in the mountains with stunning views of the surrounding landscape. Enjoy a peaceful retreat with all the modern amenities, including a fully equipped kitchen, a warm fireplace, and a spacious deck perfect for star gazing.",
+        "price": 120,
+        "photo_gallery": [
+            "https://i.ibb.co/j390L9R/2.jpg",
+            "https://i.ibb.co/N9FFDhG/3.jpg",
+            "https://i.ibb.co/xjX52Xg/4.jpg"
+        ],
+        "rating": 5,
+        "status": "Available",
+        "facility": [
+            {
+                "name": "Free Wi-Fi",
+                "icon_url": "https://i.ibb.co/ySJrtVd/008-wifi.png"
+            },
+            {
+                "name": "Air Conditioning",
+                "icon_url": "https://i.ibb.co/F4H9P4H/005-air-conditioning.png"
+            },
+            {
+                "name": "Television",
+                "icon_url": "https://i.ibb.co/tMwkhM0/003-smart-tv.png"
+            },
+            {
+                "name": "Washing Machine",
+                "icon_url": "https://i.ibb.co/8r7RJ6g/washing.png"
+            },
+            {
+                "name": "Coffee Maker",
+                "icon_url": "https://i.ibb.co/vv1KVKJ/coffee-machine.png"
+            },
+            {
+                "name": "Safe",
+                "icon_url": "https://i.ibb.co/ZTkwbvz/shield.png"
+            }
+        ],
+        "accessories": "Jacuzzi, designer toiletries, grand piano.",
+        "details": {
+            "room_size": "780 sqm",
+            "room_bed": "King bed",
+            "occupancy": 4,
+            "view": "Arabian Gulf",
+            "location": "Dubai, UAE",
+            "guest": 2,
+            "bed": 1,
+            "bath": 1
+        }
+    },
+    {
+        "title": "Rustic Forest Lodge",
+        "thumb": "https://i.ibb.co/W6yd6GS/88b6172a82090f99abd1eb15dfa01491.jpg",
+        "description": "The Shahi Mahal Suite at Raj Palace is a magnificent six-bedroom suite that offers a royal experience. This suite includes a private theatre, a bar, and a library. The interiors are richly decorated with gold leaf, stucco, and intricate mirror work, reflecting the grandeur of the royal heritage. Guests can enjoy a dedicated butler service and personalized dining experiences. The suite also features a spacious living area, a grand dining room, and luxurious bathrooms with premium amenities. With stunning views of the palace gardens and a serene ambiance, the Shahi Mahal Suite promises a regal stay.",
+        "short_description": "A rustic lodge surrounded by tranquil forest. Perfect for nature lovers, this lodge offers a serene escape with hiking trails, a private pond, and a large outdoor space for barbecues. Inside, you'll find a spacious living area, a wood-burning stove, and cozy bedrooms.",
+        "price": 180,
+        "photo_gallery": [
+            "https://i.ibb.co/j390L9R/2.jpg",
+            "https://i.ibb.co/N9FFDhG/3.jpg",
+            "https://i.ibb.co/xjX52Xg/4.jpg"
+        ],
+        "rating": 5,
+        "status": "Available",
+        "facility": [
+            {
+                "name": "Free Wi-Fi",
+                "icon_url": "https://i.ibb.co/ySJrtVd/008-wifi.png"
+            },
+            {
+                "name": "Air Conditioning",
+                "icon_url": "https://i.ibb.co/F4H9P4H/005-air-conditioning.png"
+            },
+            {
+                "name": "Television",
+                "icon_url": "https://i.ibb.co/tMwkhM0/003-smart-tv.png"
+            },
+            {
+                "name": "Washing Machine",
+                "icon_url": "https://i.ibb.co/8r7RJ6g/washing.png"
+            },
+            {
+                "name": "Coffee Maker",
+                "icon_url": "https://i.ibb.co/vv1KVKJ/coffee-machine.png"
+            },
+            {
+                "name": "Safe",
+                "icon_url": "https://i.ibb.co/ZTkwbvz/shield.png"
+            }
+        ],
+        "accessories": "Jacuzzi, designer toiletries, grand piano.",
+        "details": {
+            "room_size": "780 sqm",
+            "room_bed": "King bed",
+            "occupancy": 4,
+            "view": "Arabian Gulf",
+            "location": "Dubai, UAE",
+            "guest": 2,
+            "bed": 1,
+            "bath": 1
+        }
+    },
+    {
+        "title": "Luxury City Apartment",
+        "thumb": "https://i.ibb.co/4MDvV86/d10246beb4f14c6f9f3e4e16e20dc5bd.jpg",
+        "description": "Luxuriate in the exquisite Peninsula Suite at The Peninsula Hong Kong. This suite offers a panoramic view of Victoria Harbour, complete with a private terrace and study. The interiors are elegantly designed with a blend of classic and modern decor, featuring luxurious furnishings and state-of-the-art amenities. Guests can enjoy a spacious living area, a grand bedroom with a king-size bed, and a lavish bathroom with premium toiletries. The suite also includes a personal chauffeur service, ensuring seamless travel throughout the city. With a 24-hour butler service, guests can experience unparalleled comfort and convenience during their stay.",
+        "short_description": "A modern apartment located in the heart of the city. This luxurious space offers high-end finishes, floor-to-ceiling windows with breathtaking city views, a state-of-the-art kitchen, and convenient access to shopping, dining, and entertainment.",
+        "price": 200,
+        "photo_gallery": [
+            "https://i.ibb.co/j390L9R/2.jpg",
+            "https://i.ibb.co/N9FFDhG/3.jpg",
+            "https://i.ibb.co/xjX52Xg/4.jpg"
+        ],
+        "rating": 5,
+        "status": "Available",
+        "facility": [
+            {
+                "name": "Free Wi-Fi",
+                "icon_url": "https://i.ibb.co/ySJrtVd/008-wifi.png"
+            },
+            {
+                "name": "Air Conditioning",
+                "icon_url": "https://i.ibb.co/F4H9P4H/005-air-conditioning.png"
+            },
+            {
+                "name": "Television",
+                "icon_url": "https://i.ibb.co/tMwkhM0/003-smart-tv.png"
+            },
+            {
+                "name": "Washing Machine",
+                "icon_url": "https://i.ibb.co/8r7RJ6g/washing.png"
+            },
+            {
+                "name": "Coffee Maker",
+                "icon_url": "https://i.ibb.co/vv1KVKJ/coffee-machine.png"
+            },
+            {
+                "name": "Safe",
+                "icon_url": "https://i.ibb.co/ZTkwbvz/shield.png"
+            }
+        ],
+        "accessories": "Jacuzzi, designer toiletries, grand piano.",
+        "details": {
+            "room_size": "780 sqm",
+            "room_bed": "King bed",
+            "occupancy": 4,
+            "view": "Arabian Gulf",
+            "location": "Dubai, UAE",
+            "guest": 2,
+            "bed": 1,
+            "bath": 1
+        }
+    },
+    {
+        "title": "Cozy Mountain Cabin",
+        "thumb": "https://i.ibb.co/8r047rH/4a7833ea72b2da39ee312ae4d8d65e48.jpg",
+        "description": "This spectacular suite spans the arch of the Atlantis, offering unique views and exceptional amenities. The Royal Bridge Suite features a private elevator, a grand dining room, and a luxurious living area. Guests can enjoy a 24-hour butler service and a dedicated team to cater to their every need. The interiors are designed with opulence in mind, featuring designer furnishings and luxury bath products. With stunning views of Palm Island and the Arabian Gulf, this suite provides a truly unforgettable experience. Whether you're relaxing in the spacious living area or exploring the hotel's exclusive amenities, the Royal Bridge Suite promises an extraordinary stay.",
+        "short_description": "A cozy cabin nestled in the mountains with stunning views of the surrounding landscape. Enjoy a peaceful retreat with all the modern amenities, including a fully equipped kitchen, a warm fireplace, and a spacious deck perfect for star gazing.",
+        "price": 120,
+        "photo_gallery": [
+            "https://i.ibb.co/j390L9R/2.jpg",
+            "https://i.ibb.co/N9FFDhG/3.jpg",
+            "https://i.ibb.co/xjX52Xg/4.jpg"
+        ],
+        "rating": 5,
+        "status": "Available",
+        "facility": [
+            {
+                "name": "Free Wi-Fi",
+                "icon_url": "https://i.ibb.co/ySJrtVd/008-wifi.png"
+            },
+            {
+                "name": "Air Conditioning",
+                "icon_url": "https://i.ibb.co/F4H9P4H/005-air-conditioning.png"
+            },
+            {
+                "name": "Television",
+                "icon_url": "https://i.ibb.co/tMwkhM0/003-smart-tv.png"
+            },
+            {
+                "name": "Washing Machine",
+                "icon_url": "https://i.ibb.co/8r7RJ6g/washing.png"
+            },
+            {
+                "name": "Coffee Maker",
+                "icon_url": "https://i.ibb.co/vv1KVKJ/coffee-machine.png"
+            },
+            {
+                "name": "Safe",
+                "icon_url": "https://i.ibb.co/ZTkwbvz/shield.png"
+            }
+        ],
+        "accessories": "Jacuzzi, designer toiletries, grand piano.",
+        "details": {
+            "room_size": "780 sqm",
+            "room_bed": "King bed",
+            "occupancy": 4,
+            "view": "Arabian Gulf",
+            "location": "Dubai, UAE",
+            "guest": 1,
+            "bed": 1,
+            "bath": 1
+        }
+    }
+]

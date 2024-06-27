@@ -18,7 +18,7 @@ import MoreAbout from "../MoreAbout/MoreAbout";
 const Cooperation = () => {
     return (
         <div className="mx-5 rounded-md lg:relative ">
-            <Parallax bgImage={parallaxBg} strength={500} className="bg-cover bg-center rounded-md">
+            <Parallax bgImage={parallaxBg} strength={700} className="bg-cover  bg-bottom rounded-md">
                 <div style={{ height: 500 }} className="bg-slate-950 bg-opacity-50">
                     <div className="absolute h-full grid grid-cols-1 lg:grid-cols-2 w-11/12 mx-auto">
                         <div className="flex flex-col justify-center items-center">

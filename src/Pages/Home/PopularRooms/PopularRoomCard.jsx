@@ -4,12 +4,12 @@ import { MdBathroom } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 const PopularRoomCard = ({item}) => {
 
-    const {img, title, short_description, price_per_night, bed, bath, guest} = item;
+    const {thumb, title, short_description, price,details} = item;
 
     return (
-      <div className="text-white relative rounded-md overflow-hidden">
-        <img src={img} alt="" className="rounded-md" />
-        <div className="absolute bottom-0 p-5 bg-gradient-to-b from-transparent to-slate-800 h-full flex flex-col justify-end">
+      <div className="text-white relative rounded-md overflow-hidden h-full">
+        <img src={thumb} alt="" className="rounded-md w-full h-[400px]" />
+        <div className="absolute bottom-0 w-full p-5 bg-gradient-to-b from-transparent to-slate-800 h-full flex flex-col justify-end">
           <Link to={"/"} className="text-2xl font-bold font-serif">
             {title}
           </Link>
@@ -20,26 +20,26 @@ const PopularRoomCard = ({item}) => {
                 <span className="text-xl p-1 bg-orange-300 rounded-full text-gray-900">
                   <FaPerson />
                 </span>
-                {guest} Guest
+                {details.guest} Guest
               </p>
               <p className="flex gap-2  font-semibold items-center">
                 <span className="text-xl p-1 bg-orange-300 rounded-full text-gray-900">
                   <FaBedPulse />
                 </span>
-                {bed} Bed
+                {details.bed} Bed
               </p>
               <p className="flex gap-2  font-semibold items-center">
                 <span className="text-xl p-1 bg-orange-300 rounded-full text-gray-900">
                   <MdBathroom />
                 </span>
-                {bath} Bath
+                {details.bath} Bath
               </p>
               <p className="flex gap-1 text-lg font-semibold items-center font-serif text-orange-300">
                 {/* <span className="text-2xl p-2 bg-orange-300 rounded-full text-gray-900">
                   <IoCloudyNightSharp />
                 </span> */}
                 <span className="text-xl">$</span>
-                {price_per_night}/Night
+                {price}/Night
               </p>
             </div>
           </div>

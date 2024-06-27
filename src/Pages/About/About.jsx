@@ -10,6 +10,7 @@ import { FaPlay } from 'react-icons/fa';
 import video from '../../../src/assets/moreAbout/1.mp4'
 import Counter from '../../Components/Shared/ParallaxBg';
 import TriangleIcon from '../../Components/TriangleIcon';
+import OurTeam from './OurTeam/OurTeam';
 const About = () => {
 
     const [showVideo, setShowVideo] = useState(false);
@@ -157,23 +158,30 @@ const About = () => {
 
             {/* Start Counter */}
 
-            <div className='relative z-0 '>
+            <div className='relative z-0 m-5 rounded-md overflow-hidden'>
                 <Counter></Counter>
             </div>
 
+            {/* Start Our Team */}
+
+            <div className=' m-5'>
+                <OurTeam></OurTeam>
+            </div>
+
+            {/* End Out Team */}
 
             {/* End Counter  */}
 
             {/* Our Gallery Start */}
 
-            <div>
+            <div className='m-5 rounded-md overflow-hidden'>
                 <OurGallery></OurGallery>
             </div>
 
             {/* Our Gallery End */}
 
             {/* Start Testimonial */}
-            <div>
+            <div className='m-5'>
                 <Testimonial></Testimonial>
             </div>
             {/* End Testimonial */}

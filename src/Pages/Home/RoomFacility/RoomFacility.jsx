@@ -28,10 +28,10 @@ const RoomFacility = () => {
 
     return (
         <div className='mx-5 border border-dashed mt-5 bg-stone-100 rounded-md relative py-20 z-0'>
-            <div className='lg:pt-[18%] w-96 mx-auto'>
+            <div className='lg:pt-[18%] xl:pt-[35%] 2xl:pt-[20%] w-96 mx-auto'>
                 <PrimaryDivider />
             </div>
-            <div className='lg:w-[84%] mx-auto p-5 relative z-10 rounded-md bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10'>
+            <div className='lg:w-[83.5%] xl:w-[90%] mx-auto p-5 relative z-10 rounded-md bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10'>
                 {
                     facility.map((facility, idx) => {
                         return <FacilityCard key={facility._id} item={facility} idx={idx}></FacilityCard>

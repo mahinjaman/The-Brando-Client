@@ -9,14 +9,12 @@ import PrimaryDivider from '../../../Components/Shared/PrimaryDivider';
 
 const PopularRooms = () => {
 
-
-
   const secureAxios = useSecureAxios();
 
   const { isPending, data, error } = useQuery({
     queryKey: 'popularRooms',
     queryFn: async () => {
-      const response = await secureAxios.get('/popularRooms')
+      const response = await secureAxios.get('/rooms')
       return response.data;
     }
   })
@@ -28,6 +26,9 @@ const PopularRooms = () => {
   if (error) {
     return <h1>{error.message}</h1>
   }
+
+  const popularRooms = data.slice(5, 10);
+
 
   return (
     <div className="grid grid-cols-1 p-5 lg:p-0 lg:grid-cols-4 gap-5 bg-slate-900 bg-opacity-95">
@@ -70,7 +71,7 @@ const PopularRooms = () => {
       {/* Slider */}
 
       <div className="lg:col-span-3 flex">
-          <RoomSlider rooms={data}></RoomSlider>
+          <RoomSlider rooms={popularRooms}></RoomSlider>
       </div>
     </div>
   );

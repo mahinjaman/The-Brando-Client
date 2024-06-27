@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Author from '../../../assets/moreAbout/author.jpeg';
+import Author from '../../../assets/image/author.jpeg';
 import AuthorSignature from '../../../assets/moreAbout/AuthorSignature.png'
 import bg from '../../../assets/moreAbout/bg.jpg'
 import { FaPlay } from 'react-icons/fa';

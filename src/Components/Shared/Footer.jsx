@@ -9,7 +9,7 @@ const Footer = () => {
 
     const date = moment().format("YYYY");
     return (
-        <div className='bg-slate-950 text-white bottom-0 lg:fixed lg:-z-10 pt-20 lg:h-[570px]'>
+        <div className='bg-slate-950 text-white bottom-0 lg:fixed lg:-z-10 pt-20 lg:h-[570px] max-w-7xl'>
             <div className="flex gap-5 items-center justify-center">
                 <div className='w-[50px] lg:w-[150px] h-[1px] bg-slate-300'></div>
                 <div className="w-2 h-2 bg-white rounded-full"></div>

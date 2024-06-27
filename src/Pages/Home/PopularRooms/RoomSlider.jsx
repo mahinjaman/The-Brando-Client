@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import PopularRoomCard from "./PopularRoomCard";
 
 const RoomSlider = ({rooms}) => {
+  console.log(rooms);
   const settings = {
     className: "center",
     infinite: true,
