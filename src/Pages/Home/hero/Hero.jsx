@@ -50,7 +50,7 @@ const Hero = () => {
     return (
       <div
       id="#"
-        className="hero h-[700px] text-white"
+        className="hero h-[700px] text-white mb-5"
         style={{
           background:
             "url(https://c0.wallpaperflare.com/preview/621/1008/840/living-room-apartment-room-interior.jpg)",

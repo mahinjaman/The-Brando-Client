@@ -8,8 +8,8 @@ import map_icon from '../../assets/image/Map_symbol_location_02.png'
 const Contact = () => {
     const [anchor, setAnchor] = useState([24.3329, 90.0288]);
     return (
-        <div className='bg-white'>
-            <div style={{ backgroundImage: `url(${bg})` }} className='border m-5 py-20 bg-no-repeat bg-top bg-opacity-30 relative rounded-md mb-[570px]'>
+        <div className='bg-white pt-5'>
+            <div style={{ backgroundImage: `url(${bg})` }} className='border  py-20 bg-no-repeat bg-top bg-opacity-30 relative rounded-md'>
                 {/* Contact Info */}
                 <div className='p-7 lg:w-10/12 mx-auto bg-slate-50 border rounded-md mb-5'>
                     <div className='border p-5 bg-white rounded-md grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>

@@ -44,7 +44,7 @@ const TestSlider = ({testimonials}) => {
         ]
       }
     return (
-        <div className='w-[400px] md:w-4/5 m-auto'>
+        <div className='w-[400px] md:w-5/6 m-auto'>
                 <Slider {...settings}>
                 {testimonials?.map(testimonial => {
                     return <div className='p-5'>

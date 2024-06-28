@@ -16,7 +16,7 @@ const Navbar = () => {
       <li>
         <details>
           <summary>The Restaurant</summary>
-          <ul className="shadow-none rounded-md flex flex-col gap-3 z-20 bg-white p-2">
+          <ul className="shadow-none rounded-md flex flex-col gap-3 z-50  p-2 bg-white">
             <li className="border-b-2 duration-300 rounded-b-md rounded-md font-semibold hover:text-white hover:bg-gray-900 hover:border-orange-500">
               <NavLink to={"/restaurant"}>Restaurant</NavLink>
             </li>
@@ -48,7 +48,7 @@ const Navbar = () => {
 
 
   return (
-    <div className={`2xl::max-w-7xl navbar shadow-md px-5 lg:px-44 py-4 bg-white text-black shadow-white ${staticNav ? 'fixed z-50 top-0' : ''}`}>
+    <div className={`navbar shadow-md px-5 lg:px-44 py-4 bg-white text-black shadow-white 2xl:max-w-[1910px] mx-auto z-50 ${staticNav ? 'fixed top-0' : ''}`}>
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -69,7 +69,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white rounded-box w-52 "
+            className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-white rounded-box w-52 z-50"
           >
             {navMenu}
           </ul>
@@ -82,7 +82,7 @@ const Navbar = () => {
           />
         </Link>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-center hidden lg:flex z-50">
         <ul className="menu menu-horizontal px-1 font-semibold">{navMenu}</ul>
       </div>
 

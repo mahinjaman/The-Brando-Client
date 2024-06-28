@@ -5,9 +5,11 @@ import Footer from '../Components/Shared/Footer';
 
 const Root = () => {
     return (
-        <div className='mx-auto'>
+        <div className=' 2xl:max-w-[1910px] mx-auto overflow-hidden'>
             <Navbar></Navbar>
-            <Outlet></Outlet>
+            <div className=''>
+                <Outlet></Outlet>
+            </div>
             <Footer></Footer>
         </div>
     );

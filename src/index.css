@@ -88,6 +88,17 @@ li {
     }
 }
 
+@media only screen and (max-width: 1365px) {
+    .slick-prev:before {
+        left: -20px;
+
+    }
+
+    .slick-next:before {
+        margin-left: 15px;
+    }
+}
+
 .slick-prev:before,
 .slick-next:before {
     color: #C2A576 !important;
@@ -106,5 +117,20 @@ li {
 @media only screen and (min-width: 1024px) {
     .react-parallax img {
         top: -80%;
+    }
+}
+
+
+
+.home-parallax img{
+    top: 20%;
+}
+
+
+@media only screen and (min-width: 1900px) {
+    body{
+        width: 1910px ;
+        margin: 0px auto;
+        overflow-x: hidden;
     }
 }

@@ -11,10 +11,10 @@ const PopularRooms = () => {
 
   const secureAxios = useSecureAxios();
 
-  const { isPending, data, error } = useQuery({
+  const { isPending, data: popularRooms, error } = useQuery({
     queryKey: 'popularRooms',
     queryFn: async () => {
-      const response = await secureAxios.get('/rooms')
+      const response = await secureAxios.get('/popular_rooms')
       return response.data;
     }
   })
@@ -27,12 +27,10 @@ const PopularRooms = () => {
     return <h1>{error.message}</h1>
   }
 
-  const popularRooms = data.slice(5, 10);
 
-
-  return (
-    <div className="grid grid-cols-1 p-5 lg:p-0 lg:grid-cols-4 gap-5 bg-slate-900 bg-opacity-95">
-      <div className="lg:col-span-1 lg:p-5 bg-no-repeat bg-opacity-35 relative">
+  return ( 
+    <div className="grid grid-cols-1 p-5 lg:p-0 lg:grid-cols-9 xl:grid-cols-12 2xl:grid-cols-4 gap-5 bg-slate-900 bg-opacity-95">
+      <div className="lg:col-span-3 xl:col-span-4 2xl:col-span-1 lg:p-5 bg-no-repeat bg-opacity-35 relative">
         <div className="absolute opacity-30 w-full flex items-center justify-center mt-20">
           <img src={popularBg} className="lg:w-56" alt="" />
         </div>
@@ -61,7 +59,7 @@ const PopularRooms = () => {
                 <div className="p-2 border border-dashed border-[#fdba74] rounded-full">
                   <div className="w-2 h-2 bg-[#fdba74] rotate-45"></div>
                 </div>
-                <div className="w-2 h-2 bg-white rounded-full"></div>
+                <div className="w-2 h-2 bg-white rounded-full "></div>
               </div>
             </div>
           </div>
@@ -70,7 +68,7 @@ const PopularRooms = () => {
 
       {/* Slider */}
 
-      <div className="lg:col-span-3 flex">
+      <div className="2xl:col-span-3 xl:col-span-8 lg:col-span-6 flex">
           <RoomSlider rooms={popularRooms}></RoomSlider>
       </div>
     </div>

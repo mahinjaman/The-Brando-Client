@@ -73,7 +73,7 @@ const Testimonial = () => {
         ],
     }
     return (
-        <div className='border rounded-md py-10 relative z-10 bg-white lg:mb-[565px]'>
+        <div className='border rounded-md py-10 relative z-10 bg-white'>
             <div className='p-10'>
                 <PrimaryTitle>What said about us</PrimaryTitle>
                 <h1 className='text-4xl font-serif font-semibold text-center mt-5'>Testimonials & Clients</h1>

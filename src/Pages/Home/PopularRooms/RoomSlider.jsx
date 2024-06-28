@@ -9,9 +9,18 @@ const RoomSlider = ({rooms}) => {
     className: "center",
     infinite: true,
     centerPadding: "60px",
-    slidesToShow: 3,
+    slidesToShow: 2,
     swipeToSlide: true,
     responsive: [
+      {
+        breakpoint: 1365,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
       {
         breakpoint: 1024,
         settings: {

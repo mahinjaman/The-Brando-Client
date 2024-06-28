@@ -51,7 +51,7 @@ const OurGallery = () => {
     };
 
     return (
-        <div className="grid grid-cols-1 p-5 lg:p-0 lg:grid-cols-4 gap-5 bg-slate-900 bg-opacity-95">
+        <div className="grid grid-cols-1 p-5 lg:p-0 lg:grid-cols-4 gap-5 bg-slate-900 bg-opacity-95 ">
             <div className="lg:col-span-1 lg:p-5 bg-no-repeat bg-opacity-35 relative lg:h-[500px]">
                 <div className="absolute opacity-20 w-full flex items-center justify-center mt-20">
                     <img src={bg} className="" alt="" />

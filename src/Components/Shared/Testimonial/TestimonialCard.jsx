@@ -6,7 +6,7 @@ const TestimonialCard = ({ testimonial }) => {
     return (
         <div className='p-5 border rounded-md bg-slate-50 relative'>
             <div className='flex flex-col items-center justify-center text-center relative border rounded-md bg-white p-5 z-10'>
-                <img src={testimonial.profile} alt={testimonial.name} className='w-20 h-20 absolute z-50 -top-10 rounded-full border-8 border-slate-400' />
+                <img src={testimonial.profile} alt={testimonial.name} className='w-20 h-20 absolute -top-10 rounded-full border-8 border-slate-400' />
                 <h1 className='text-lg font-semibold mt-10'>{testimonial.name}</h1>
                 <div className='flex text-[#C2A576] my-4'>
 

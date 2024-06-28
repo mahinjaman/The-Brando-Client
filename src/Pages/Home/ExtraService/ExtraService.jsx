@@ -30,20 +30,20 @@ const ExtraService = () => {
 
       <div className=" lg:w-11/12 mx-auto grid grid-cols-1 lg:grid-cols-3 text-center text-white gap-10 lg:h-80">
         {/* Card-1 */}
-        <div className="relative rounded-md overflow-hidden h-[355px] lg:h-80">
+        <div className="relative rounded-md overflow-hidden h-[355px] lg:h-80 ">
           <div className="theCard absolute w-full h-full">
             {/* font */}
             <div
               className="theFront absolute w-full h-full "
               style={{ backgroundImage: `url(${img1})` }}
             >
-              <div className=" bg-slate-900 bg-opacity-30 p-5">
-                <div className="border p-5 flex flex-col justify-center items-center rounded-md">
+              <div className=" bg-slate-900 bg-opacity-30 p-5 h-full">
+                <div className="border p-5 flex flex-col rounded-md h-full">
                   <hr className="w-16 border border-[#c4a676]" />
-                  <h1 className="text-center text-3xl font-bold my-5 font-serif">
+                  <h1 className="text-center text-3xl font-bold font-serif">
                     Spa And Wellness
                   </h1>
-                  <h4 className="text-lg font-semibold uppercase">
+                  <h4 className="text-lg font-semibold uppercase ">
                     Start relax better
                   </h4>
                   <div className="w-full">
@@ -57,15 +57,15 @@ const ExtraService = () => {
             </div>
             {/* back */}
             <div className="theBack absolute w-full h-full bg-gray-900 p-5">
-              <div className="border rounded-md h-full flex flex-col justify-center items-center p-5">
-                <div className="relative flex flex-col items-center justify-center mb-5">
+              <div className="border rounded-md flex flex-col  p-5 h-full">
+                <div className="relative flex flex-col items-center justify-center ">
                   <div className="absolute top-0 w-32 h-6 bg-slate-700 bg-opacity-50 rounded-xl mr-10"></div>
                   <div className="text-5xl text-[#c4a676] z-10">
                     <MdOutlineSpa />
                   </div>
                   <div className=" w-32 h-6 bg-slate-700 bg-opacity-50 rounded-xl ml-10"></div>
                 </div>
-                <p className='flex-grow'>
+                <p className='text-sm'>
                   Indulge in our Swedish Massage, a soothing full-body
                   treatment that uses gentle, flowing strokes to relieve
                   tension, improve circulation, and promote relaxation.
@@ -86,10 +86,10 @@ const ExtraService = () => {
               className="theFront absolute w-full h-full"
               style={{ backgroundImage: `url(${img2})` }}
             >
-              <div className=" bg-slate-900 bg-opacity-30 p-5 rounded-md">
-                <div className="border p-5 flex flex-col justify-center items-center rounded-md">
+              <div className=" bg-slate-900 bg-opacity-30 p-5 rounded-md h-full">
+                <div className="border p-5 flex flex-col rounded-md h-full">
                   <hr className="w-16 border border-[#c4a676]" />
-                  <h1 className="text-center text-3xl font-bold my-5 font-serif">
+                  <h1 className="text-center text-3xl font-bold font-serif">
                     Indoor Swimming Pool
                   </h1>
                   <h4 className="text-lg font-semibold uppercase">
@@ -107,7 +107,7 @@ const ExtraService = () => {
             {/* back */}
             <div className="theBack absolute w-full h-full bg-gray-900 p-5">
               <div className="border rounded-md h-full flex flex-col justify-center items-center p-5">
-                <div className="relative flex flex-col items-center justify-center mb-5">
+                <div className="relative flex flex-col items-center justify-center ">
                   <div className="absolute top-0 w-32 h-6 bg-slate-700 bg-opacity-50 rounded-xl mr-10"></div>
                   <div className="text-5xl text-[#c4a676] z-10">
                     <FaSwimmingPool />
@@ -132,10 +132,10 @@ const ExtraService = () => {
               className="theFront absolute w-full h-full"
               style={{ backgroundImage: `url(${img3})` }}
             >
-              <div className=" bg-slate-900 bg-opacity-30 p-5 rounded-md">
-                <div className="border p-5 flex flex-col justify-center items-center rounded-md">
+              <div className=" bg-slate-900 bg-opacity-30 p-5 rounded-md h-full">
+                <div className="border p-5 flex flex-col rounded-md h-full">
                   <hr className="w-16 border border-[#c4a676]" />
-                  <h1 className="text-center text-3xl font-bold my-5 font-serif">
+                  <h1 className="text-center text-3xl font-bold  font-serif">
                     The Restaurant Center
                   </h1>
                   <h4 className="text-lg font-semibold uppercase">
@@ -153,7 +153,7 @@ const ExtraService = () => {
             {/* back */}
             <div className="theBack absolute w-full h-full bg-gray-900 p-5">
               <div className="border rounded-md h-full flex flex-col justify-center items-center p-5">
-                <div className="relative flex flex-col items-center justify-center mb-5">
+                <div className="relative flex flex-col items-center justify-center">
                   <div className="absolute top-0 w-32 h-6 bg-slate-700 bg-opacity-50 rounded-xl mr-10"></div>
                   <div className="text-5xl text-[#c4a676] z-10">
                     <GrRestaurant />

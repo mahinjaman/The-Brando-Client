@@ -161,16 +161,16 @@ const About = () => {
             <div className='relative z-0 m-5 rounded-md overflow-hidden'>
                 <Counter></Counter>
             </div>
+            {/* End Counter  */}
 
             {/* Start Our Team */}
 
-            <div className=' m-5'>
+            <div className='m-5'>
                 <OurTeam></OurTeam>
             </div>
 
             {/* End Out Team */}
 
-            {/* End Counter  */}
 
             {/* Our Gallery Start */}
 

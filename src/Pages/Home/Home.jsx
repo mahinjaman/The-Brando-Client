@@ -40,7 +40,7 @@ const Home = () => {
               <LatestNews />
 
               {/* Testimonials */}
-
+ 
               <Testimonial />
         </div>
     );
