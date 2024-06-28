@@ -89,7 +89,7 @@ const Testimonial = () => {
 
             {/* Triangle Icon */}
             <div className='relative flex justify-center'>
-                <div className='absolute top-10'>
+                <div className='absolute top-[41px]'>
                     <TriangleIcon></TriangleIcon>
                 </div>
             </div>

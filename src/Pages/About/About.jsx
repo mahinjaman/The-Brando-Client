@@ -181,7 +181,7 @@ const About = () => {
             {/* Our Gallery End */}
 
             {/* Start Testimonial */}
-            <div className='m-5'>
+            <div className='mx-5'>
                 <Testimonial></Testimonial>
             </div>
             {/* End Testimonial */}
