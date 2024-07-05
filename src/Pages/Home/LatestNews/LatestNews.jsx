@@ -21,7 +21,6 @@ const LatestNews = () => {
             return response.data;
         }
     })
-    console.log(news);
 
     if (isPending) {
         return <h1>Loading...</h1>

@@ -28,7 +28,6 @@ const BookingNow = ({ children }) => {
       setRoom(room - 1);
     } else if (item === "guests") {
       const newGuest = guest - 1;
-      console.log(newGuest);
       setGuest(newGuest);
     }
   };
@@ -40,7 +39,6 @@ const BookingNow = ({ children }) => {
     const date = formData.get("date");
     const rooms = room;
     const guests = guest;
-    console.log(date, rooms, guests);
   };
 
   return (

@@ -39,7 +39,6 @@ const TestSlider2 = () => {
         }
     })
 
-    console.log(data);
 
     if (isPending) {
         return <h1>Loading...</h1>

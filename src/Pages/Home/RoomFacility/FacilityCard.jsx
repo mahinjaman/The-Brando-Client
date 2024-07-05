@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 const FacilityCard = ({item, idx}) => {
-    console.log(item);
     const { icon , facility, description} = item;
     return (
         <div className='border p-5 rounded-lg flex flex-col relative overflow-hidden duration-300 hover:shadow-xl'>

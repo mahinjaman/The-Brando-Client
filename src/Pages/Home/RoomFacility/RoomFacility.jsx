@@ -24,8 +24,6 @@ const RoomFacility = () => {
         return <h1>{error.message}</h1>
     }
 
-    console.log(facility);
-
     return (
         <div className='mx-5 border border-dashed mt-5 bg-stone-100 rounded-md relative py-20 z-0 xl:mt-16 2xl:mt-0'>
             <div className='lg:pt-[18%] xl:pt-[0%] 2xl:pt-[20%] w-96 mx-auto'>

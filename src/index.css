@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    scroll-behavior: smooth;
+}
+
 .custom-btn {
     color: #c4a676;
     padding: 10px 30px;

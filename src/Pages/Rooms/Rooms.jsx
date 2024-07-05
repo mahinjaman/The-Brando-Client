@@ -9,7 +9,8 @@ const Rooms = () => {
     const [showForm, setShowForm] = useState(false);
     const secureAxios = useSecureAxios();
     const [totalRooms, setTotalRooms] = useState(1);
-    const [rooms, setRooms] = useState([])
+    const [rooms, setRooms] = useState([]);
+    
     useEffect(() => {
         const fetchData = async () => {
             const response = await secureAxios.get('total_rooms')
@@ -18,7 +19,6 @@ const Rooms = () => {
         fetchData().then(data => {
             const { count } = data;
             setTotalRooms(count)
-            console.log(count);
         });
     }, [])
 
@@ -71,6 +71,7 @@ const Rooms = () => {
 
     const handlePrev = () =>{
         if(activePage > 1){
+
             setActivePage(activePage - 1);
         }
     }
@@ -79,6 +80,11 @@ const Rooms = () => {
         if (activePage < pages) {
             setActivePage(activePage + 1);
         }
+    }
+
+    const handleLimit = e =>{
+        setLimit(parseInt(e.target.value));
+        setActivePage(1)
     }
 
 
@@ -96,6 +102,15 @@ const Rooms = () => {
                     </div>
 
                     <div className='col-span-4 p-7 bg-slate-100 rounded-md'>
+                        <div className='w-2/5 mb-5 text-end py-3 flex items-center justify-center bg-white rounded-md gap-3'>
+                            <label htmlFor="limit" className='primary-font italic font-semibold'>Select Your Range</label>
+                            <select name="limit" id="limit" onChange={handleLimit} className='outline-none py-3 px-10 bg-white'>
+                                <option value="6">6</option>
+                                <option value="12">12</option>
+                                <option value="18">18</option>
+                                <option value="24">24</option>
+                            </select>
+                        </div>
                         <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 p-7 bg-white border rounded-md'>
                             {
                                 rooms.map(room => <RoomCard key={room._id} room={room}></RoomCard>)
