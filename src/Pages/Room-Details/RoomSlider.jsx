@@ -61,7 +61,7 @@ const RoomSlider = ({images}) => {
                {
                 images?.map((image, idx) => {
                     return (
-                        <div key={idx} className=' flex items-center justify-center'>
+                        <div key={idx} className='flex items-center justify-center'>
                             <img src={image} alt="Image" className='h-[400px] w-[500px] md:w-[430px] 2xl:w-[570px] rounded-md' />
                         </div>
                     );
