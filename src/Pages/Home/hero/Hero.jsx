@@ -1,7 +1,7 @@
 // import { useState } from "react";
 // import { FaStar } from "react-icons/fa";
 
-import BookingNow from "../../../Components/Shared/BookingNow";
+import SearchRoom from "../../../Components/Shared/SearchRoom";
 
 const Hero = () => {
   // const [room, setRoom ] = useState(1);
@@ -75,9 +75,9 @@ const Hero = () => {
             <button className="custom-btn">Start Explore</button>
           </div>
           <div className="lg:col-span-2">
-            <BookingNow>
+            <SearchRoom>
               Search Room
-            </BookingNow>
+            </SearchRoom>
           </div>
         </div>
       </div>

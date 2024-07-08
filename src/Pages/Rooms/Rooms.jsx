@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import BookingNow from '../../Components/Shared/BookingNow';
 import useSecureAxios from '../../Hooks/useSecureAxios';
 import RoomCard from './RoomCard';
 import bg from '../../assets/map_bg5.png'
+import SearchRoom from '../../Components/Shared/SearchRoom';
 const Rooms = () => {
     const [activePage, setActivePage] = useState(1)
     const [limit, setLimit] = useState(6);
-    const [showForm, setShowForm] = useState(false);
     const secureAxios = useSecureAxios();
     const [totalRooms, setTotalRooms] = useState(1);
     const [rooms, setRooms] = useState([]);
-    
+    const [prevDisabled, setPrevDisabled] = useState(false);
+    const [nextDisabled, setNextDisabled] = useState(false);
+
     useEffect(() => {
         const fetchData = async () => {
             const response = await secureAxios.get('total_rooms')
@@ -20,7 +21,7 @@ const Rooms = () => {
             const { count } = data;
             setTotalRooms(count)
         });
-    }, [])
+    }, [secureAxios])
 
     const pages = Math.ceil(totalRooms / limit);
 
@@ -33,7 +34,7 @@ const Rooms = () => {
         fetchRooms().then(data => {
             setRooms(data);
         });
-    }, [activePage, limit])
+    }, [activePage, limit, secureAxios])
 
 
 
@@ -52,27 +53,30 @@ const Rooms = () => {
 
 
 
-    useEffect(() => {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                setShowForm(true);
-            }
-        })
-    }, []);
+    // useEffect(() => {
+    //     window.addEventListener('scroll', () => {
+    //         if (window.scrollY > 100) {
+    //             setShowForm(true);
+    //         }
+    //     })
+    // }, []);
 
-    useEffect(() => {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 1000) {
-                setShowForm(false);
-            }
-        })
-    }, [])
+    // useEffect(() => {
+    //     window.addEventListener('scroll', () => {
+    //         if (window.scrollY > 1000) {
+    //             setShowForm(false);
+    //         }
+    //     })
+    // }, [])
 
 
-    const handlePrev = () =>{
-        if(activePage > 1){
-
+    const handlePrev = () => {
+        if (activePage > 1) {
             setActivePage(activePage - 1);
+
+        }
+        if (activePage === 1) {
+            setPrevDisabled(true);
         }
     }
 
@@ -82,10 +86,27 @@ const Rooms = () => {
         }
     }
 
-    const handleLimit = e =>{
+    const handleLimit = e => {
         setLimit(parseInt(e.target.value));
         setActivePage(1)
     }
+    console.log(nextDisabled);
+
+    useEffect(()=>{
+        if (activePage === pages) {
+            setNextDisabled(true);
+        }
+        else{
+            setNextDisabled(false);
+        }
+
+        if (activePage === 1) {
+            setPrevDisabled(true);
+        }
+        else{
+            setPrevDisabled(false);
+        }
+    },[activePage, pages])
 
 
     return (
@@ -94,10 +115,10 @@ const Rooms = () => {
             <div className='py-20 lg:w-10/12 mx-auto'>
                 <div className='grid grid-cols-1 lg:grid-cols-6 gap-5'>
                     <div className='col-span-2 text-white relative'>
-                        <div className={ `w-[500px] duration-500 ${showForm ? 'fixed' : ''}`}>
-                            <BookingNow>
+                        <div className="w-[500px] duration-500 ">
+                            <SearchRoom>
                                 Search Filters
-                            </BookingNow>
+                            </SearchRoom>
                         </div>
                     </div>
 
@@ -119,11 +140,11 @@ const Rooms = () => {
                     </div>
                 </div>
                 <div className='text-end py-5 '>
-                    <button className='btn mr-5  hover:bg-blue-700 hover:text-white' onClick={handlePrev}>Prev</button>
+                    <button className='btn btn-outline mr-5 border hover:bg-blue-700 hover:text-white' disabled={prevDisabled} onClick={handlePrev}>Prev</button>
                     {
-                        AllPages.map(page => <button className={`btn mr-2 hover:bg-blue-700 hover:text-white ${page === activePage && 'bg-blue-700 text-white'}`} value={page} onClick={handlePage}>{page}</button>)
+                        AllPages.map((page, idx) => <button key={idx} className={`btn mr-2 hover:bg-blue-700 hover:text-white ${page === activePage && 'bg-blue-700 text-white'}`} value={page} onClick={handlePage}>{page}</button>)
                     }
-                    <button className='btn ml-5 hover:bg-blue-700 hover:text-white' onClick={handleNext}>Next</button>
+                    <button className={`btn btn-outline ml-5 hover:bg-blue-700 hover:text-white border`} disabled={nextDisabled} onClick={handleNext}>Next</button>
                 </div>
             </div>
         </div>

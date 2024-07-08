@@ -9,6 +9,7 @@ import RoomSlider from './RoomSlider';
 import { FaPeopleGroup } from "react-icons/fa6";
 import { LuBedDouble } from "react-icons/lu";
 import { MdBathtub } from "react-icons/md";
+import BookingNow from '../../Components/Shared/BookingNow';
 const RoomDetails = () => {
     const { id } = useParams();
     const secureAxios = useSecureAxios();
@@ -29,7 +30,7 @@ const RoomDetails = () => {
     }
 
     console.log(room);
-    const { photo_gallery, title, details, price , description, thumb} = room;
+    const { photo_gallery, title, details, price, description, thumb, facility } = room;
 
     return (
         <div className=''>
@@ -64,15 +65,35 @@ const RoomDetails = () => {
 
                         <div className='py-5 border-b '>
                             <p className='first-letter:text-7xl primary-font first-letter:text-[#C4A676] text-justify'>{description}</p>
-                            <img className='w-full rounded-md mt-5' src={thumb} alt="" />
+                            <img className='w-full h-[500px] rounded-md mt-5' src={thumb} alt="" />
                         </div>
 
                         {/* Room Amenities */}
+
+
+                        <div>
+                            <h1 className='text-4xl font-serif mt-5'>Room Amenities</h1>
+                            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-5 border rounded-md mt-5 gap-3 font-semibold'>
+                                {
+                                    facility.map((item, index) => (
+                                        <div key={index} className='flex items-center gap-2 px-5 py-3 border rounded-md bg-orange-500 bg-opacity-15'>
+                                            <img className='w-10' src={item.icon_url} alt="" />
+                                            <p>{item.name}</p>
+                                        </div>
+                                    ))
+                                }
+                            </div>
+                        </div>
+
                     </div>
 
                     {/* Booking Field */}
-                    <div>
-
+                    <div className='text-white'>
+                        <div className='md:w-8/12 mx-auto'>
+                            <BookingNow room={room}>
+                                Booking Now
+                            </BookingNow>
+                        </div>
                     </div>
                 </div>
             </div>

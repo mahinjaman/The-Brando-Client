@@ -4,6 +4,7 @@ import { FaBedPulse, FaPerson } from 'react-icons/fa6';
 import { MdBathroom } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { CiSearch } from "react-icons/ci";
+import PropTypes from "prop-types"
 const RoomCard = ({ room }) => {
     const [ show, setShow ] = useState(false);
     const {_id, thumb, price, title, description, details } = room;
@@ -63,6 +64,10 @@ const RoomCard = ({ room }) => {
             }
         </div>
     );
+};
+
+RoomCard.propTypes = {
+    room: PropTypes.object.isRequired
 };
 
 export default RoomCard;
