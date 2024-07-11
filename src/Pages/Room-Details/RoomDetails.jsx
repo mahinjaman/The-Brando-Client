@@ -10,6 +10,7 @@ import { FaPeopleGroup } from "react-icons/fa6";
 import { LuBedDouble } from "react-icons/lu";
 import { MdBathtub } from "react-icons/md";
 import BookingNow from '../../Components/Shared/BookingNow';
+import { Helmet } from 'react-helmet-async';
 const RoomDetails = () => {
     const { id } = useParams();
     const secureAxios = useSecureAxios();
@@ -34,6 +35,9 @@ const RoomDetails = () => {
 
     return (
         <div className=''>
+            <Helmet>
+                <title>The Brando | Room Details</title>
+            </Helmet>
             {/* Slider */}
             <div className='p-5 border bg-slate-50 rounded-t-md 2xl:max-w-[1800px] mx-auto'>
                 <RoomSlider images={photo_gallery}></RoomSlider>

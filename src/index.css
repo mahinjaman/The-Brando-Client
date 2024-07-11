@@ -138,3 +138,9 @@ li {
         overflow-x: hidden;
     }
 }
+
+.react-multiple-carousel__arrow {
+    background-color: #C2A576 !important;
+    z-index: 10 !important;
+    color: #C2A576 !important;
+}

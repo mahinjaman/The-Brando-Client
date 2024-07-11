@@ -27,7 +27,7 @@ const About = () => {
 
             {/* Start Head Title */}
             <Helmet>
-                <title>About Us</title>
+                <title>The Brando | About Us</title>
             </Helmet>
             {/* End Head Title */}
 

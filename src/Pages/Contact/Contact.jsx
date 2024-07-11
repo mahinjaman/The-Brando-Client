@@ -5,10 +5,14 @@ import { IoLocationOutline } from "react-icons/io5";
 import { GiRotaryPhone } from "react-icons/gi";
 import { Map, Draggable } from "pigeon-maps";
 import map_icon from '../../assets/image/Map_symbol_location_02.png'
+import { Helmet } from 'react-helmet-async';
 const Contact = () => {
     const [anchor, setAnchor] = useState([24.3329, 90.0288]);
     return (
         <div className='bg-white pt-5'>
+            <Helmet>
+                <title>The Brando | Contact Us</title>
+            </Helmet>
             <div style={{ backgroundImage: `url(${bg})` }} className='border  py-20 bg-no-repeat bg-top bg-opacity-30 relative rounded-md'>
                 {/* Contact Info */}
                 <div className='p-7 lg:w-10/12 mx-auto bg-slate-50 border rounded-md mb-5'>

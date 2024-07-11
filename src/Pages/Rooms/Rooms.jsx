@@ -3,6 +3,7 @@ import useSecureAxios from '../../Hooks/useSecureAxios';
 import RoomCard from './RoomCard';
 import bg from '../../assets/map_bg5.png'
 import SearchRoom from '../../Components/Shared/SearchRoom';
+import { Helmet } from 'react-helmet-async';
 const Rooms = () => {
     const [activePage, setActivePage] = useState(1)
     const [limit, setLimit] = useState(6);
@@ -112,6 +113,9 @@ const Rooms = () => {
     return (
         <div className='border rounded-md bg-no-repeat bg-top'
             style={{ backgroundImage: `url(${bg})` }}>
+                <Helmet>
+                    <title>The Brando | Rooms</title>
+                </Helmet>
             <div className='py-20 lg:w-10/12 mx-auto'>
                 <div className='grid grid-cols-1 lg:grid-cols-6 gap-5'>
                     <div className='col-span-2 text-white relative'>

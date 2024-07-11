@@ -7,15 +7,13 @@ import ExtraService from './ExtraService/ExtraService';
 import Cooperation from './Cooperation/Cooperation';
 import RoomFacility from './RoomFacility/RoomFacility';
 import LatestNews from './LatestNews/LatestNews';
-import NewsSlider from './LatestNews/NewsSlider';
 import Testimonial from '../../Components/Shared/Testimonial/Testimonial';
-import TestSlider2 from '../../Components/Shared/Testimonial/TestSlider2';
 
 const Home = () => {
     return (
         <div className='bg-white'>
             <Helmet>
-                <title>Home</title>
+                <title>The Brando | Home</title>
             </Helmet>
             {/* Hero */}
             <Hero />

@@ -1,11 +1,15 @@
 import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import PropTypes from 'prop-types'
-const RoomSlider = ({images}) => {
+import img1 from '../../assets/restaurant/13.jpg'
+import img2 from '../../assets/restaurant/8.jpg'
+import img3 from '../../assets/restaurant/9.jpg'
+
+const RestaurantSlider = () => {
     return (
-        <div className=''>
+        <div className='rounded-md overflow-hidden'>
             <Carousel
+            
                 additionalTransfrom={0}
                 arrows
                 autoPlaySpeed={3000}
@@ -29,7 +33,7 @@ const RoomSlider = ({images}) => {
                             max: 3000,
                             min: 1024
                         },
-                        items: 3,
+                        items: 1,
                         partialVisibilityGutter: 40
                     },
                     mobile: {
@@ -45,7 +49,7 @@ const RoomSlider = ({images}) => {
                             max: 1024,
                             min: 700
                         },
-                        items: 2,
+                        items: 1,
                         partialVisibilityGutter: 30
                     }
                 }}
@@ -58,22 +62,16 @@ const RoomSlider = ({images}) => {
                 slidesToSlide={1}
                 swipeable
             >
-               {
-                images?.map((image, idx) => {
-                    return (
-                        <div key={idx} className='flex items-center justify-center'>
-                            <img src={image} alt="Image" className='h-[400px] w-[500px] md:w-[430px] 2xl:w-[570px] rounded-md' />
-                        </div>
-                    );
-                })
-               }
+               <img className='rounded-md' src={img1} alt="" />
+               <img className='rounded-md' src={img2} alt="" />
+               <img className='rounded-md' src={img3} alt="" />
             </Carousel>
         </div>
     );
 };
 
-RoomSlider.propTypes = {
-    images: PropTypes.arrayOf(PropTypes.string).isRequired
-}
+export default RestaurantSlider;
 
-export default RoomSlider;
+
+
+
