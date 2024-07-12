@@ -11,9 +11,19 @@ import video from '../../../src/assets/moreAbout/1.mp4'
 import Counter from '../../Components/Shared/ParallaxBg';
 import TriangleIcon from '../../Components/TriangleIcon';
 import OurTeam from './OurTeam/OurTeam';
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+import { useEffect } from 'react';
+
 const About = () => {
 
     const [showVideo, setShowVideo] = useState(false);
+    useEffect(()=>{
+        AOS.init({
+            duration:1000
+        });
+      },[])
+
     const handleVideo = () => {
         setShowVideo(true);
     }
@@ -37,7 +47,7 @@ const About = () => {
             <div className='z-10'>
                 <div className="home_about relative grid grid-cols-1 lg:grid-cols-2 lg:p-32 gap-10 lg:gap-0 lg:mx-5 border border-dashed rounded-md mb-5">
                     {/* Content */}
-                    <div className={`p-5 flex flex-col gap-3 items-start`}>
+                    <div className={`p-5 flex flex-col gap-3 items-start`} data-aos="fade-up-right">
                         <p className="text-[#c4a676] text-lg font-semibold">
                             <hr className="w-16 border border-[#c4a676] mb-2" />
                             Enjoy your time in our Hotel
@@ -76,7 +86,7 @@ const About = () => {
 
                     {/* Image */}
 
-                    <div className="flex flex-col items-center justify-center relative row-start-1 lg:row-span-2">
+                    <div className="flex flex-col items-center justify-center relative row-start-1 lg:row-span-2" data-aos="fade-up-left">
                         <img
                             src={img}
                             alt="img"
@@ -132,7 +142,7 @@ const About = () => {
                         </div>
                     </div>
 
-                    <div className='hidden lg:absolute lg:flex items-center gap-5 top-[52%]'>
+                    <div className='hidden lg:absolute lg:flex items-center gap-5 top-[52%]' data-aos="fade-up-right">
                         <div className='w-10 h-[1px] bg-slate-500'></div>
                         <div className='p-2 rounded-full border border-dashed border-[#c4a676]'>
                             <div className='w-3 h-3 rotate-45 bg-[#c4a676]'></div>
@@ -158,7 +168,7 @@ const About = () => {
 
             {/* Start Counter */}
 
-            <div className='relative z-0 m-5 rounded-md overflow-hidden'>
+            <div className='relative z-0 m-5 rounded-md overflow-hidden'  data-aos="zoom-out">
                 <Counter></Counter>
             </div>
             {/* End Counter  */}
@@ -174,14 +184,14 @@ const About = () => {
 
             {/* Our Gallery Start */}
 
-            <div className='m-5 rounded-md overflow-hidden'>
+            <div className='m-5 rounded-md overflow-hidden' data-aos="zoom-in-right">
                 <OurGallery></OurGallery>
             </div>
 
             {/* Our Gallery End */}
 
             {/* Start Testimonial */}
-            <div className='mx-5'>
+            <div className='mx-5' data-aos="zoom-in-right">
                 <Testimonial></Testimonial>
             </div>
             {/* End Testimonial */}

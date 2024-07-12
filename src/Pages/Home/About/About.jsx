@@ -1,9 +1,19 @@
 import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+import { useEffect } from 'react';
 const About = () => {
+  useEffect(()=>{
+    AOS.init();
+  },[])
+
+
   return (
     <div className="home_about relative grid grid-cols-1 lg:grid-cols-2 lg:p-20 gap-10 lg:gap-0 lg:mx-20 border border-dashed rounded-md my-20 ">
       {/* Content */}
-      <div className={`p-5 flex flex-col gap-3 items-start`}>
+      <div className={`p-5 flex flex-col gap-3 items-start`}
+      data-aos="fade-up-right"
+      >
         <p className="text-[#c4a676] text-lg font-semibold">
           <hr className="w-16 border border-[#c4a676] mb-2" />
           Enjoy your time in our Hotel
@@ -42,7 +52,9 @@ const About = () => {
 
       {/* Image */}
 
-      <div className="flex flex-col items-center justify-center relative row-start-1 lg:row-span-2">
+      <div className="flex flex-col items-center justify-center relative row-start-1 lg:row-span-2"
+      data-aos="fade-up-left"
+      >
         <img
           src="https://i.ibb.co/PjfV2PQ/1.jpg"
           alt="img"

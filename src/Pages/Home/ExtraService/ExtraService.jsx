@@ -9,7 +9,15 @@ import { FaSwimmingPool } from "react-icons/fa";
 import { GrRestaurant } from 'react-icons/gr';
 import bg from '../../../assets/map_bg5.png'
 import TriangleIcon from '../../../Components/TriangleIcon';
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+import { useEffect } from 'react';
+
 const ExtraService = () => {
+
+  useEffect(()=>{
+    AOS.init();
+  },[])
   return (
     <div className=" mx-5 p-10 border rounded-md mt-10 bg-slate-50 relative">
       {/* background */}
@@ -30,7 +38,9 @@ const ExtraService = () => {
 
       <div className=" lg:w-11/12 mx-auto grid grid-cols-1 lg:grid-cols-3 text-center text-white gap-10 lg:h-80">
         {/* Card-1 */}
-        <div className="relative rounded-md overflow-hidden h-[355px] lg:h-80 ">
+        <div className="relative rounded-md overflow-hidden h-[355px] lg:h-80 "
+        data-aos="fade-down-left"
+        >
           <div className="theCard absolute w-full h-full">
             {/* font */}
             <div
@@ -79,7 +89,9 @@ const ExtraService = () => {
 
         {/* Card-2 */}
 
-        <div className="relative rounded-md overflow-hidden h-[355px] lg:h-80">
+        <div className="relative rounded-md overflow-hidden h-[355px] lg:h-80"
+        data-aos="flip-up"
+        >
           <div className="theCard absolute w-full h-full">
             {/* font */}
             <div
@@ -125,7 +137,9 @@ const ExtraService = () => {
 
         {/* Card-3 */}
 
-        <div className="relative rounded-md overflow-hidden h-[355px] lg:h-80">
+        <div className="relative rounded-md overflow-hidden h-[355px] lg:h-80"
+        data-aos="fade-down-right"
+        >
           <div className="theCard absolute w-full h-full ">
             {/* Font */}
             <div

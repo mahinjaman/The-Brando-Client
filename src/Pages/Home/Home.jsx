@@ -9,37 +9,64 @@ import RoomFacility from './RoomFacility/RoomFacility';
 import LatestNews from './LatestNews/LatestNews';
 import Testimonial from '../../Components/Shared/Testimonial/Testimonial';
 
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+import { useEffect } from 'react';
+
+
 const Home = () => {
+
+    useEffect(()=>{
+        AOS.init({
+            duration:1000
+        });
+      },[])
     return (
         <div className='bg-white'>
             <Helmet>
                 <title>The Brando | Home</title>
             </Helmet>
             {/* Hero */}
-            <Hero />
-            
+            <div  data-aos="zoom-out">
+                <Hero />
+            </div>
+
             {/* About */}
 
-            <About />
+            <div data-aos="zoom-in-right">
+                <About />
+            </div>
 
             {/* Popular Rooms */}
-            <PopularRooms />
+            <div data-aos="zoom-in-left">
+                <PopularRooms />
+            </div>
 
-              {/* Extra Service  */}
-              <ExtraService />
+            {/* Extra Service  */}
+            <div data-aos="zoom-in-right"> 
+                <ExtraService />
+            </div>
 
-              {/* Cooperation */}
-              <Cooperation />
+            {/* Cooperation */}
+            <div>
+                <Cooperation />
+            </div>
 
-              {/* Room Facility */}
-              <RoomFacility />
+            {/* Room Facility */}
+            <div  data-aos="zoom-out">
+                <RoomFacility />
+            </div>
 
-              {/* Latest News */}
-              <LatestNews />
+            {/* Latest News */}
+            <div data-aos="zoom-in-left">
+                <LatestNews />
+            </div>
 
-              {/* Testimonials */}
- 
-              <Testimonial />
+            {/* Testimonials */}
+
+            <div data-aos="zoom-in-right">
+                <Testimonial />
+            </div>
         </div>
     );
 };

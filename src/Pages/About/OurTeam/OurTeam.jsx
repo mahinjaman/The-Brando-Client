@@ -7,7 +7,17 @@ import Author from '../../../assets/image/author.jpeg';
 import imran from '../../../assets/image/imran.png'
 import mahin from '../../../assets/image/mahin.png'
 
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+import { useEffect } from 'react';
+
 const OurTeam = () => {
+
+    useEffect(()=>{
+        AOS.init({
+            duration:1000
+        });
+      },[])
     return (
         <div className='border py-20'>
             <div>
@@ -20,7 +30,7 @@ const OurTeam = () => {
 
             <div className='p-7 bg-slate-50 border rounded-md w-10/12 mx-auto'>
                 <div className='p-7 bg-white border rounded-md grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
-                    <div>
+                    <div data-aos="fade-up-right">
                         {/* team image & social */}
                         <div className='p-5 border rounded-md relative overflow-hidden group'>
                             <div>
@@ -45,7 +55,7 @@ const OurTeam = () => {
                         </div>
                     </div>
 
-                    <div>
+                    <div data-aos="flip-up">
                         {/* team image & social */}
                         <div className='p-5 border rounded-md relative overflow-hidden group'>
                             <div>
@@ -70,7 +80,7 @@ const OurTeam = () => {
                         </div>
                     </div>
 
-                    <div>
+                    <div data-aos="fade-up-left">
                         {/* team image & social */}
                         <div className='p-5 border rounded-md relative overflow-hidden group'>
                             <div>

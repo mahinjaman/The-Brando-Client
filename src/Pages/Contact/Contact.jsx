@@ -6,8 +6,19 @@ import { GiRotaryPhone } from "react-icons/gi";
 import { Map, Draggable } from "pigeon-maps";
 import map_icon from '../../assets/image/Map_symbol_location_02.png'
 import { Helmet } from 'react-helmet-async';
+
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+import { useEffect } from 'react';
+
+
 const Contact = () => {
     const [anchor, setAnchor] = useState([24.3329, 90.0288]);
+    useEffect(()=>{
+        AOS.init({
+            duration:1000
+        });
+      },[])
     return (
         <div className='bg-white pt-5'>
             <Helmet>
@@ -18,7 +29,7 @@ const Contact = () => {
                 <div className='p-7 lg:w-10/12 mx-auto bg-slate-50 border rounded-md mb-5'>
                     <div className='border p-5 bg-white rounded-md grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
 
-                        <div className='flex items-center gap-5 p-5 border rounded-md bg-slate-50'>
+                        <div className='flex items-center gap-5 p-5 border rounded-md bg-slate-50' data-aos="fade-down-right">
                             <div>
                                 <h1 className='text-5xl text-[#C2A576]'><IoLocationOutline /></h1>
                             </div>
@@ -29,7 +40,7 @@ const Contact = () => {
                             </div>
                         </div>
 
-                        <div className='flex items-center gap-5 p-5 border rounded-md bg-slate-50'>
+                        <div className='flex items-center gap-5 p-5 border rounded-md bg-slate-50' data-aos="flip-up">
                             <div>
                                 <h1 className='text-5xl text-[#C2A576]'><GiRotaryPhone /></h1>
                             </div>
@@ -40,7 +51,7 @@ const Contact = () => {
                             </div>
                         </div>
 
-                        <div className='flex items-center gap-5 p-5 border rounded-md bg-slate-50'>
+                        <div className='flex items-center gap-5 p-5 border rounded-md bg-slate-50' data-aos="fade-down-left">
                             <div>
                                 <h1 className='text-5xl text-[#C2A576]'><IoLocationOutline /></h1>
                             </div>
@@ -56,7 +67,7 @@ const Contact = () => {
                 {/* Form */}
 
                 <div className=' w-10/12 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-5'>
-                    <div className='p-7 border bg-slate-50 rounded-md'>
+                    <div className='p-7 border bg-slate-50 rounded-md' data-aos="fade-up-left">
                         <div className='p-5 bg-white border rounded-md'>
                             <div className='flex items-center justify-between py-4 border-b'>
                                 <h1 className='text-xl font-serif'>Get In Touch</h1>
@@ -74,7 +85,7 @@ const Contact = () => {
                         </div>
                     </div>
                     {/* Map */}
-                    <div className='rounded-md overflow-hidden'>
+                    <div className='rounded-md overflow-hidden' data-aos="fade-up-right">
                         <Map height={500} defaultCenter={[24.3329, 90.0288]} defaultZoom={11}>
                             <Draggable offset={[60, 87]} anchor={anchor} onDragEnd={setAnchor}>
                                 <img src={map_icon} width={50} height={95} alt="Pigeon!" />

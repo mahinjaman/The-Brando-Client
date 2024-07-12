@@ -144,3 +144,70 @@ li {
     z-index: 10 !important;
     color: #C2A576 !important;
 }
+
+.t-to-b{
+    transition: all 0.5s ease;
+    animation-name: top-to-bottom;
+    width: 100px;
+    height: 2px;
+    animation-duration: 1.5s;
+}
+
+@keyframes top-to-bottom {
+    0%{
+        width: 0px;
+    }
+    100%{
+        width: 100px;
+    }
+}
+
+.restaurant-bg{
+    animation-name: background;
+    animation-duration:5;
+    opacity: 1;
+    transition: 5s;
+    animation-delay: 0.5s;
+}
+
+@keyframes background {
+    0%{
+        translate: 100% 100%;        
+    }
+    100%{
+        translate: 0% 0%;   
+    }
+}
+
+
+.restaurant-bg-end{
+    animation-name: background-end;
+    animation-duration: 10s;
+    transition: all 5s ease;
+
+}
+
+@keyframes background-end {
+    0%{
+        translate: 100% 100%;        
+    }
+    100%{
+        translate: 0% 0%;   
+    }
+}
+
+/* restaurant timing */
+
+.restaurant-timing{
+    animation-name: timing;
+    animation-duration: 0.5s;
+}
+
+@keyframes timing {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}

@@ -5,14 +5,20 @@ import { MdBathroom } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { CiSearch } from "react-icons/ci";
 import PropTypes from "prop-types"
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 const RoomCard = ({ room }) => {
     const [ show, setShow ] = useState(false);
     const {_id, thumb, price, title, description, details } = room;
     const { guest, bed, bath } = details;
-
+    useEffect(()=>{
+        AOS.init({
+            duration:1000
+        });
+      },[])
     
     return (
-        <div className='group flex flex-col border rounded-md shadow-xl'>
+        <div className='group flex flex-col border rounded-md shadow-xl' data-aos="fade-up-right">
             <div className='rounded-t-md overflow-hidden  bg-slate-400 h-80 relative group'>
                 <img src={thumb} alt="" className='duration-300 group-hover:scale-110 rounded-t-md w-full h-80' />
                 <div className='absolute duration-300 group-hover:left-0  h-full w-full bg-slate-600 bg-opacity-50 top-0 left-[500px]'>

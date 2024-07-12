@@ -1,167 +1,167 @@
 [
     {
-        "thumb": "https://ibb.co/CBGKZZz",
+        "thumb": "https://i.ibb.co/8MZgpp0/Grilled-Salmon.png",
         "title": "Grilled Salmon",
         "description": "A delicious grilled salmon fillet served with lemon butter sauce.",
         "price": 20.99,
         "category": "Dishes"
     },
     {
-        "thumb": "https://ibb.co/C6zsRfx",
+        "thumb": "https://i.ibb.co/T1kq9sz/Beef-Steak.png",
         "title": "Beef Steak",
         "description": "Juicy beef steak cooked to perfection, served with mashed potatoes.",
         "price": 25.50,
         "category": "Dishes"
     },
     {
-        "thumb": "https://ibb.co/CmshcLy",
+        "thumb": "https://i.ibb.co/LYhnFKy/Chicken-Alfredo.png",
         "title": "Chicken Alfredo",
         "description": "Creamy Alfredo pasta with grilled chicken and parmesan cheese.",
         "price": 18.99,
         "category": "Dishes"
     },
     {
-        "thumb": "https://ibb.co/nk7SdWL",
+        "thumb": "https://i.ibb.co/0JC34wG/Vegetarian-Pizza.png",
         "title": "Vegetarian Pizza",
         "description": "Wood-fired pizza topped with fresh vegetables and mozzarella cheese.",
         "price": 15.99,
         "category": "Dishes"
     },
     {
-        "thumb": "https://ibb.co/XWRqmcN",
+        "thumb": "https://i.ibb.co/grKxskH/Spaghetti-Carbonara.png",
         "title": "Spaghetti Carbonara",
         "description": "Classic Italian pasta with pancetta, egg, and parmesan cheese.",
         "price": 17.50,
         "category": "Dishes"
     },
     {
-        "thumb": "https://ibb.co/z8XqsbJ",
+        "thumb": "https://i.ibb.co/jVynhGR/Lamb-Chops.png",
         "title": "Lamb Chops",
         "description": "Grilled lamb chops served with mint sauce and roasted vegetables.",
         "price": 29.99,
         "category": "Dishes"
     },
     {
-        "thumb": "https://ibb.co/b3PPjyK",
+        "thumb": "https://i.ibb.co/0DH2GrV/Bruschetta.jpg",
         "title": "Bruschetta",
         "description": "Grilled bread topped with a mixture of tomatoes, garlic, and basil.",
         "price": 7.99,
         "category": "Starters"
     },
     {
-        "thumb": "https://ibb.co/7gtsVYG",
+        "thumb": "https://i.ibb.co/yhFH5f8/Caesar-Salad.jpg",
         "title": "Caesar Salad",
         "description": "Fresh romaine lettuce with Caesar dressing, croutons, and parmesan cheese.",
         "price": 9.50,
         "category": "Starters"
     },
     {
-        "thumb": "https://ibb.co/b3PPjyK",
+        "thumb": "https://i.ibb.co/N3ssgky/Stuffed-Mushrooms.jpg",
         "title": "Stuffed Mushrooms",
         "description": "Mushrooms stuffed with a mixture of cheese and herbs.",
         "price": 8.50,
         "category": "Starters"
     },
     {
-        "thumb": "https://ibb.co/L8XGL6m",
+        "thumb": "https://i.ibb.co/2y1bDPx/Garlic-Prawns.jpg",
         "title": "Garlic Prawns",
         "description": "Prawns sautéed in garlic and olive oil, served with a slice of lemon.",
         "price": 12.00,
         "category": "Starters"
     },
     {
-        "thumb": "https://ibb.co/cgz50ZT",
+        "thumb": "https://i.ibb.co/QbsBLTm/French-Onion-Soup.jpg",
         "title": "French Onion Soup",
         "description": "Traditional French onion soup with melted cheese and croutons.",
         "price": 6.99,
         "category": "Starters"
     },
     {
-        "thumb": "https://ibb.co/sb4T9Tt",
+        "thumb": "https://i.ibb.co/wBqnhnY/Spring-Rolls.jpg",
         "title": "Spring Rolls",
         "description": "Crispy spring rolls filled with vegetables, served with a sweet chili sauce.",
         "price": 5.99,
         "category": "Starters"
     },
     {
-        "thumb": "https://ibb.co/X5bJNtn",
+        "thumb": "https://i.ibb.co/T0khptQ/Chocolate-Lava-Cake.jpg",
         "title": "Chocolate Lava Cake",
         "description": "Warm chocolate cake with a gooey molten center, served with vanilla ice cream.",
         "price": 8.99,
         "category": "Desserts"
     },
     {
-        "thumb": "https://ibb.co/tsCvkN8",
+        "thumb": "https://i.ibb.co/Ltpcbqn/Cheesecake.jpg",
         "title": "Cheesecake",
         "description": "Creamy cheesecake with a graham cracker crust, topped with fresh strawberries.",
         "price": 7.50,
         "category": "Desserts"
     },
     {
-        "thumb": "https://ibb.co/g3CZFyx",
+        "thumb": "https://i.ibb.co/56VhxTP/Tiramisu.jpg",
         "title": "Tiramisu",
         "description": "Classic Italian dessert made with layers of coffee-soaked ladyfingers and mascarpone cheese.",
         "price": 7.99,
         "category": "Desserts"
     },
     {
-        "thumb": "https://ibb.co/kh60nbc",
+        "thumb": "https://i.ibb.co/wKrCHG6/Apple-Pie.jpg",
         "title": "Apple Pie",
         "description": "Traditional apple pie with a flaky crust, served with vanilla ice cream.",
         "price": 6.99,
         "category": "Desserts"
     },
     {
-        "thumb": "https://ibb.co/HTKFMg3",
+        "thumb": "https://i.ibb.co/23FnLKH/Panna-Cotta.jpg",
         "title": "Panna Cotta",
         "description": "Creamy Italian dessert topped with berry sauce.",
         "price": 6.50,
         "category": "Desserts"
     },
     {
-        "thumb": "https://ibb.co/z6hR5v7",
+        "thumb": "https://i.ibb.co/tLMshrx/Brownie-Sundae.jpg",
         "title": "Brownie Sundae",
         "description": "Warm brownie topped with ice cream, chocolate sauce, and whipped cream.",
         "price": 8.50,
         "category": "Desserts"
     },
     {
-        "thumb": "https://ibb.co/N6pRLfk",
+        "thumb": "https://i.ibb.co/Y78gtJK/Mojito.jpg",
         "title": "Mojito",
         "description": "Refreshing cocktail made with rum, lime juice, mint, and soda water.",
         "price": 10.00,
         "category": "Drinks"
     },
     {
-        "thumb": "https://ibb.co/8z4m6Qf",
+        "thumb": "https://i.ibb.co/M85gMJt/Lemonade.jpg",
         "title": "Lemonade",
         "description": "Freshly squeezed lemonade with a hint of mint.",
         "price": 5.00,
         "category": "Drinks"
     },
     {
-        "thumb": "https://ibb.co/PFPzgKy",
+        "thumb": "https://i.ibb.co/gmfFJN8/Iced-Coffee.jpg",
         "title": "Iced Coffee",
         "description": "Cold brewed coffee served with ice and a splash of milk.",
         "price": 4.50,
         "category": "Drinks"
     },
     {
-        "thumb": "https://ibb.co/SVRKxMC",
+        "thumb": "https://i.ibb.co/GCcVJ8S/Green-Smoothie.jpg",
         "title": "Green Smoothie",
         "description": "Healthy smoothie made with spinach, banana, and almond milk.",
         "price": 6.00,
         "category": "Drinks"
     },
     {
-        "thumb": "https://ibb.co/VLMtc2G",
+        "thumb": "https://i.ibb.co/NFWsdZq/Mango-Lassi.jpg",
         "title": "Mango Lassi",
         "description": "Traditional Indian yogurt drink blended with fresh mangoes.",
         "price": 5.50,
         "category": "Drinks"
     },
     {
-        "thumb": "https://ibb.co/PQp62PV",
+        "thumb": "https://i.ibb.co/zJc43Bt/Hot-Chocolate.jpg",
         "title": "Hot Chocolate",
         "description": "Rich and creamy hot chocolate topped with whipped cream.",
         "price": 4.00,

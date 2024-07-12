@@ -1,9 +1,16 @@
-import React from 'react';
 import PropTypes from 'prop-types'
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+import { useEffect } from 'react';
 const FacilityCard = ({item, idx}) => {
     const { icon , facility, description} = item;
+    useEffect(()=>{
+        AOS.init();
+      },[])
     return (
-        <div className='border p-5 rounded-lg flex flex-col relative overflow-hidden duration-300 hover:shadow-xl'>
+        <div className='border p-5 rounded-lg flex flex-col relative overflow-hidden duration-300 hover:shadow-xl'
+        data-aos="fade-down-right"
+        >
             <div>
             <img src={icon} alt={facility} className='w-10' />
             </div>
