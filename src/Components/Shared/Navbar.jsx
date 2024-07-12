@@ -38,7 +38,7 @@ const Navbar = () => {
 
 
   return (
-    <div className={`navbar shadow-md px-5 lg:px-44 py-4 bg-white text-black shadow-white 2xl:max-w-[1910px] mx-auto z-50 ${staticNav ? 'fixed top-0 overflow-hidden z-50' : ''}`}>
+    <div className={`navbar shadow-md px-5 lg:px-44 py-4 bg-white text-black shadow-white 2xl:max-w-[1910px] mx-auto z-50 ${staticNav ? 'fixed top-0 z-50' : ''}`}>
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -81,20 +81,20 @@ const Navbar = () => {
 
       
 
-        <div className="dropdown dropdown-end">
+        <div className="dropdown dropdown-end z-50">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
               <img alt="Tailwind CSS Navbar component" src="https://i.ibb.co/GxfNxF3/Whats-App-Image-2024-04-30-at-13-07-47-5f0c778c.jpg" />
             </div>
           </div>
-          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 z-50">
             <li>
               <a className="justify-between">
                 Profile
                 <span className="badge">New</span>
               </a>
             </li>
-            <li><a>Logout</a></li>
+            <li><Link to={'/login'}>Log In</Link></li>
           </ul>
         </div>
       </div>

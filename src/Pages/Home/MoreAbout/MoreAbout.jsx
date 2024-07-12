@@ -3,7 +3,6 @@ import Author from '../../../assets/image/author.jpeg';
 import AuthorSignature from '../../../assets/moreAbout/AuthorSignature.png'
 import bg from '../../../assets/moreAbout/bg.jpg'
 import { FaPlay } from 'react-icons/fa';
-
 import video from '../../../assets/moreAbout/1.mp4'
 
 const MoreAbout = () => {

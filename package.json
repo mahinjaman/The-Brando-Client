@@ -39,6 +39,8 @@
     "rimraf": "^5.0.7",
     "slick-carousel": "^1.8.1",
     "sort-by": "^1.2.0",
+    "sweetalert2": "^11.12.2",
+    "sweetalert2-react-content": "^5.0.7",
     "swiper": "^11.1.4"
   },
   "devDependencies": {
