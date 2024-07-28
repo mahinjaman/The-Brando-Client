@@ -4,9 +4,11 @@ import 'aos/dist/aos.css'
 import { useEffect } from 'react';
 const FacilityCard = ({item, idx}) => {
     const { icon , facility, description} = item;
-    useEffect(()=>{
-        AOS.init();
-      },[])
+    useEffect(() => {
+        AOS.init({
+            duration: 1000
+        });
+    }, [])
     return (
         <div className='border p-5 rounded-lg flex flex-col relative overflow-hidden duration-300 hover:shadow-xl'
         data-aos="fade-down-right"

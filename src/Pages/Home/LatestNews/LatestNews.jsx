@@ -8,6 +8,8 @@ import { useQuery } from '@tanstack/react-query';
 import useSecureAxios from '../../../Hooks/useSecureAxios';
 import bg2 from '../../../assets/popular_bg.png'
 import NewsSlider from './NewsSlider';
+import RoomSkeleton from '../../../Components/Shared/RoomSkeleton';
+import ErrorImage from '../../../Components/ErrorImage';
 
 
 const LatestNews = () => {
@@ -23,11 +25,11 @@ const LatestNews = () => {
     })
 
     if (isPending) {
-        return <h1>Loading...</h1>
+        return <RoomSkeleton />
     }
 
     if (error) {
-        return <h1>{error.message}</h1>
+        return <ErrorImage />
     }
 
     return (

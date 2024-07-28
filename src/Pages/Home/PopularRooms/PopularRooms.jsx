@@ -5,6 +5,8 @@ import { useQuery } from '@tanstack/react-query';
 import RoomSlider from './RoomSlider';
 import PrimaryTitle from '../../../Components/Shared/PrimaryTitle';
 import PrimaryDivider from '../../../Components/Shared/PrimaryDivider';
+import RoomSkeleton from '../../../Components/Shared/RoomSkeleton';
+import ErrorImage from '../../../Components/ErrorImage';
 
 
 const PopularRooms = () => {
@@ -21,10 +23,10 @@ const PopularRooms = () => {
 
 
   if (isPending) {
-    return <h1>Loading...</h1>
+    return <RoomSkeleton></RoomSkeleton>
   }
   if (error) {
-    return <h1>{error.message}</h1>
+    return <ErrorImage />
   }
 
 

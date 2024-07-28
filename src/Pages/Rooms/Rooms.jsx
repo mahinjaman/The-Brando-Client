@@ -4,6 +4,7 @@ import RoomCard from './RoomCard';
 import bg from '../../assets/map_bg5.png'
 import SearchRoom from '../../Components/Shared/SearchRoom';
 import { Helmet } from 'react-helmet-async';
+import ErrorImage from '../../Components/ErrorImage';
 const Rooms = () => {
     const [activePage, setActivePage] = useState(1)
     const [limit, setLimit] = useState(6);
@@ -53,6 +54,7 @@ const Rooms = () => {
     }
 
 
+    
 
     // useEffect(() => {
     //     window.addEventListener('scroll', () => {
@@ -91,8 +93,6 @@ const Rooms = () => {
         setLimit(parseInt(e.target.value));
         setActivePage(1)
     }
-    console.log(nextDisabled);
-
     useEffect(()=>{
         if (activePage === pages) {
             setNextDisabled(true);
@@ -127,7 +127,7 @@ const Rooms = () => {
                     </div>
 
                     <div className='col-span-4 p-7 bg-slate-100 rounded-md'>
-                        <div className='w-2/5 mb-5 text-end py-3 flex items-center justify-center bg-white rounded-md gap-3'>
+                        <div className='lg:w-2/5 mb-5 text-end py-3 flex items-center justify-center bg-white rounded-md gap-3'>
                             <label htmlFor="limit" className='primary-font italic font-semibold'>Select Your Range</label>
                             <select name="limit" id="limit" onChange={handleLimit} className='outline-none py-3 px-10 bg-white'>
                                 <option value="6">6</option>

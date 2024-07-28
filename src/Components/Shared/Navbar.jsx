@@ -1,9 +1,15 @@
-import { useEffect, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-
+import { useContext, useEffect, useState } from 'react';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { UserContext } from '../../AuthProvider/AuthContext';
+import { CgProfile } from "react-icons/cg";
+import Swal from 'sweetalert2';
+import useSecureAxios from '../../Hooks/useSecureAxios';
 const Navbar = () => {
 
-  const [staticNav, setStaticNav] = useState(false)
+  const [staticNav, setStaticNav] = useState(false);
+  const {user , LogOut} = useContext(UserContext);
+  const navigate = useNavigate();
+  const secureAxios = useSecureAxios()
 
   const navMenu = (
     <>
@@ -35,6 +41,45 @@ const Navbar = () => {
       }
     })
   }, [])
+
+
+  const handleLogOut = () =>{
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be logout your account",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        LogOut()
+        .then(()=>{
+          secureAxios.post('/log_out')
+          .then(res =>{
+            Swal.fire({
+              title: "Successfully..!",
+              text: "Your account has been logged in successfully.",
+              icon: "success"
+            });
+            navigate('/')
+          })
+          .catch(err=>{
+            console.log('error while log out the user',err);
+          })
+        })
+        .catch(err=>{
+          Swal.fire({
+            title: "Error",
+            text: "Failed to log out. Please try again.",
+            icon: "error"
+          });
+        })
+        
+      }
+    });
+  }
 
 
   return (
@@ -83,18 +128,20 @@ const Navbar = () => {
 
         <div className="dropdown dropdown-end z-50">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-            <div className="w-10 rounded-full">
+            {/* <div className="w-10 rounded-full">
               <img alt="Tailwind CSS Navbar component" src="https://i.ibb.co/GxfNxF3/Whats-App-Image-2024-04-30-at-13-07-47-5f0c778c.jpg" />
-            </div>
+            </div> */}
+
+            <h1 className='text-3xl'><CgProfile /></h1>
+
           </div>
-          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 z-50">
+          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 z-50">
             <li>
-              <a className="justify-between">
-                Profile
-                <span className="badge">New</span>
-              </a>
+              <Link to={'/bookings'}>My Bookings</Link>
             </li>
-            <li><Link to={'/login'}>Log In</Link></li>
+            {
+              user?.email ? <li><button onClick={handleLogOut}>Log Out</button></li> : <li><Link to={'/login'}>Log In</Link></li>
+            }
           </ul>
         </div>
       </div>

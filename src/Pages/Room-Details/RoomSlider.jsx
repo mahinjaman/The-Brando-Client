@@ -2,7 +2,7 @@ import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import PropTypes from 'prop-types'
-const RoomSlider = ({images}) => {
+const RoomSlider = ({ images }) => {
     return (
         <div className=''>
             <Carousel
@@ -58,22 +58,24 @@ const RoomSlider = ({images}) => {
                 slidesToSlide={1}
                 swipeable
             >
-               {
-                images?.map((image, idx) => {
-                    return (
+                {
+                    images?.map((image, idx) => (
                         <div key={idx} className='flex items-center justify-center'>
-                            <img src={image} alt="Image" className='h-[400px] w-[500px] md:w-[430px] 2xl:w-[570px] rounded-md' />
+                            <img
+                                src={image}
+                                alt={`Image ${idx}`}
+                                className='h-[400px] w-[500px] md:w-[430px] 2xl:w-[570px] rounded-md'
+                            />
                         </div>
-                    );
-                })
-               }
+                    ))
+                }
             </Carousel>
         </div>
     );
 };
 
 RoomSlider.propTypes = {
-    images: PropTypes.arrayOf(PropTypes.string).isRequired
+    images: PropTypes.array.isRequired
 }
 
 export default RoomSlider;

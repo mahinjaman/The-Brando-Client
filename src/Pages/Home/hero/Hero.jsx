@@ -4,64 +4,21 @@
 import SearchRoom from "../../../Components/Shared/SearchRoom";
 
 const Hero = () => {
-  // const [room, setRoom ] = useState(1);
-  // const [ guest, setGuest ] = useState(1);
-
-  // const handlePlus = (item) =>{
-  //   if(item === 'rooms'){
-  //     if(room > 5){
-  //       return;
-  //     }
-  //     setRoom(room + 1);
-  //   }
-  //   else if(item === 'guests'){
-  //     if(guest > 7){
-  //       return;
-  //     }
-  //     setGuest(guest + 1);
-  //   }
-  // }
-
-  // const handleMinus = (item) =>{
-  //   if (item === "rooms") {
-  //     if(room < 1){
-  //       return;
-  //     }
-  //     setRoom(room - 1);
-  //   } 
-  //   else if (item === "guests"){
-  //     const newGuest = guest - 1;
-  //     console.log(newGuest);
-  //     setGuest(newGuest);
-  //   }
-  // }
-
-
-  // const handleSearch = e =>{
-  //   e.preventDefault();
-  //   const form = e.target;
-  //   const formData = new FormData(form);
-  //   const date = formData.get('date');
-  //   const rooms = room;
-  //   const guests = guest;
-  //   console.log(date, rooms, guests);
-  // }
-
     return (
       <div
       id="#"
         className="hero h-[700px] text-white mb-5"
         style={{
           background:
-            "url(https://c0.wallpaperflare.com/preview/621/1008/840/living-room-apartment-room-interior.jpg)",
+            "url(https://cdn.prod.website-files.com/5c6d6c45eaa55f57c6367749/65045f093c166fdddb4a94a5_x-65045f0266217.webp)",
           backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
+          backgroundSize: "100%",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
           backgroundBlendMode: "darken",
         }}
       >
-        <div className="hero-overlay bg-gradient-to-r from-zinc-900 to-blue-500 opacity-40"></div>
+        <div className="hero-overlay bg-gradient-to-r from-black to-blue-900 opacity-40"></div>
         <div className="hero-content grid grid-cols-1 lg:grid-cols-5">
           <div className="lg:col-span-3">
             <p className="text-orange-300 text-lg font-semibold">

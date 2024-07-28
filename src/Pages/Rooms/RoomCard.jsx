@@ -18,7 +18,7 @@ const RoomCard = ({ room }) => {
       },[])
     
     return (
-        <div className='group flex flex-col border rounded-md shadow-xl' data-aos="fade-up-right">
+        <div className='group flex flex-col border rounded-md shadow-xl pb-5' data-aos="fade-up-right">
             <div className='rounded-t-md overflow-hidden  bg-slate-400 h-80 relative group'>
                 <img src={thumb} alt="" className='duration-300 group-hover:scale-110 rounded-t-md w-full h-80' />
                 <div className='absolute duration-300 group-hover:left-0  h-full w-full bg-slate-600 bg-opacity-50 top-0 left-[500px]'>

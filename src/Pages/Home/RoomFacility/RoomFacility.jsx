@@ -4,6 +4,8 @@ import useSecureAxios from '../../../Hooks/useSecureAxios';
 import PrimaryDivider from '../../../Components/Shared/PrimaryDivider';
 import FacilityCard from './FacilityCard';
 import bg from '../../../assets/popular_bg.png'
+import RoomSkeleton from '../../../Components/Shared/RoomSkeleton';
+import ErrorImage from '../../../Components/ErrorImage';
 const RoomFacility = () => {
 
     const secureAxios = useSecureAxios();
@@ -17,11 +19,11 @@ const RoomFacility = () => {
     })
 
     if (isPending) {
-        return <h1>Loading...</h1>
+        return <RoomSkeleton />
     }
 
     if (error) {
-        return <h1>{error.message}</h1>
+        return <ErrorImage />
     }
 
     return (

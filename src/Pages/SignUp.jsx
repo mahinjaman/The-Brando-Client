@@ -1,32 +1,55 @@
-import React, { useRef, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import hotelImg from '../assets/About/10.jpg'
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
+import { UserContext } from '../AuthProvider/AuthContext';
+import { updateProfile } from 'firebase/auth';
 
 const SignUp = () => {
-    const [ showPassword, setShowPassword ] = useState(false)
-    const emailRef = useRef();
-    const email = emailRef.current
-    const handleLogin = e =>{
+    const [showPassword, setShowPassword] = useState(false)
+    const { createUser } = useContext(UserContext);
+    const handleLogin = e => {
         e.preventDefault();
         const form = e.target;
         const data = new FormData(form);
         const name = data.get('name');
+        const email = data.get('email');
         const password = data.get('password');
 
-        if(!/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,16}$/.test(password)){
+        if (!/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,16}$/.test(password)) {
             Swal.fire({
                 title: "Password Error",
                 text: "Password must contain at least 8 characters, including at least one uppercase letter, one lowercase letter, one number, and one special character.",
                 icon: "error"
-              });
+            });
             return;
         }
 
-        
-        
-        console.log(name, email, password);
+        createUser(email, password)
+            .then(result => {
+                const user = result?.user;
+
+                updateProfile(user, {
+                    displayName: name,
+                }).then(() => {
+                    Swal.fire({
+                        title: "Registration Successful",
+                        text: "You have successfully registered. You can now log in.",
+                        icon: "success"
+                    });
+                })
+                form.reset();
+
+            })
+            .catch(err => {
+                Swal.fire({
+                    title: "Registration Failed",
+                    text: "Failed to register. Please try again.",
+                    icon: "error"
+                });
+            });
+
     }
 
     return (
@@ -55,7 +78,7 @@ const SignUp = () => {
                             <label className="label">
                                 <span className="label-text font-semibold">Email</span>
                             </label>
-                            <input type="email" placeholder="Email*" ref={emailRef} className="py-3 px-5 border rounded-md outline-none" required />
+                            <input type="email" placeholder="Email*" name='email' className="py-3 px-5 border rounded-md outline-none" required />
                         </div>
 
                         <div className="form-control relative">
@@ -64,9 +87,9 @@ const SignUp = () => {
                             </label>
 
                             <div className='relative w-full'>
-                            <input type={`${showPassword ? "text" : "password"}`}  placeholder="password" name='password' className="py-3 px-5 border rounded-md outline-none w-full" required />
-                            
-                            <span className='absolute top-4 right-5' onClick={()=> setShowPassword(!showPassword)}>{showPassword ? <FaRegEyeSlash /> : <FaRegEye />}   </span>
+                                <input type={`${showPassword ? "text" : "password"}`} placeholder="password" name='password' className="py-3 px-5 border rounded-md outline-none w-full" required />
+
+                                <span className='absolute top-4 right-5' onClick={() => setShowPassword(!showPassword)}>{showPassword ? <FaRegEyeSlash /> : <FaRegEye />}   </span>
                             </div>
                         </div>
 

@@ -3,19 +3,26 @@ import { FaStar } from "react-icons/fa";
 import PropTypes from "prop-types";
 import PrimaryDivider from "./PrimaryDivider";
 import useUserContext from "../../Hooks/useUserContext";
+import Swal from "sweetalert2";
+import useSecureAxios from "../../Hooks/useSecureAxios";
+import { useNavigate } from "react-router-dom";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import moment from 'moment';
 const BookingNow = ({ children, room }) => {
 
-
-  const {name} = useUserContext();
-  console.log(name);
-
   const [guest, setGuest] = useState(1);
+  const secureAxios = useSecureAxios();
+  const { user } = useUserContext();
+  const [bookDate, setBookDate] = useState(new Date());
+  const navigate = useNavigate()
+  const currentDate = moment().format('YYYY-MM-DD');
 
   const handlePlus = () => {
-    if(guest >= 7){
+    if (guest >= 7) {
       return;
     }
-    setGuest(guest + 1) 
+    setGuest(guest + 1)
   };
 
   const handleMinus = () => {
@@ -25,22 +32,67 @@ const BookingNow = ({ children, room }) => {
     setGuest(guest - 1);
   };
 
-  const handleSearch = (e) => {
+  const handleBooking = (e) => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
     const name = formData.get('name');
-    const email = formData.get('email');
-    const date = formData.get("date");
-
     const guests = guest;
 
-    console.log(name, email , date, guests , room);
+    const { thumb, price, status } = room;
+    if (status != 'Available') {
+      Swal.fire({
+        title: 'Room is not available!',
+        text: 'Please choose another date or room.',
+        icon: 'warning',
+        confirmButtonText: 'Okay'
+      });
+      return;
+    }
+    const data = {
+      room_id: room?._id,
+      room_name: room?.title,
+      name,
+      email: user.email,
+      bookDate,
+      currentDate,
+      guests,
+      thumb,
+      price,
+      orderStatus: 'pending'
+    }
+
+    secureAxios.post('/booking', data)
+      .then((res) => {
+        const result = res.data;
+        if (result?.insertedId) {
+          Swal.fire({
+            title: 'Booking Successful!',
+            text: 'Your booking has been submitted successfully.',
+            icon: 'success',
+            confirmButtonText: 'Okay'
+          });
+          form.reset();
+          navigate('/')
+
+        }
+
+      })
+      .catch(err => {
+        console.log(err.message);
+        Swal.fire({
+          title: 'Error',
+          text: 'Failed to book the room. Please try again later.',
+          icon: 'error',
+          confirmButtonText: 'Okay'
+        });
+      });
+
   };
 
   return (
     <div className="lg:col-span-2 bg-slate-900 p-5 rounded-md border-4 border-slate-700">
-      <form onSubmit={handleSearch}>
+      <form onSubmit={handleBooking}>
         <fieldset className="border p-5 rounded-md">
           <legend className="text-orange-300 text-center flex gap-3 px-5">
             <FaStar />
@@ -71,9 +123,10 @@ const BookingNow = ({ children, room }) => {
                 type="text"
                 name="name"
                 id="name"
+                defaultValue={user?.displayName}
 
               />
-              
+
             </div>
 
             {/* Email */}
@@ -90,27 +143,26 @@ const BookingNow = ({ children, room }) => {
                 type="text"
                 name="email"
                 id="email"
-
+                defaultValue={user?.email}
+                disabled
               />
-              
+
             </div>
 
             {/* Date */}
-            <div className="relative">
+            <div className="relative w-full">
               <label
                 htmlFor="date"
-                className="block  absolute top-[25px] left-3"
+                className="block  absolute top-[25px] left-3 z-20 "
               >
                 Date:
               </label>
-              <input
-                className="w-full py-4 px-5 rounded bg-slate-800  border border-slate-700 mt-2 text-end"
-                type="date"
-                name="date"
-                id="date"
-              />
+              
+              <div className="w-full py-4 px-5 rounded bg-slate-800  border border-slate-700 mt-2 text-end">
+                <DatePicker isClearable  placeholderText="I have been cleared!" selected={bookDate} onChange={(date) => setBookDate(date)}className=" z-10 bg-transparent w-[410px] outline-none" />
+              </div>
             </div>
-          
+
 
             {/* Guest */}
 

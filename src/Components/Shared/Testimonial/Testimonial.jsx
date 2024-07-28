@@ -11,6 +11,8 @@ import { Arrow } from '@egjs/flicking-plugins';
 import TestSlider from './TestSlider';
 import TestSlider2 from './TestSlider2';
 import TriangleIcon from '../../TriangleIcon';
+import RoomSkeleton from '../RoomSkeleton';
+import ErrorImage from '../../ErrorImage';
 
 
 const Testimonial = () => {
@@ -27,10 +29,10 @@ const Testimonial = () => {
 
 
     if (isPending) {
-        return <h1>Loading...</h1>
+        return <RoomSkeleton></RoomSkeleton>
     }
     if (error) {
-        return <h1>{error.message}</h1>
+        return <ErrorImage />
     }
 
     const settings = {

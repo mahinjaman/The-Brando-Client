@@ -15,9 +15,11 @@ import { useEffect } from 'react';
 
 const ExtraService = () => {
 
-  useEffect(()=>{
-    AOS.init();
-  },[])
+  useEffect(() => {
+    AOS.init({
+        duration: 1000
+    });
+}, [])
   return (
     <div className=" mx-5 p-10 border rounded-md mt-10 bg-slate-50 relative">
       {/* background */}

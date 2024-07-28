@@ -8,6 +8,8 @@ import RoomDetails from "../Pages/Room-Details/RoomDetails";
 import Restaurant from "../Pages/Restaurant/Restaurant";
 import LogIn from "../Pages/LogIn";
 import SignUp from "../Pages/SignUp";
+import PrivateRoute from "../PrivateRoutes/PrivateRoute";
+import Bookings from "../Pages/Bookings/Bookings";
 
 const routes = createBrowserRouter([
     {
@@ -32,7 +34,7 @@ const routes = createBrowserRouter([
             },
             {
                 path: '/details/:id',
-                element: <RoomDetails />
+                element: <PrivateRoute><RoomDetails /></PrivateRoute>
             },
             {
                 path: '/restaurant',
@@ -45,6 +47,10 @@ const routes = createBrowserRouter([
             {
                 path:'/signup',
                 element: <SignUp />
+            },
+            {
+                path:'/bookings',
+                element: <PrivateRoute><Bookings /></PrivateRoute>
             }
         ]
     }

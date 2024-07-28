@@ -4,6 +4,8 @@ import useSecureAxios from '../../../Hooks/useSecureAxios';
 import { useQuery } from '@tanstack/react-query';
 import { IoMdStar } from 'react-icons/io';
 import { RiDoubleQuotesL, RiDoubleQuotesR } from 'react-icons/ri';
+import RoomSkeleton from '../RoomSkeleton';
+import ErrorImage from '../../ErrorImage';
 
 const TestSlider2 = () => {
     const responsiveOptions = [
@@ -41,10 +43,10 @@ const TestSlider2 = () => {
 
 
     if (isPending) {
-        return <h1>Loading...</h1>
+        return <RoomSkeleton />
     }
     if (error) {
-        return <h1>{error.message}</h1>
+        return <ErrorImage />
     }
 
     const productTemplate = (testimonial) => {

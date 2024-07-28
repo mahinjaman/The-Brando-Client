@@ -15,6 +15,7 @@ import MenuCard from './MenuCard';
 import PrimaryDivider from '../../Components/Shared/PrimaryDivider';
 import AOS from 'aos';
 import 'aos/dist/aos.css'
+import ErrorImage from '../../Components/ErrorImage';
 
 const Restaurant = () => {
     const [breakfastBg, setBreakfastBg] = useState(false);
@@ -52,7 +53,7 @@ const Restaurant = () => {
 
     // Loaded restaurant Menu 
 
-    const { isPending, data: menus, isError } = useQuery({
+    const { isPending, data: menus, error } = useQuery({
         queryKey: 'restaurant_menu',
         queryFn: async () => {
             // Replace with your API call
@@ -62,11 +63,20 @@ const Restaurant = () => {
     })
 
     if (isPending) {
-        return <h1>Loading...</h1>
+        return <div className="flex w-52 flex-col gap-4">
+        <div className="flex items-center gap-4">
+          <div className="skeleton h-16 w-16 shrink-0 rounded-full"></div>
+          <div className="flex flex-col gap-4">
+            <div className="skeleton h-4 w-20"></div>
+            <div className="skeleton h-4 w-28"></div>
+          </div>
+        </div>
+        <div className="skeleton h-32 w-full"></div>
+      </div>
     }
 
-    if (isError) {
-        return <h1>Error fetching data: {isError.message}</h1>
+    if (error) {
+        return <ErrorImage />
     }
 
     const showMenu = menus.filter(menu => menu.category === displayMenu);

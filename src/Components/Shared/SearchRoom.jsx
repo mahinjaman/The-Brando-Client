@@ -2,10 +2,11 @@ import { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import PropTypes from "prop-types";
 import PrimaryDivider from "./PrimaryDivider";
+import { useNavigate } from "react-router-dom";
 const SearchRoom = ({ children }) => {
   const [room, setRoom] = useState(1);
   const [guest, setGuest] = useState(1);
-
+  const navigate = useNavigate()
   const handlePlus = (item) => {
     if (item === "rooms") {
       if (room > 5) {
@@ -39,6 +40,7 @@ const SearchRoom = ({ children }) => {
     const date = formData.get("date");
     const rooms = room;
     const guests = guest;
+    navigate('/rooms')
   };
 
   return (

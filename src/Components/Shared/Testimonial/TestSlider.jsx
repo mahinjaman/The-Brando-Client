@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import TestimonialCard from './TestimonialCard';
-
+import PropTypes from "prop-types"
 const TestSlider = ({testimonials}) => {
     const settings = {
         dots: true,
@@ -46,8 +46,8 @@ const TestSlider = ({testimonials}) => {
     return (
         <div className='w-[400px] md:w-5/6 m-auto'>
                 <Slider {...settings}>
-                {testimonials?.map(testimonial => {
-                    return <div className='p-5'>
+                {testimonials?.map((testimonial, idx) => {
+                    return <div className='p-5' key={idx}>
                         <TestimonialCard testimonial={testimonial}></TestimonialCard>
                     </div>
                 })}
@@ -55,5 +55,9 @@ const TestSlider = ({testimonials}) => {
         </div>
     );
 };
+
+TestSlider.propTypes = {
+    testimonials: PropTypes.array.isRequired
+}
 
 export default TestSlider;

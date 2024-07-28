@@ -3,9 +3,11 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'
 import { useEffect } from 'react';
 const About = () => {
-  useEffect(()=>{
-    AOS.init();
-  },[])
+  useEffect(() => {
+    AOS.init({
+        duration: 1000
+    });
+}, [])
 
 
   return (

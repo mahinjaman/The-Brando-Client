@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import useSecureAxios from '../../Hooks/useSecureAxios';
 import {
@@ -11,6 +11,8 @@ import { LuBedDouble } from "react-icons/lu";
 import { MdBathtub } from "react-icons/md";
 import BookingNow from '../../Components/Shared/BookingNow';
 import { Helmet } from 'react-helmet-async';
+import RoomSkeleton from '../../Components/Shared/RoomSkeleton';
+import ErrorImage from '../../Components/ErrorImage';
 const RoomDetails = () => {
     const { id } = useParams();
     const secureAxios = useSecureAxios();
@@ -23,15 +25,14 @@ const RoomDetails = () => {
     })
 
     if (isPending) {
-        return <h1>Loading...</h1>
+        return <RoomSkeleton />
     }
 
     if (error) {
-        return <h1>{error.message}</h1>
+        return <ErrorImage />
     }
 
-    console.log(room);
-    const { photo_gallery, title, details, price, description, thumb, facility } = room;
+    const { photo_gallery, title, details, price, description, thumb, facility , status} = room;
 
     return (
         <div className=''>
@@ -58,6 +59,7 @@ const RoomDetails = () => {
                                         <p className='flex items-center gap-2'><span className='text-2xl text-[#C4A676]'><LuBedDouble /></span> {details?.bed} Bed</p>
                                         <p className='flex items-center gap-2'><span className='text-2xl text-[#C4A676]'><MdBathtub /></span> {details?.bath} Bath</p>
                                     </div>
+                                    <p className={`py-2 px-5 border md:w-1/3 text-center rounded-md  font-serif font-semibold italic  ${status != 'Available' ? 'border-red-500 text-red-500' : 'border-green-500 text-green-600'}`}>{status}</p>
                                 </div>
 
                                 {/* room price */}

@@ -42,7 +42,7 @@ const newsSlider = ({newses}) => {
             <div className=''>
                 <Slider {...settings}>
                 {newses?.map(news => {
-                    return <NewsCard news={news}></NewsCard>
+                    return <NewsCard news={news} key={news?._id}></NewsCard>
                 })}
                 </Slider>
             </div>

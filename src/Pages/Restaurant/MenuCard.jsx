@@ -5,9 +5,11 @@ import 'aos/dist/aos.css'
 const MenuCard = ({ menu }) => {
     const { title, price, description, thumb } = menu;
 
-    useEffect(()=>{
-        AOS.init();
-    },[])
+    useEffect(() => {
+        AOS.init({
+            duration: 1000
+        });
+    }, [])
 
     return (
         <div className='flex gap-5 items-center border-b my-5 pb-5'

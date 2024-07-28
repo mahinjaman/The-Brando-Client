@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import bg from '../../assets/map_bg5.png'
 import TriangleIcon from '../../Components/TriangleIcon';
 import { IoLocationOutline } from "react-icons/io5";
@@ -6,19 +6,46 @@ import { GiRotaryPhone } from "react-icons/gi";
 import { Map, Draggable } from "pigeon-maps";
 import map_icon from '../../assets/image/Map_symbol_location_02.png'
 import { Helmet } from 'react-helmet-async';
-
+import emailjs from '@emailjs/browser';
 import AOS from 'aos';
 import 'aos/dist/aos.css'
 import { useEffect } from 'react';
+import Swal from 'sweetalert2';
 
 
 const Contact = () => {
     const [anchor, setAnchor] = useState([24.3329, 90.0288]);
-    useEffect(()=>{
+    useEffect(() => {
         AOS.init({
-            duration:1000
+            duration: 1000
         });
-      },[])
+    }, [])
+
+    const form = useRef();
+
+    const handleMessage = (e) => {
+        e.preventDefault();
+
+        emailjs
+            .sendForm(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, form.current, {
+                publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+            })
+            .then(
+                () => {
+                    Swal.fire({
+                        title: 'Thank You',
+                        text: 'Your Message Sent Successfully',
+                        icon:'success',
+                        confirmButtonText: 'Okay'
+                    });
+                    e.target.reset();
+                },
+                (error) => {
+                    console.log('FAILED...', error.text);
+                },
+            );
+    }
+
     return (
         <div className='bg-white pt-5'>
             <Helmet>
@@ -74,13 +101,13 @@ const Contact = () => {
                                 <p className='w-10 h-[1px] bg-[#C2A576]'></p>
                             </div>
 
-                            <form className='mt-5'>
+                            <form className='mt-5' ref={form} onSubmit={handleMessage}>
                                 <div className='flex gap-5'>
                                     <input className='py-4 px-5 placeholder:text-slate-400 outline-none border rounded-md w-1/2 bg-slate-50' placeholder='Your Name *' type="text" name="name" id="name" required />
                                     <input className='py-4 px-5 placeholder:text-slate-400 outline-none border rounded-md w-1/2 bg-slate-50' placeholder='Your Email *' type="email" name="email" id="email" required />
                                 </div>
                                 <textarea name="message" id="message" placeholder='Your Message:' rows={5} className='border rounded-md mt-5 w-full p-5 bg-slate-50 outline-none'></textarea>
-                                <input type="submit" value="Send Message" className='py-3 px-7 bg-slate-900 text-[#C2A576] font-serif tracking-wider rounded-md' />
+                                <input type="submit" value="Send Message" className='py-3 px-7 cursor-pointer bg-slate-900 text-[#C2A576] font-serif tracking-wider rounded-md' />
                             </form>
                         </div>
                     </div>
