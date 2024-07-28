@@ -63,7 +63,7 @@ const Bookings = () => {
 
     if (error) return <ErrorImage />
     return (
-        <div className="overflow-x-auto lg:w-10/12 mx-auto">
+        <div className="overflow-x-auto lg:w-10/12 mx-auto my-10">
             <table className="table">
                 {/* head */}
                 <thead>

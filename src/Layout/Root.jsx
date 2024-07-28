@@ -7,7 +7,7 @@ const Root = () => {
     return (
         <div className=' 2xl:max-w-[1910px] mx-auto overflow-hidden'>
             <Navbar></Navbar>
-            <div className=''>
+            <div>
                 <Outlet></Outlet>
             </div>
             <Footer></Footer>

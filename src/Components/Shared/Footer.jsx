@@ -40,11 +40,10 @@ const Footer = () => {
                     <div>
                         <h3 className='font-serif text-2xl text-[#C2A576]  mb-5'>Helpful Links</h3>
                         <ul className='flex flex-col gap-3'>
-                            <li className='flex gap-2 items-center hover:underline hover:text-[#C2A576]'> <span><IoIosArrowForward /></span> <Link to={'/'} className="link link-hover">Our Latest News</Link></li>
                             <li className='flex gap-2 items-center hover:underline hover:text-[#C2A576]'> <span><IoIosArrowForward /></span> <Link to={'/rooms'} className="link link-hover">Rooms</Link></li>
                             <li className='flex gap-2 items-center hover:underline hover:text-[#C2A576]'> <span><IoIosArrowForward /></span> <Link to={'/contact'} className="link link-hover">Contact</Link></li>
                             <li className='flex gap-2 items-center hover:underline hover:text-[#C2A576]'> <span><IoIosArrowForward /></span> <Link to={'/about'} className="link link-hover">About</Link></li>
-                            <li className='flex gap-2 items-center hover:underline hover:text-[#C2A576]'> <span><IoIosArrowForward /></span> <Link to={'/privacy_policy'} className="link link-hover">Privacy Policy</Link></li>
+                            <li className='flex gap-2 items-center hover:underline hover:text-[#C2A576]'> <span><IoIosArrowForward /></span> <Link to={'/restaurant'} className="link link-hover">Our Restaurant</Link></li>
                         </ul>
                     </div>
 
