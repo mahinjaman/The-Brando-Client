@@ -4,6 +4,7 @@ import { UserContext } from '../../AuthProvider/AuthContext';
 import { CgProfile } from "react-icons/cg";
 import Swal from 'sweetalert2';
 import useSecureAxios from '../../Hooks/useSecureAxios';
+import Logo from '../../assets/image/logo.png'
 const Navbar = () => {
 
   const [staticNav, setStaticNav] = useState(false);
@@ -111,8 +112,8 @@ const Navbar = () => {
         </div>
         <Link to={'/'}>
           <img
-            src="../../../src/assets/image/logo.png"
-            alt="Logo"
+            src={Logo}
+            alt="The Brando"
             width={200}
           />
         </Link>
