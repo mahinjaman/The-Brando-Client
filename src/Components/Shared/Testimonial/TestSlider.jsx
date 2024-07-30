@@ -18,7 +18,7 @@ const TestSlider = ({testimonials}) => {
         initialSlide: 0,
         responsive: [
           {
-            breakpoint: 1024,
+            breakpoint: 1366,
             settings: {
               slidesToShow: 2,
               slidesToScroll: 1,
@@ -44,7 +44,7 @@ const TestSlider = ({testimonials}) => {
         ]
       }
     return (
-        <div className='w-[400px] md:w-5/6 m-auto'>
+        <div className='md:w-5/6 m-auto relative'>
                 <Slider {...settings}>
                 {testimonials?.map((testimonial, idx) => {
                     return <div className='p-5' key={idx}>

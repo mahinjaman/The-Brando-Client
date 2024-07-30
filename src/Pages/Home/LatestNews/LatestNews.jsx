@@ -34,7 +34,7 @@ const LatestNews = () => {
 
     return (
         <div className='mt-5 bg-slate-900 p-5'>
-            <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 rounded-xl overflow-hidden'>
+            <div className='grid grid-cols-1 xl:grid-cols-2 gap-5 rounded-xl overflow-hidden'>
                 {/* Latest News */}
                 <div className='rounded-md text-white relative'>
                     <div className='absolute w-1/4 flex items-center justify-center opacity-20 left-1/3 top-1/4'><img src={bg2} alt="" /></div>
@@ -53,7 +53,7 @@ const LatestNews = () => {
                             </div>
 
                             <div className='flex flex-col gap-5 justify-center items-center'>
-                                <Link className='custom-btn'>Read All News</Link>
+                                {/* <Link className='custom-btn'>Read All News</Link> */}
                                 <div className="flex gap-5 items-center">
                                     <div className="w-2 h-2 bg-white rounded-full"></div>
                                     <div className="p-2 border border-dashed border-[#fdba74] rounded-full">
@@ -71,7 +71,7 @@ const LatestNews = () => {
                 <div className='h-96 lg:h-full p-5 bg-center bg-contain border rounded-md' style={{
                     backgroundImage: `url(${bg})`
                 }}>
-                    <div className='h-full w-full bg-black bg-opacity-50 flex flex-col gap-10 justify-center items-center rounded-md border border-dashed text-white pb-5'>
+                    <div className='h-full w-full text-center bg-black bg-opacity-50 flex flex-col gap-10 justify-center items-center rounded-md border border-dashed text-white pb-5'>
                         <p className='text-5xl font-bold'>. . . . .</p>
                         <h1 className='font-serif text-3xl font-semibold text-[#c4a676]'>OUR RESTAURANT</h1>
                         <h4 className='text-xl italic font-serif'>Want to order food at number? Visit our online store.</h4>

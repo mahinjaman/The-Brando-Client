@@ -52,7 +52,7 @@ const Navbar = () => {
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!"
+      confirmButtonText: "Yes, Log Out!"
     }).then((result) => {
       if (result.isConfirmed) {
         LogOut()

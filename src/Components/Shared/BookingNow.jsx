@@ -91,9 +91,9 @@ const BookingNow = ({ children, room }) => {
   };
 
   return (
-    <div className="lg:col-span-2 bg-slate-900 p-5 rounded-md border-4 border-slate-700">
+    <div className="mt-5 md:mt-0 lg:col-span-2 bg-slate-900 p-5 rounded-md border-4 border-slate-700">
       <form onSubmit={handleBooking}>
-        <fieldset className="border p-5 rounded-md">
+        <fieldset className="border p-2 md:p-5 rounded-md">
           <legend className="text-orange-300 text-center flex gap-3 px-5">
             <FaStar />
             <FaStar />
@@ -159,7 +159,7 @@ const BookingNow = ({ children, room }) => {
               </label>
               
               <div className="w-full py-4 px-5 rounded bg-slate-800  border border-slate-700 mt-2 text-end">
-                <DatePicker isClearable  placeholderText="I have been cleared!" selected={bookDate} onChange={(date) => setBookDate(date)}className=" z-10 bg-transparent w-[410px] outline-none" />
+                <DatePicker isClearable  placeholderText="I have been cleared!" selected={bookDate} onChange={(date) => setBookDate(date)}className=" z-10 bg-transparent md:w-[410px] outline-none" />
               </div>
             </div>
 

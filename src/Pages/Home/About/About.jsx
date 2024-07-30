@@ -11,7 +11,7 @@ const About = () => {
 
 
   return (
-    <div className="home_about relative grid grid-cols-1 lg:grid-cols-2 lg:p-20 gap-10 lg:gap-0 lg:mx-20 border border-dashed rounded-md my-20 ">
+    <div className="home_about relative grid grid-cols-1 xl:grid-cols-2 lg:p-20 gap-10 lg:gap-0 lg:mx-20 border border-dashed rounded-md my-20 ">
       {/* Content */}
       <div className={`p-5 flex flex-col gap-3 items-start`}
       data-aos="fade-up-right"
@@ -54,7 +54,7 @@ const About = () => {
 
       {/* Image */}
 
-      <div className="flex flex-col items-center justify-center relative row-start-1 lg:row-span-2"
+      <div className="flex flex-col items-center justify-center relative lg:row-start-1 xl:col-start-2 lg:row-span-2"
       data-aos="fade-up-left"
       >
         <img

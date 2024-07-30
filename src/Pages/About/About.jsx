@@ -45,7 +45,7 @@ const About = () => {
             {/* Start About  */}
 
             <div className='z-10' id='about'>
-                <div className="home_about relative grid grid-cols-1 lg:grid-cols-2 lg:p-32 gap-10 lg:gap-0 lg:mx-5 border border-dashed rounded-md mb-5">
+                <div className="home_about relative grid grid-cols-1 xl:grid-cols-2 lg:p-32 gap-10 lg:gap-0 lg:mx-5 border border-dashed rounded-md mb-5">
                     {/* Content */}
                     <div className={`p-5 flex flex-col gap-3 items-start`} data-aos="fade-up-right">
                         <p className="text-[#c4a676] text-lg font-semibold">
@@ -113,7 +113,7 @@ const About = () => {
 
                         </div>
 
-                        <div className='absolute left-10  lg:bottom-10 group'>
+                        <div className='absolute left-10 top-40 md:top-52 lg:bottom-10 group'>
                             <div onClick={handleVideo} className='flex items-center gap-3 cursor-pointer'>
                                 <h1 className='bg-[#c4a676] duration-300 group-hover:bg-slate-900 group-hover:text-[#C2A576] p-4 rounded-full border-8 border-opacity-10 text-xl'><FaPlay /></h1>
                                 <h3 className='uppercase text-white font-serif text-sm'>Play Story Presentation Video</h3>

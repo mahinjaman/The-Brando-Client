@@ -18,14 +18,14 @@ const RoomCard = ({ room }) => {
       },[])
     
     return (
-        <div className='group flex flex-col border rounded-md shadow-xl pb-5' data-aos="fade-up-right">
+        <div className='group flex flex-col border rounded-md shadow-xl' data-aos="fade-up-right">
             <div className='rounded-t-md overflow-hidden  bg-slate-400 h-80 relative group'>
                 <img src={thumb} alt="" className='duration-300 group-hover:scale-110 rounded-t-md w-full h-80' />
-                <div className='absolute duration-300 group-hover:left-0  h-full w-full bg-slate-600 bg-opacity-50 top-0 left-[500px]'>
+                <div className='absolute duration-300 group-hover:left-0  h-full w-full bg-slate-600 bg-opacity-50 top-0 left-[1000px]'>
                     <button onClick={()=>setShow(true)} className='p-[5px] absolute right-5 top-5 bg-white bg-opacity-30 text-[#C4A676] flex items-center justify-center rounded-full'><span className='p-3 bg-white flex items-center justify-center rounded-full text-xl'><CiSearch /></span></button>
                 </div>
             </div>
-            <div className='p-5 flex flex-col h-[340px]'>
+            <div className='p-5 flex flex-col min-h-[340px]'>
                 <h1 className='text-2xl font-serif font-semibold flex-grow'>{title}</h1>
                 <p className='text-gray-500 mt-5'>{description.slice(0, 150)}...</p>
 

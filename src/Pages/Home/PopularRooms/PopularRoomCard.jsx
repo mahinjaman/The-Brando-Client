@@ -9,7 +9,7 @@ const PopularRoomCard = ({item}) => {
     return (
       <div className="text-white relative rounded-md overflow-hidden h-full">
         <img src={thumb} alt="" className="rounded-md w-full h-[400px]" />
-        <div className="absolute bottom-0 w-full p-5 bg-gradient-to-b from-transparent to-slate-800 h-full flex flex-col justify-end">
+        <div className="absolute bottom-0 w-full p-2 lg:p-5 bg-gradient-to-b from-transparent to-slate-800 h-full flex flex-col justify-end">
           <Link to={`/details/${_id}`} className="text-2xl font-bold font-serif">
             {title}
           </Link>

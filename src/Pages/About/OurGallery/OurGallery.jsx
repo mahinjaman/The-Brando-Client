@@ -24,9 +24,9 @@ const OurGallery = () => {
         initialSlide: 5,
         responsive: [
             {
-                breakpoint: 1024,
+                breakpoint: 1366,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 1,
                     slidesToScroll: 1,
                     infinite: true,
                     dots: true
@@ -51,8 +51,10 @@ const OurGallery = () => {
     };
 
     return (
-        <div className="grid grid-cols-1 p-5 lg:p-0 lg:grid-cols-4 gap-5 bg-slate-900 bg-opacity-95 ">
-            <div className="lg:col-span-1 lg:p-5 bg-no-repeat bg-opacity-35 relative lg:h-[500px]">
+        <div className="grid grid-cols-1 p-5 lg:p-0 lg:grid-cols-2 xl:grid-cols-4 gap-5 bg-slate-900 bg-opacity-95 ">
+
+
+            <div className="xl:col-span-1 lg:p-5 bg-no-repeat bg-opacity-35 relative lg:h-[500px]">
                 <div className="absolute opacity-20 w-full flex items-center justify-center mt-20">
                     <img src={bg} className="" alt="" />
                 </div>
@@ -82,23 +84,23 @@ const OurGallery = () => {
 
             {/* Slider */}
 
-            <div className="lg:col-span-3 flex">
-                <div className="w-4/5 m-auto">
+            <div className="xl:col-span-3 flex">
+                <div className="w-[90%] lg:w-[80%] xl:w-[90%] m-auto">
                     <Slider {...settings} className='relative'>
-                        <div className='p-5 mx-5'>
+                        <div className='p-2'>
                             <img src={img1} alt="" className='rounded-md  ' />
                         </div>
-                        <div className='p-5'>
+                        <div className='p-2'>
                             <img src={img2} alt="" className='rounded-md ' />
                         </div>
-                        <div className='p-5'>
+                        <div className='p-2'>
                             <img src={img3} alt="" className='rounded-md ' />
                         </div>
-                        <div className='p-5'>
+                        <div className='p-2'>
                             <img src={img4} alt="" className='rounded-md ' />
                         </div>
-                        <div className='p-5 '>
-                            <img src={img5} alt="" className='rounded-md' />
+                        <div className='p-2'>
+                            <img src={img5} alt="" className='rounded-md ' />
                         </div>
                     </Slider>
                 </div>

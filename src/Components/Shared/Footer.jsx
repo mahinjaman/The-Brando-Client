@@ -21,7 +21,7 @@ const Footer = () => {
             </div>
 
             <div className='lg:w-10/12 mx-auto py-10 xl:py-0 flex-grow'>
-                <div className="p-10  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div className="p-10  grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
                     <div>
                         <h3 className='font-serif text-2xl text-[#C2A576] mb-5'>About Us</h3>
                         <p className='pr-3 text-justify'>Welcome to The Brando, a luxury resort on Tetiaroa, French Polynesia. Enjoy our exclusive rooms and villas amidst stunning beaches and lush landscapes. We are committed to eco-friendly practices, ensuring a memorable and sustainable stay. Experience paradise with us.</p>

@@ -54,7 +54,7 @@ const Contact = () => {
             <div style={{ backgroundImage: `url(${bg})` }} className='border  py-20 bg-no-repeat bg-top bg-opacity-30 relative rounded-md'>
                 {/* Contact Info */}
                 <div className='p-7 lg:w-10/12 mx-auto bg-slate-50 border rounded-md mb-5'>
-                    <div className='border p-5 bg-white rounded-md grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
+                    <div className='md:border md:p-5 bg-white rounded-md grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5'>
 
                         <div className='flex items-center gap-5 p-5 border rounded-md bg-slate-50' data-aos="fade-down-right">
                             <div>
@@ -93,8 +93,8 @@ const Contact = () => {
 
                 {/* Form */}
 
-                <div className=' w-10/12 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-5'>
-                    <div className='p-7 border bg-slate-50 rounded-md' data-aos="fade-up-left">
+                <div className=' w-10/12 mx-auto grid grid-cols-1 xl:grid-cols-2 gap-5'>
+                    <div className='md:p-7 md:border bg-slate-50 rounded-md' data-aos="fade-up-left">
                         <div className='p-5 bg-white border rounded-md'>
                             <div className='flex items-center justify-between py-4 border-b'>
                                 <h1 className='text-xl font-serif'>Get In Touch</h1>
@@ -102,9 +102,9 @@ const Contact = () => {
                             </div>
 
                             <form className='mt-5' ref={form} onSubmit={handleMessage}>
-                                <div className='flex gap-5'>
-                                    <input className='py-4 px-5 placeholder:text-slate-400 outline-none border rounded-md w-1/2 bg-slate-50' placeholder='Your Name *' type="text" name="name" id="name" required />
-                                    <input className='py-4 px-5 placeholder:text-slate-400 outline-none border rounded-md w-1/2 bg-slate-50' placeholder='Your Email *' type="email" name="email" id="email" required />
+                                <div className='flex flex-col xl:flex-row gap-5'>
+                                    <input className='w-full py-4 px-5 placeholder:text-slate-400 outline-none border rounded-md xl:w-1/2 bg-slate-50' placeholder='Your Name *' type="text" name="name" id="name" required />
+                                    <input className='w-full py-4 px-5 placeholder:text-slate-400 outline-none border rounded-md xl:w-1/2 bg-slate-50' placeholder='Your Email *' type="email" name="email" id="email" required />
                                 </div>
                                 <textarea name="message" id="message" placeholder='Your Message:' rows={5} className='border rounded-md mt-5 w-full p-5 bg-slate-50 outline-none'></textarea>
                                 <input type="submit" value="Send Message" className='py-3 px-7 cursor-pointer bg-slate-900 text-[#C2A576] font-serif tracking-wider rounded-md' />

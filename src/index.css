@@ -79,29 +79,9 @@ li {
 
 
 
-@media only screen and (min-width: 720px) {
-    .slick-prev:before {
-        margin-right: 50px !important;
-        position: absolute;
-        left: -50px;
 
-    }
 
-    .slick-next:before {
-        margin-left: 50px;
-    }
-}
 
-@media only screen and (max-width: 1365px) {
-    .slick-prev:before {
-        left: -20px;
-
-    }
-
-    .slick-next:before {
-        margin-left: 15px;
-    }
-}
 
 .slick-prev:before,
 .slick-next:before {
@@ -142,7 +122,6 @@ li {
 .react-multiple-carousel__arrow {
     background-color: #C2A576 !important;
     z-index: 10 !important;
-    color: #C2A576 !important;
 }
 
 .t-to-b{

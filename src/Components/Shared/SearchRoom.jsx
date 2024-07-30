@@ -44,9 +44,9 @@ const SearchRoom = ({ children }) => {
   };
 
   return (
-    <div className="lg:col-span-2 bg-slate-900 p-5 rounded-md border-4 border-slate-700">
+    <div className="lg:col-span-2 bg-slate-900 p-2 lg:p-5 rounded-md border-4 border-slate-700">
       <form onSubmit={handleSearch}>
-        <fieldset className="border p-5 rounded-md">
+        <fieldset className="border p-2 lg:p-5 rounded-md">
           <legend className="text-orange-300 text-center flex gap-3 px-5">
             <FaStar />
             <FaStar />

@@ -17,10 +17,10 @@ const MoreAbout = () => {
 
 
     return (
-        <div className='grid grid-cols-1 lg:grid-cols-2 border border-dotted rounded-xl overflow-hidden'>
+        <div className='grid grid-cols-1 xl:grid-cols-2 border border-dotted rounded-xl overflow-hidden'>
             {/* About Content */}
-            <div className='p-5 lg:p-10'>
-                <div className='border p-5 rounded-md'>
+            <div className=' lg:p-10'>
+                <div className='border p-2 lg:p-5 rounded-md'>
                     {/* Content */}
                     <div className='flex flex-col gap-3'>
                         <h4 className='font-serif text-[#c4a676] uppercase'>More About us</h4>
@@ -48,7 +48,7 @@ const MoreAbout = () => {
             </div>
 
             {/* Our Hotel Video */}
-            <div className='h-96 lg:h-full p-5 lg:p-10 bg-center bg-contain' style={{
+            <div className='h-96 lg:h-full p-5 lg:p-10 bg-center bg-contain lg:min-h-[500px]' style={{
                 backgroundImage: `url(${bg})`
             }}>
                 <div className='h-full w-full bg-indigo-900 bg-opacity-30 flex justify-center items-center rounded-md border border-dashed'>

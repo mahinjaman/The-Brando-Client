@@ -38,7 +38,7 @@ const newsSlider = ({newses}) => {
         ]
       }
     return (
-        <div className='w-2/3 m-auto'>
+        <div className='w-[85%] md:w-[80%] m-auto'>
             <div className=''>
                 <Slider {...settings}>
                 {newses?.map(news => {

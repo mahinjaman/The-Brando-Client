@@ -12,6 +12,7 @@ import TriangleIcon from '../../../Components/TriangleIcon';
 import AOS from 'aos';
 import 'aos/dist/aos.css'
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const ExtraService = () => {
 
@@ -21,26 +22,26 @@ const ExtraService = () => {
     });
 }, [])
   return (
-    <div className=" mx-5 p-10 border rounded-md mt-10 bg-slate-50 relative">
+    <div className=" mx-5 lg:mb-10 xl:p-10 border rounded-md mt-10 bg-slate-50 relative z-20">
       {/* background */}
-      <div className='absolute top-0 lg:-right-5 opacity-20'>
+      <div className='absolute lg:top-20 top-10 rotate-45 right-10 lg:right-10 '>
         <img src={bg} alt="" />
       </div>
       {/* Content */}
-      <div className="text-center mb-5">
+      <div className="text-center mb-5 relative">
         <PrimaryTitle>
           Enjoy your time in our Hotel with pleasure.
         </PrimaryTitle>
-        <h1 className="text-5xl font-bold font-serif my-5">
+        <h1 className=" text-3xl lg:text-5xl font-bold font-serif my-5">
           Hotels Extra Services
         </h1>
       </div>
 
       {/* Card */}
 
-      <div className=" lg:w-11/12 mx-auto grid grid-cols-1 lg:grid-cols-3 text-center text-white gap-10 lg:h-80">
+      <div className=" xl:w-11/12 mx-auto grid grid-cols-1 lg:grid-cols-3 text-center text-white gap-5 xl:gap-10 lg:h-80 p-2">
         {/* Card-1 */}
-        <div className="relative rounded-md overflow-hidden h-[355px] lg:h-80 "
+        <div className="relative rounded-md overflow-hidden h-[355px] xl:h-80 "
         data-aos="fade-down-left"
         >
           <div className="theCard absolute w-full h-full">
@@ -91,7 +92,7 @@ const ExtraService = () => {
 
         {/* Card-2 */}
 
-        <div className="relative rounded-md overflow-hidden h-[355px] lg:h-80"
+        <div className="relative rounded-md overflow-hidden h-[355px] xl:h-80"
         data-aos="flip-up"
         >
           <div className="theCard absolute w-full h-full">
@@ -139,7 +140,7 @@ const ExtraService = () => {
 
         {/* Card-3 */}
 
-        <div className="relative rounded-md overflow-hidden h-[355px] lg:h-80"
+        <div className="relative rounded-md overflow-hidden h-[355px] xl:h-80"
         data-aos="fade-down-right"
         >
           <div className="theCard absolute w-full h-full ">
@@ -187,13 +188,8 @@ const ExtraService = () => {
       </div>
 
       {/* GET IN TOUCH WITH US btn */}
-      <div className='flex flex-col  items-center justify-center mt-14'>
-        <button className='custom-btn bg-gray-900 text-[#c4a676] border-gray-900 hover:bg-[#c4a676] hover:text-gray-900'> GET IN TOUCH WITH US </button>
-        <div className='mt-10 flex flex-col items-center relative'>
-          <div className='absolute top-10 z-10'>
-            <TriangleIcon></TriangleIcon>
-          </div>
-        </div>
+      <div className='flex flex-col items-center justify-center mt-14 relative z-30 mb-5'>
+        <Link to={'/contact'}><button className='custom-btn lg:mt-5  bg-gray-900 text-[#c4a676] border-gray-900 hover:bg-[#c4a676] hover:text-gray-900'> GET IN TOUCH WITH US </button></Link>
       </div>
     </div>
   );

@@ -117,16 +117,16 @@ const Rooms = () => {
                     <title>The Brando | Rooms</title>
                 </Helmet>
             <div className='py-20 lg:w-10/12 mx-auto'>
-                <div className='grid grid-cols-1 lg:grid-cols-6 gap-5'>
-                    <div className='col-span-2 text-white relative'>
-                        <div className="w-[500px] duration-500 ">
+                <div className='grid grid-cols-1 xl:grid-cols-6 gap-5'>
+                    <div className='md:col-span-2 text-white relative w-full p-2'>
+                        <div className="">
                             <SearchRoom>
                                 Search Filters
                             </SearchRoom>
                         </div>
                     </div>
 
-                    <div className='col-span-4 p-7 bg-slate-100 rounded-md'>
+                    <div className='md:col-span-4 p-7 bg-slate-100 rounded-md'>
                         <div className='lg:w-2/5 mb-5 text-end py-3 flex items-center justify-center bg-white rounded-md gap-3'>
                             <label htmlFor="limit" className='primary-font italic font-semibold'>Select Your Range</label>
                             <select name="limit" id="limit" onChange={handleLimit} className='outline-none py-3 px-10 bg-white'>
@@ -136,7 +136,7 @@ const Rooms = () => {
                                 <option value="24">24</option>
                             </select>
                         </div>
-                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 p-7 bg-white border rounded-md'>
+                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 md:p-7 bg-white border rounded-md'>
                             {
                                 rooms.map(room => <RoomCard key={room._id} room={room}></RoomCard>)
                             }

@@ -28,8 +28,8 @@ const OurTeam = () => {
                 </div>
             </div>
 
-            <div className='p-7 bg-slate-50 border rounded-md w-10/12 mx-auto'>
-                <div className='p-7 bg-white border rounded-md grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
+            <div className='lg:p-7 bg-slate-50 md:border rounded-md w-10/12 mx-auto'>
+                <div className='lg:p-7 bg-white md:border rounded-md grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-10'>
                     <div data-aos="fade-up-right">
                         {/* team image & social */}
                         <div className='p-5 border rounded-md relative overflow-hidden group'>

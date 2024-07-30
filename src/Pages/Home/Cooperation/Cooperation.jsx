@@ -17,13 +17,13 @@ import MoreAbout from "../MoreAbout/MoreAbout";
 
 const Cooperation = () => {
     return (
-        <div className="mx-5 rounded-md lg:relative ">
-            <Parallax bgImage={parallaxBg} strength={700} className='home-parallax'>
-                <div style={{ height: 500 }} className="bg-slate-950 bg-opacity-50">
-                    <div className="absolute h-full grid grid-cols-1 lg:grid-cols-2 w-11/12 mx-auto">
-                        <div className="flex flex-col justify-center items-center">
+        <div className="mx-5 mt-5 md:mt-0 rounded-md lg:relative z-10">
+            <Parallax bgImage={parallaxBg} strength={700} className='home-parallax relative z-10'>
+                <div className="bg-slate-950 bg-opacity-50 h-[300px] lg:h-[500px] ">
+                    <div className="h-full grid grid-cols-1 xl:grid-cols-2 rounded-md lg:mx-auto">
+                        <div className="flex flex-col justify-center items-center lg:w-4/6 mx-auto">
                             <PrimaryTitle>OTHER AMINITES AND SERVICES</PrimaryTitle>
-                            <h1 className="text-4xl font-serif text-center text-white leading-relaxed mt-5">ENJOY COMPLETE & BEST QUALITY COOPERATION</h1>
+                            <h1 className="text-2xl lg:text-4xl font-serif text-center text-white leading-relaxed mt-5">ENJOY COMPLETE & BEST QUALITY COOPERATION</h1>
                         </div>
                         <div className="flex justify-center ">
                             <Marquee
@@ -40,18 +40,18 @@ const Cooperation = () => {
             </Parallax>
 
             {/* More About Us */}
-            <div className="lg:w-10/12 xl:w-full xl:my-5 2xl:w-10/12 left-[8.3%] 2xl:absolute 2xl:top-3/4 bg-white rounded-xl overflow-hidden z-10">
+            <div className="mx-auto xl:w-10/12 xl:my-5 2xl:w-10/12 left-[8.3%] 2xl:absolute 2xl:top-3/4 bg-white rounded-xl overflow-hidden z-10">
                 <MoreAbout />
             </div>
 
-            <div className='hidden xl:absolute lg:flex items-center gap-5 2xl:-top-[75%] left-0  z-50'>
+            <div className='hidden lg:absolute lg:flex items-center gap-5 lg:top-[101.5%] 2xl:-top-[75%] left-0  z-50'>
                 <div className='w-10 h-[1px] bg-slate-500'></div>
                 <div className='p-2 rounded-full border border-dashed border-[#c4a676]'>
                     <div className='w-3 h-3 rotate-45 bg-[#c4a676]'></div>
                 </div>
             </div>
 
-            <div className='hidden xl:absolute lg:flex items-center gap-5 2xl:-top-[75%] right-0 '>
+            <div className='hidden lg:absolute lg:flex items-center gap-5 lg:top-[101.5%] 2xl:-top-[75%] right-0 '>
                 <div className='p-2 rounded-full border border-dashed border-[#c4a676]'>
                     <div className='w-3 h-3 rotate-45 bg-[#c4a676]'></div>
                 </div>

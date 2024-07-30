@@ -92,7 +92,7 @@ const Restaurant = () => {
             {/* Start About  */}
 
             <div className='z-10'>
-                <div className="home_about relative grid grid-cols-1 lg:grid-cols-2 lg:p-32 gap-10 lg:gap-0 lg:mx-5 border border-dashed rounded-md mb-5 items-center">
+                <div className="home_about relative grid grid-cols-1 xl:grid-cols-2 lg:p-32 gap-10 lg:gap-0 lg:mx-5 border border-dashed rounded-md mb-5 items-center">
                     {/* Content */}
                     <div className={`p-5 flex flex-col gap-3 items-start`} data-aos="fade-up-left">
                         <p className="text-[#c4a676] text-lg font-semibold">
@@ -123,7 +123,7 @@ const Restaurant = () => {
 
                     {/* Slider */}
 
-                    <div className="" data-aos="fade-up-right">
+                    <div className="lg:row-start-1 xl:col-start-2" data-aos="fade-up-right">
                         <RestaurantSlider />
                     </div>
 
@@ -232,13 +232,13 @@ const Restaurant = () => {
                         <PrimaryDivider></PrimaryDivider>
                     </div>
                 </div>
-                <div role="tablist" className="tabs tabs-lifted w-5/12 mx-auto">
+                <div role="tablist" className="tabs tabs-lifted md:w-5/12 mx-auto">
                     <a onClick={()=> setDisplayMenu("Dishes")} role="tab" className={`font-semibold text-[18px] tab ${displayMenu === "Dishes" ? 'tab-active text-[#C4A676]' : ''}`}>Main Dishes</a>
                     <a onClick={()=> setDisplayMenu("Starters")} role="tab" className={`font-semibold text-[18px] tab ${displayMenu === "Starters" ? 'tab-active text-[#C4A676]' : ''}`}>Starters</a>
                     <a onClick={()=> setDisplayMenu("Desserts")} role="tab" className={`font-semibold text-[18px] tab ${displayMenu === "Desserts" ? 'tab-active text-[#C4A676]' : ''}`}>Desserts</a>
                     <a onClick={()=> setDisplayMenu("Drinks")} role="tab" className={`font-semibold text-[18px] tab ${displayMenu === "Drinks" ? 'tab-active text-[#C4A676]' : ''}`}>Drinks</a>
                 </div>
-                <div className=' lg:w-9/12 mx-auto grid grid-cols-1 md:grid-cols-2'>
+                <div className=' lg:w-9/12 mx-auto grid grid-cols-1 md:grid-cols-2 p-3 md:p-0'>
                     {
                         showMenu.map(menu => <MenuCard key={menu._id} menu={menu}></MenuCard>)
                     }
