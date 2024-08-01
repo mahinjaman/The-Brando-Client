@@ -11,6 +11,8 @@ const Bookings = () => {
     const secureAxios = useSecureAxios();
     const { user } = useContext(UserContext);
     const [displayBookings, setDisplayBookings] = useState([]);
+
+
     const { isPending, data: bookingsRoom, error } = useQuery({
         queryKey: 'bookings room',
         queryFn: async () => {
@@ -23,6 +25,7 @@ const Bookings = () => {
     useEffect(() => {
         setDisplayBookings(bookingsRoom)
     }, [bookingsRoom])
+
 
     const handleStatusCancel = (id, currentUser) => {
         Swal.fire({
@@ -44,6 +47,11 @@ const Bookings = () => {
                                 text: "Your Room Booked has been cancelled.",
                                 icon: "success"
                             })
+                            const remainingRoom = displayBookings.filter(room => room._id != id);
+                            const updateRoom = displayBookings.find(room => room._id === id);
+                            updateRoom.orderStatus = 'Cancelled';
+                            const newBookingRooms = [...remainingRoom, updateRoom]
+                            setDisplayBookings(newBookingRooms);
                         })
                     })
                     .catch(err => {

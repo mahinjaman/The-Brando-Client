@@ -47,9 +47,9 @@ const About = () => {
             viverra viverra etiam porta facilisis.
           </p>
         </div>
-        <button className="custom-btn bg-slate-900 text-[#c4a676] hover:bg-[#c4a676] hover:text-black">
-          <Link to={"/about"}>Read More About Us</Link>
-        </button>
+        <Link to={'/about'}><button className="custom-btn bg-slate-900 text-[#c4a676] hover:bg-[#c4a676] hover:text-black">
+          Read More About Us
+        </button></Link>
       </div>
 
       {/* Image */}
