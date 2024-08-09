@@ -40,7 +40,7 @@ const Bookings = () => {
             if (result.isConfirmed) {
                 secureAxios.put(`/booking_cancelled/${id}?status=Cancelled&email=${user?.email}`, currentUser)
                     .then(res => {
-                        secureAxios.patch(`/room_available/${currentUser?.room_id}`)
+                        secureAxios.patch(`/room_status/${currentUser?.room_id}?status=Available`)
                         .then(() =>{
                             Swal.fire({
                                 title: "Cancelled!",
