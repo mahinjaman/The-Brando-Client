@@ -74,7 +74,7 @@ const BookingNow = ({ children, room }) => {
           });
           secureAxios.patch(`/room_status/${room?.room_id}?status=Booking`)
           form.reset();
-          navigate('/')
+          navigate('/rooms')
 
         }
 
