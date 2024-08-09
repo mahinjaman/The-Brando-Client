@@ -84,7 +84,7 @@ const AuthContext = ({ children }) => {
                 }
 
                 if(  diffInDaysBook >=3){
-                    secureAxios.patch(`/room_available/${room_id}`)
+                    secureAxios.patch(`/room_status/${room_id}?status=Available`)
                 }
             })
         }
