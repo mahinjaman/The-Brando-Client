@@ -59,7 +59,6 @@ const AuthContext = ({ children }) => {
     // }, [secureAxios])
 
     setInterval(() => {
-        console.log('Hello world !');
         
         secureAxios.get('/all_bookings')
             .then(res => {
@@ -79,7 +78,7 @@ const AuthContext = ({ children }) => {
                 const diffInBookDate = today - bookedDate;
                 const diffInDaysBook = diffInBookDate / (1000 * 60 * 60 * 24);
                 
-                if(currentDate < today && diffInDaysCurrent >= 1 && orderStatus !== 'Cancelled'){                    
+                if(currentDate < today && diffInDaysCurrent >= 1 && orderStatus !== 'Cancelled'){  
                     secureAxios.put(`/bookingConfirmed/${_id}?status=Confirmed&email=${user?.email}`)
                 }
 
