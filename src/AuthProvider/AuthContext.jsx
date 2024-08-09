@@ -59,6 +59,8 @@ const AuthContext = ({ children }) => {
     // }, [secureAxios])
 
     setInterval(() => {
+        console.log('Hello world !');
+        
         secureAxios.get('/all_bookings')
             .then(res => {
                 const result = res.data;
@@ -85,7 +87,7 @@ const AuthContext = ({ children }) => {
                 }
             })
         }
-    }, 3600000)
+    }, 3600)
 
     // Manage User
 
