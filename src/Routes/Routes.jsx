@@ -10,6 +10,8 @@ import LogIn from "../Pages/LogIn";
 import SignUp from "../Pages/SignUp";
 import PrivateRoute from "../PrivateRoutes/PrivateRoute";
 import Bookings from "../Pages/Bookings/Bookings";
+import Dashboard from "../Layout/Dashboard";
+import Carts from "../Pages/Dashboard/Cart/Carts";
 
 const routes = createBrowserRouter([
     {
@@ -53,6 +55,17 @@ const routes = createBrowserRouter([
                 element: <PrivateRoute><Bookings /></PrivateRoute>
             }
         ]
+    },
+    {
+        path:'/dashboard',
+        element: <Dashboard />,
+        children: [
+            {
+                path:'bookings',
+                element: <Carts />
+            }
+        ]
     }
+    
 ])
 export default routes

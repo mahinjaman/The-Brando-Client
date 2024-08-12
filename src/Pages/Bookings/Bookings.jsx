@@ -48,10 +48,7 @@ const Bookings = () => {
                                 icon: "success"
                             })
                             const remainingRoom = displayBookings.filter(room => room._id != id);
-                            const updateRoom = displayBookings.find(room => room._id === id);
-                            updateRoom.orderStatus = 'Cancelled';
-                            const newBookingRooms = [...remainingRoom, updateRoom]
-                            setDisplayBookings(newBookingRooms);
+                            setDisplayBookings(remainingRoom);
                         })
                     })
                     .catch(err => {
@@ -70,6 +67,7 @@ const Bookings = () => {
     if (isPending) return <RoomSkeleton></RoomSkeleton>
 
     if (error) return <ErrorImage />
+    
     return (
         <div className="overflow-x-auto lg:w-10/12 mx-auto my-10">
             <table className="table">

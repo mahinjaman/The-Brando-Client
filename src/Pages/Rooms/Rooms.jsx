@@ -5,39 +5,36 @@ import bg from '../../assets/map_bg5.png'
 import SearchRoom from '../../Components/Shared/SearchRoom';
 import { Helmet } from 'react-helmet-async';
 import ErrorImage from '../../Components/ErrorImage';
+import useRooms from '../../Hooks/useRooms';
 const Rooms = () => {
     const [activePage, setActivePage] = useState(1)
     const [limit, setLimit] = useState(6);
     const secureAxios = useSecureAxios();
     const [totalRooms, setTotalRooms] = useState(1);
-    const [rooms, setRooms] = useState([]);
+    // const [rooms, setRooms] = useState([]);
     const [prevDisabled, setPrevDisabled] = useState(false);
     const [nextDisabled, setNextDisabled] = useState(false);
 
     useEffect(() => {
-        const fetchData = async () => {
-            const response = await secureAxios.get('total_rooms')
-            return response.data;
-        }
-        fetchData().then(data => {
-            const { count } = data;
-            setTotalRooms(count)
-        });
+        secureAxios.get('total_rooms')
+       .then(res=>{
+            const data = res?.data;
+            setTotalRooms(data?.count);
+       })
     }, [secureAxios])
 
     const pages = Math.ceil(totalRooms / limit);
 
 
-    useEffect(() => {
-        const fetchRooms = async () => {
-            const response = await secureAxios.get(`/rooms?page=${activePage}&limit=${limit}`)
-            return response.data;
-        }
-        fetchRooms().then(data => {
-            setRooms(data);
-        });
-    }, [activePage, limit, secureAxios])
+    // useEffect(() => {
+    //     secureAxios.get(`/rooms?page=${activePage}&limit=${limit}`)
+    //     .then(res=>{
+    //         setRooms(res?.data);
+    //     })
+    // }, [activePage, limit, secureAxios])
 
+    
+    const rooms = useRooms(activePage, limit);
 
 
     let AllPages = [];
@@ -53,24 +50,6 @@ const Rooms = () => {
         setActivePage(page);
     }
 
-
-    
-
-    // useEffect(() => {
-    //     window.addEventListener('scroll', () => {
-    //         if (window.scrollY > 100) {
-    //             setShowForm(true);
-    //         }
-    //     })
-    // }, []);
-
-    // useEffect(() => {
-    //     window.addEventListener('scroll', () => {
-    //         if (window.scrollY > 1000) {
-    //             setShowForm(false);
-    //         }
-    //     })
-    // }, [])
 
 
     const handlePrev = () => {
@@ -138,7 +117,7 @@ const Rooms = () => {
                         </div>
                         <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 md:p-7 bg-white border rounded-md'>
                             {
-                                rooms.map(room => <RoomCard key={room._id} room={room}></RoomCard>)
+                               rooms && rooms.map(room => <RoomCard key={room._id} room={room}></RoomCard>)
                             }
                         </div>
                     </div>

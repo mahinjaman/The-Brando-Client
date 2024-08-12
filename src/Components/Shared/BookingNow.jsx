@@ -72,7 +72,7 @@ const BookingNow = ({ children, room }) => {
             icon: 'success',
             confirmButtonText: 'Okay'
           });
-          secureAxios.patch(`/room_status/${room?.room_id}?status=Booking`)
+          secureAxios.patch(`/room_status/${room?._id}?status=Booking`)
           form.reset();
           navigate('/rooms')
 

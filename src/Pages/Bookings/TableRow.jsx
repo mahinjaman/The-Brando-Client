@@ -25,7 +25,7 @@ const TableRow = ({ room , handleStatusCancel}) => {
             </td>
             
             <td>
-                <p className='font-serif font-semibold'>{room?.bookDate.slice(0,10)}</p>
+                <p className='font-serif font-semibold'>{room?.bookDate?.slice(0,10)}</p>
             </td>
             <td>
                 <p className='font-serif font-semibold'>{room?.name}</p>
@@ -40,7 +40,7 @@ const TableRow = ({ room , handleStatusCancel}) => {
                 <p className={`font-serif font-semibold ${room?.orderStatus === 'Confirmed' ? 'text-green-500' : 'text-red-500'}`}>{room?.orderStatus}</p>
             </td>
             <th>
-                <button onClick={()=>handleStatusCancel(_id, currentUser)} disabled={room?.orderStatus ==="Cancelled" || room?.orderStatus ==="Confirmed"? true : false} className="text-red-500 border-[2px] py-3 px-7 rounded-md border-red-500">Cancel</button>
+                <button onClick={()=>handleStatusCancel(_id, currentUser)} disabled={room?.orderStatus ==="Cancelled" || room?.orderStatus ==="Confirmed"? true : false} className={`text-red-500 border-[2px] py-3 px-7 rounded-md border-red-500 ${room?.orderStatus ==="Confirmed" && 'bg-slate-500 text-white border-white'}`}>Cancel</button>
             </th>
         </tr>
     );

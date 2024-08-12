@@ -54,15 +54,13 @@ const AuthContext = ({ children }) => {
         return signInWithPopup(Auth, githubProvider)
     }
 
-    // useEffect(() => {
-        
-    // }, [secureAxios])
+
 
     setInterval(() => {
         
         secureAxios.get('/all_bookings')
             .then(res => {
-                const result = res.data;
+                const result = res?.data;
                 setBookings(result);
             })
             .catch(err => {
@@ -110,6 +108,8 @@ const AuthContext = ({ children }) => {
         })
         return () => unSubscribe();
     }, [secureAxios])
+
+    
 
     const info = {
         createUser,
