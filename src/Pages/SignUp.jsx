@@ -1,14 +1,17 @@
 import React, { useContext, useRef, useState } from 'react';
 import hotelImg from '../assets/About/10.jpg'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 import { UserContext } from '../AuthProvider/AuthContext';
 import { updateProfile } from 'firebase/auth';
+import useSecureAxios from '../Hooks/useSecureAxios';
 
 const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false)
-    const { createUser } = useContext(UserContext);
+    const { createUser , LogOut} = useContext(UserContext);
+    const secureAxios = useSecureAxios();
+    const navigate = useNavigate();
     const handleLogin = e => {
         e.preventDefault();
         const form = e.target;
@@ -26,20 +29,39 @@ const SignUp = () => {
             return;
         }
 
+
         createUser(email, password)
             .then(result => {
                 const user = result?.user;
-
+                const userInfo = {
+                    name: name,
+                    email: user.email,
+                    password:  password
+                }
                 updateProfile(user, {
                     displayName: name,
                 }).then(() => {
-                    Swal.fire({
-                        title: "Registration Successful",
-                        text: "You have successfully registered. You can now log in.",
-                        icon: "success"
-                    });
+                    
+                    secureAxios.post('/users',userInfo)
+                    .then(res=>{
+                        console.log(res.data);
+                        if(res.data.insertedId){
+                            LogOut()
+                            .then(()=>{
+                                Swal.fire({
+                                    title: "Registration Successful",
+                                    text: "You have successfully registered. You can now log in.",
+                                    icon: "success"
+                                });
+                                form.reset();
+                                navigate('/login')
+                            })
+                        }
+                        
+                    })
+                    
                 })
-                form.reset();
+                
 
             })
             .catch(err => {

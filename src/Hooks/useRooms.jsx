@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import useSecureAxios from './useSecureAxios';
+import usePublicAxios from './usePublicAxios';
 
 const useRooms = (activePage, limit) => {
     const [rooms, setRooms ] = useState([])
-    const secureAxios = useSecureAxios();
+    const publicAxios = usePublicAxios();
     
     useEffect(() => {
-        secureAxios.get(`/rooms?page=${activePage}&limit=${limit}`)
+        publicAxios.get(`/rooms?page=${activePage}&limit=${limit}`)
         .then(res=>{
             setRooms(res?.data)
         })
-    }, [activePage, limit, secureAxios])
+    }, [activePage, limit, publicAxios]);
+    
     return rooms;
 };
 

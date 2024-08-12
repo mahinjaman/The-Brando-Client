@@ -66,15 +66,20 @@ const BookingNow = ({ children, room }) => {
       .then((res) => {
         const result = res.data;
         if (result?.insertedId) {
-          Swal.fire({
-            title: 'Booking Successful!',
-            text: 'Your booking has been submitted successfully.',
-            icon: 'success',
-            confirmButtonText: 'Okay'
-          });
           secureAxios.patch(`/room_status/${room?._id}?status=Booking`)
-          form.reset();
-          navigate('/rooms')
+            .then(res => {
+              console.log('res',res.data);
+              
+              Swal.fire({
+                title: 'Booking Successful!',
+                text: 'Your booking has been submitted successfully.',
+                icon: 'success',
+                confirmButtonText: 'Okay'
+              });
+              form.reset();
+              navigate('/rooms')
+            })
+
 
         }
 
@@ -158,9 +163,9 @@ const BookingNow = ({ children, room }) => {
               >
                 Date:
               </label>
-              
+
               <div className="w-full py-4 px-5 rounded bg-slate-800  border border-slate-700 mt-2 text-end">
-                <DatePicker isClearable  placeholderText="I have been cleared!" selected={bookDate} onChange={(date) => setBookDate(date)}className=" z-10 bg-transparent md:w-[410px] outline-none" />
+                <DatePicker isClearable placeholderText="I have been cleared!" selected={bookDate} onChange={(date) => setBookDate(date)} className=" z-10 bg-transparent md:w-[410px] outline-none" />
               </div>
             </div>
 

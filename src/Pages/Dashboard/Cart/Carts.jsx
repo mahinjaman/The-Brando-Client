@@ -83,16 +83,15 @@ const Carts = () => {
 
                                 </tr>
                             </thead>
-                            {
-                                bookingsRoom.length ?
-                                    <tbody>
-                                        {
-                                            bookingsRoom && bookingsRoom.map(room => <TableRow key={room._id} room={room} handleStatusCancel={handleStatusCancel}></TableRow>)
-                                        }
-                                    </tbody>
-                                    :
-                                    <ErrorImage />
-                            }
+
+
+                            <tbody>
+                                {
+                                    bookingsRoom && bookingsRoom.map(room => <TableRow key={room._id} room={room} handleStatusCancel={handleStatusCancel}></TableRow>)
+                                }
+                            </tbody>
+
+
 
                         </table>
                 }

@@ -66,18 +66,22 @@ const AuthContext = ({ children }) => {
             .catch(err => {
                 console.log('error while getting bookings', err);
             })
-        if (bookings.length) {
+        if (bookings?.length) {
             bookings.map(room => {
                 const {_id, room_id, orderStatus} = room;
+                
                 const currentDate = new Date(room?.currentDate);
                 const bookedDate = new Date(room?.bookDate.slice(0, 10));
                 const diffInCurrentBook = today - currentDate;
                 const diffInDaysCurrent = diffInCurrentBook / (1000 * 60 * 60 * 24);
                 const diffInBookDate = today - bookedDate;
-                const diffInDaysBook = diffInBookDate / (1000 * 60 * 60 * 24);
-                
-                if(currentDate < today && diffInDaysCurrent >= 1 && orderStatus !== 'Cancelled'){  
-                    secureAxios.put(`/bookingConfirmed/${_id}?status=Confirmed&email=${user?.email}`)
+                const diffInDaysBook = diffInBookDate / (1000 * 60 * 60 * 24); 
+                               
+                if(currentDate < today && diffInDaysCurrent >= 1 && orderStatus !== 'Confirmed'){  
+                    secureAxios.patch(`/bookingStatus/${_id}?status=Cancelled`)
+                    .then(()=>{
+                        secureAxios.patch(`/room_status/${room_id}?status=Available`)
+                    })
                 }
 
                 if(  diffInDaysBook >=3){
