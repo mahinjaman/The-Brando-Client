@@ -5,12 +5,14 @@ import { CgProfile } from "react-icons/cg";
 import Swal from 'sweetalert2';
 import useSecureAxios from '../../Hooks/useSecureAxios';
 import Logo from '../../assets/image/logo.png'
+import useIsAdmin from '../../Hooks/useIsAdmin';
 const Navbar = () => {
 
   const [staticNav, setStaticNav] = useState(false);
-  const {user , LogOut} = useContext(UserContext);
+  const { user, LogOut } = useContext(UserContext);
   const navigate = useNavigate();
-  const secureAxios = useSecureAxios()
+  const secureAxios = useSecureAxios();
+  const isAdmin = useIsAdmin()
 
   const navMenu = (
     <>
@@ -44,7 +46,7 @@ const Navbar = () => {
   }, [])
 
 
-  const handleLogOut = () =>{
+  const handleLogOut = () => {
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be logout your account",
@@ -56,28 +58,28 @@ const Navbar = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         LogOut()
-        .then(()=>{
-          secureAxios.post('/log_out')
-          .then(res =>{
+          .then(() => {
+            secureAxios.post('/log_out')
+              .then(res => {
+                Swal.fire({
+                  title: "Successfully..!",
+                  text: "Your account has been logged in successfully.",
+                  icon: "success"
+                });
+                navigate('/')
+              })
+              .catch(err => {
+                console.log('error while log out the user', err);
+              })
+          })
+          .catch(err => {
             Swal.fire({
-              title: "Successfully..!",
-              text: "Your account has been logged in successfully.",
-              icon: "success"
+              title: "Error",
+              text: "Failed to log out. Please try again.",
+              icon: "error"
             });
-            navigate('/')
           })
-          .catch(err=>{
-            console.log('error while log out the user',err);
-          })
-        })
-        .catch(err=>{
-          Swal.fire({
-            title: "Error",
-            text: "Failed to log out. Please try again.",
-            icon: "error"
-          });
-        })
-        
+
       }
     });
   }
@@ -125,7 +127,7 @@ const Navbar = () => {
 
       <div className="navbar-end">
 
-      
+
 
         <div className="dropdown dropdown-end z-50">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
@@ -133,12 +135,17 @@ const Navbar = () => {
               <img alt="Tailwind CSS Navbar component" src="https://i.ibb.co/GxfNxF3/Whats-App-Image-2024-04-30-at-13-07-47-5f0c778c.jpg" />
             </div> */}
 
-            <h1 className='text-3xl'><CgProfile /></h1>
+            {
+              user?.displayName ?
+                <p className='flex text-base items-center justify-center bg-[#0f172a] text-white w-[50px] h-[45px] p-2 rounded-full '>{user?.displayName.slice(0, 1)}</p>
+                :
+                <h1 className='text-3xl'><CgProfile /></h1>
+            }
 
           </div>
           <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 z-50">
             <li>
-              <Link to={'/dashboard/bookings'}>Dashboard</Link>
+              <Link to={`${isAdmin ? '/dashboard/users' : '/dashboard/bookings'}`}>Dashboard</Link>
             </li>
             {
               user?.email ? <li><button onClick={handleLogOut}>Log Out</button></li> : <li><Link to={'/login'}>Log In</Link></li>

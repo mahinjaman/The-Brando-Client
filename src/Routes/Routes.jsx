@@ -12,6 +12,8 @@ import PrivateRoute from "../PrivateRoutes/PrivateRoute";
 import Bookings from "../Pages/Bookings/Bookings";
 import Dashboard from "../Layout/Dashboard";
 import Carts from "../Pages/Dashboard/Cart/Carts";
+import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
+import ManageBooking from "../Pages/Dashboard/ManageBooking/ManageBooking";
 
 const routes = createBrowserRouter([
     {
@@ -57,12 +59,20 @@ const routes = createBrowserRouter([
         ]
     },
     {
-        path:'/dashboard',
+        path:'dashboard',
         element: <PrivateRoute><Dashboard /></PrivateRoute>,
         children: [
             {
                 path:'bookings',
                 element: <Carts />
+            },
+            {
+                path:'users',
+                element: <AllUsers />
+            },
+            {
+                path:'manageBooking',
+                element: <ManageBooking />
             }
         ]
     }

@@ -1,10 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
-import useAuthInfo from './useAuthInfo';
 import useSecureAxios from './useSecureAxios';
-import RoomSkeleton from '../Components/Shared/RoomSkeleton';
-import ErrorImage from '../Components/ErrorImage';
-import { useContext, useEffect, useState } from 'react';
-import { refresh } from 'aos';
+import { useContext} from 'react';
 import { UserContext } from '../AuthProvider/AuthContext';
 
 const useBookingsRooms = () => {

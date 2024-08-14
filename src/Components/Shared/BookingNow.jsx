@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from 'moment';
+import useIsAdmin from "../../Hooks/useIsAdmin";
 const BookingNow = ({ children, room }) => {
 
   const [guest, setGuest] = useState(1);
@@ -17,6 +18,16 @@ const BookingNow = ({ children, room }) => {
   const [bookDate, setBookDate] = useState(new Date());
   const navigate = useNavigate()
   const currentDate = moment().format('YYYY-MM-DD');
+
+  const isAdmin = useIsAdmin();
+
+  const ConvertDate = (date) => {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  };
+
 
   const handlePlus = () => {
     if (guest >= 7) {
@@ -39,6 +50,11 @@ const BookingNow = ({ children, room }) => {
     const name = formData.get('name');
     const guests = guest;
 
+
+    const bookedDate = ConvertDate(bookDate);
+    const differentDate = new Date(bookedDate) - new Date(currentDate);
+    const differentDay = differentDate / (1000 * 60 * 60 * 24);
+
     const { thumb, price, status } = room;
     if (status != 'Available') {
       Swal.fire({
@@ -49,6 +65,27 @@ const BookingNow = ({ children, room }) => {
       });
       return;
     }
+
+    if(differentDay > 3){
+      Swal.fire({
+        title: 'Booking Failed!',
+        text: 'Booking date should be within 3 days from today.',
+        icon: 'error',
+        confirmButtonText: 'Okay'
+      });
+      return;
+    }
+
+    if(isAdmin){
+      Swal.fire({
+        title: `Sorry ${user.displayName} !`,
+        text: 'Only user can book rooms.',
+        icon: 'error',
+        confirmButtonText: 'Okay'
+      });
+      return;
+    }
+
     const data = {
       room_id: room?._id,
       room_name: room?.title,
@@ -68,16 +105,17 @@ const BookingNow = ({ children, room }) => {
         if (result?.insertedId) {
           secureAxios.patch(`/room_status/${room?._id}?status=Booking`)
             .then(res => {
-              console.log('res',res.data);
-              
-              Swal.fire({
-                title: 'Booking Successful!',
-                text: 'Your booking has been submitted successfully.',
-                icon: 'success',
-                confirmButtonText: 'Okay'
-              });
-              form.reset();
-              navigate('/rooms')
+              if (res.data.modifiedCount > 0) {
+                Swal.fire({
+                  title: 'Booking Successful!',
+                  text: 'Your booking has been submitted successfully.',
+                  icon: 'success',
+                  confirmButtonText: 'Okay'
+                });
+                form.reset();
+                navigate('/rooms')
+              }
+
             })
 
 
@@ -165,7 +203,7 @@ const BookingNow = ({ children, room }) => {
               </label>
 
               <div className="w-full py-4 px-5 rounded bg-slate-800  border border-slate-700 mt-2 text-end">
-                <DatePicker isClearable placeholderText="I have been cleared!" selected={bookDate} onChange={(date) => setBookDate(date)} className=" z-10 bg-transparent md:w-[410px] outline-none" />
+                <DatePicker isClearable placeholderText="I have been cleared!" selected={bookDate} onChange={(date) => setBookDate(date)} dateFormat='yyyy/MM/dd' className=" z-10 bg-transparent md:w-[410px] outline-none" />
               </div>
             </div>
 

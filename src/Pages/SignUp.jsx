@@ -36,6 +36,7 @@ const SignUp = () => {
                 const userInfo = {
                     name: name,
                     email: user.email,
+                    role: 'Member',
                     password:  password
                 }
                 updateProfile(user, {
@@ -44,7 +45,6 @@ const SignUp = () => {
                     
                     secureAxios.post('/users',userInfo)
                     .then(res=>{
-                        console.log(res.data);
                         if(res.data.insertedId){
                             LogOut()
                             .then(()=>{

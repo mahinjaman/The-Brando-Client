@@ -4,12 +4,14 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { FaGithub, FaGoogle, FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 import { UserContext } from '../AuthProvider/AuthContext';
+import usePublicAxios from '../Hooks/usePublicAxios';
 const LogIn = () => {
     const [showPassword, setShowPassword] = useState(false)
     const emailRef = useRef();
     const { logIn , loginWithGoogle, loginWithGithub} = useContext(UserContext);
     const navigate = useNavigate();
     const location = useLocation();
+    const publicAxios = usePublicAxios();
     const handleLogin = e => {
         e.preventDefault();
         const form = e.target;
@@ -48,6 +50,15 @@ const LogIn = () => {
     const handleGoogleLogin = () => {
         loginWithGoogle()
         .then(res=>{
+            const user = res.user;
+            const userInfo = {
+                name: user.displayName,
+                email: user.email,
+                role:'Member',
+                password: 'google'
+
+            }
+            publicAxios.post('/users',userInfo)
             Swal.fire({
                 title: 'Logged In',
                 text: 'Successfully logged in with Google!',
@@ -55,6 +66,7 @@ const LogIn = () => {
                 confirmButtonText: 'Okay'
             });
             navigate(location.state ? location.state : '/')
+            
         })
         .catch(err=>{
             Swal.fire({
@@ -68,6 +80,15 @@ const LogIn = () => {
     const handleGithubLogin = () => {
         loginWithGithub()
         .then(res=>{
+            const user = res.user;
+            const userInfo = {
+                name: user.displayName,
+                email: user.email,
+                role:'Member',
+                password: 'google'
+
+            }
+            publicAxios.post('/users',userInfo)
             Swal.fire({
                 title: 'Logged In',
                 text: 'Successfully logged in with Google!',

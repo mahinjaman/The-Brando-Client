@@ -4,6 +4,7 @@ import { createUserWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider,
 import Auth from '../Firebase/Firebase.config';
 import useSecureAxios from '../Hooks/useSecureAxios';
 import moment from 'moment'
+import usePublicAxios from '../Hooks/usePublicAxios';
 export const UserContext = createContext(null)
 
 const AuthContext = ({ children }) => {
@@ -12,6 +13,7 @@ const AuthContext = ({ children }) => {
     const [loading, setLoading] = useState(true);
     const [bookings, setBookings] = useState([])
     const secureAxios = useSecureAxios();
+    const publicAxios = usePublicAxios()
 
     const date = moment().format('YYYY-MM-DD');
     const today = new Date(date);
@@ -58,7 +60,8 @@ const AuthContext = ({ children }) => {
 
     setInterval(() => {
         
-        secureAxios.get('/all_bookings')
+        
+        publicAxios.get('/all_bookings')
             .then(res => {
                 const result = res?.data;
                 setBookings(result);
@@ -66,30 +69,40 @@ const AuthContext = ({ children }) => {
             .catch(err => {
                 console.log('error while getting bookings', err);
             })
-        if (bookings?.length) {
+        if (bookings) {
+            
             bookings.map(room => {
-                const {_id, room_id, orderStatus} = room;
-                
+                const { _id, room_id, orderStatus } = room;
+
                 const currentDate = new Date(room?.currentDate);
                 const bookedDate = new Date(room?.bookDate.slice(0, 10));
                 const diffInCurrentBook = today - currentDate;
                 const diffInDaysCurrent = diffInCurrentBook / (1000 * 60 * 60 * 24);
                 const diffInBookDate = today - bookedDate;
-                const diffInDaysBook = diffInBookDate / (1000 * 60 * 60 * 24); 
-                               
-                if(currentDate < today && diffInDaysCurrent >= 1 && orderStatus !== 'Confirmed'){  
-                    secureAxios.patch(`/bookingStatus/${_id}?status=Cancelled`)
-                    .then(()=>{
-                        secureAxios.patch(`/room_status/${room_id}?status=Available`)
-                    })
+                const diffInDaysBook = diffInBookDate / (1000 * 60 * 60 * 24);
+
+
+                if (currentDate < today && diffInDaysCurrent >= 1 && orderStatus !== 'Confirmed' && orderStatus !== 'Completed') {
+                    publicAxios.patch(`/bookingStatus/${_id}?status=Cancelled`)
+                        .then(() => {
+                            publicAxios.patch(`/room_status/${room_id}?status=Available`)
+                        })
                 }
 
-                if(  diffInDaysBook >=3){
-                    secureAxios.patch(`/room_status/${room_id}?status=Available`)
+                if (diffInDaysBook >= 3 && orderStatus === "Confirmed" && orderStatus !== 'Cancelled' && orderStatus !== 'Completed') {
+
+                    publicAxios.delete(`/booking/${_id}`)
+                        .then(res => {
+                            const result = res.data;
+                            if (result.deletedCount > 0) {
+                                publicAxios.patch(`/room_status/${room_id}?status=Available`)
+                            }
+                        })
+
                 }
             })
         }
-    }, 36000)
+    }, 50000)
 
     // Manage User
 
@@ -98,7 +111,7 @@ const AuthContext = ({ children }) => {
             if (currentUser?.email) {
                 const email = currentUser.email;
                 const loggedUser = { email }
-                secureAxios.post('/jwt', loggedUser)
+                publicAxios.post('/jwt', loggedUser)
                     .then(res => {
                         console.log(res.data);
                     })
@@ -111,9 +124,9 @@ const AuthContext = ({ children }) => {
             }
         })
         return () => unSubscribe();
-    }, [secureAxios])
+    }, [publicAxios])
 
-    
+
 
     const info = {
         createUser,
