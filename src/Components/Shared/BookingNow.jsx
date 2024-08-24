@@ -19,7 +19,7 @@ const BookingNow = ({ children, room }) => {
   const navigate = useNavigate()
   const currentDate = moment().format('YYYY-MM-DD');
 
-  const isAdmin = useIsAdmin();
+  const [ isAdmin ] = useIsAdmin();
 
   const ConvertDate = (date) => {
     const year = date.getFullYear();

@@ -12,7 +12,7 @@ import useIsAdmin from '../Hooks/useIsAdmin';
 
 const Dashboard = () => {
 
-    const isAdmin = useIsAdmin();
+    const [isAdmin] = useIsAdmin();
 
 
     const userMenu = <>
@@ -44,7 +44,7 @@ const Dashboard = () => {
 
         <li className='py-2.5 px-5 bg-slate-100 list-none font-semibold rounded-md duration-300 text-[#0f172a] hover:bg-[#fdba74]'><NavLink className={'flex gap-2 items-center'} to={'/dashboard/users'}> <span className=''><FaUsers /></span>All users</NavLink></li>
 
-        <li className='py-2.5 px-5 bg-slate-100 list-none font-semibold rounded-md duration-300 text-[#0f172a] hover:bg-[#fdba74]'><NavLink className={'flex gap-2 items-center'} to={'/dashboard/add_rooms'}> <span className=''><FcHome /></span>Add Rooms</NavLink></li>
+        <li className='py-2.5 px-5 bg-slate-100 list-none font-semibold rounded-md duration-300 text-[#0f172a] hover:bg-[#fdba74]'><NavLink className={'flex gap-2 items-center'} to={'/dashboard/addRoom'}> <span className=''><FcHome /></span>Add Room</NavLink></li>
 
         <li className='py-2.5 px-5 bg-slate-100 list-none font-semibold rounded-md duration-300 text-[#0f172a] hover:bg-[#fdba74]'><NavLink className={'flex gap-2 items-center'} to={'/dashboard/add_menu'}> <span className=''><MdChecklist /></span>Add Menu</NavLink></li>
 

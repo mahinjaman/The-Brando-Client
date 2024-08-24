@@ -12,7 +12,7 @@ const Navbar = () => {
   const { user, LogOut } = useContext(UserContext);
   const navigate = useNavigate();
   const secureAxios = useSecureAxios();
-  const isAdmin = useIsAdmin()
+  const [ isAdmin ] = useIsAdmin()
 
   const navMenu = (
     <>

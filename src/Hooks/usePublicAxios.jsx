@@ -3,12 +3,12 @@ import axios from 'axios';
 const publicAxios = axios.create({
     // baseURL: 'https://the-brando-server.vercel.app',
     baseURL: 'http://localhost:3000',
-    withCredentials: true,
+    // withCredentials: true,
 })
 
 const usePublicAxios = () => {
     
-    return publicAxios
+    return publicAxios;
 };
 
 export default usePublicAxios;

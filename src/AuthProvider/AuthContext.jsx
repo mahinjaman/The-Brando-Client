@@ -102,7 +102,7 @@ const AuthContext = ({ children }) => {
                 }
             })
         }
-    }, 50000)
+    }, 600000)
 
     // Manage User
 

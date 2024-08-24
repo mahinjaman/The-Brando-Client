@@ -7,7 +7,7 @@ const useIsAdmin = () => {
     const secureAxios = useSecureAxios()
     const {user} = useAuthInfo();
 
-    const {data: isAdmin, refetch} =  useQuery({
+    const {isPending: adminLoading ,data: isAdmin, refetch} =  useQuery({
         queryKey: ['isAdmin'],
         queryFn: async () => {
             if(user){
@@ -24,7 +24,7 @@ const useIsAdmin = () => {
         refetch()
     },[refetch, user])
 
-    return isAdmin;
+    return [isAdmin, adminLoading];
 };
 
 
