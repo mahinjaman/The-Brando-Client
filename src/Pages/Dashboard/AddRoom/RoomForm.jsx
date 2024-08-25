@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import usePublicAxios from '../../../Hooks/usePublicAxios';
 import { useForm } from "react-hook-form"
-import axios from 'axios';
+import useIsAdmin from '../../../Hooks/useIsAdmin';
+import Swal from 'sweetalert2';
+import useSecureAxios from '../../../Hooks/useSecureAxios';
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
 const RoomForm = () => {
     const [gallery, setGallery] = useState([]);
-    const publicAxios = usePublicAxios()
+    const secureAxios = useSecureAxios()
+    const publicAxios = usePublicAxios();
+    const isAdmin = useIsAdmin();
     
     const {
         register,
@@ -18,54 +22,59 @@ const RoomForm = () => {
 
 
      const handleGalleryImageChange = async e => {
-        const newImage = e.currentTarget.value;
-        console.log(newImage);
-
-
-        // setGallery([...gallery, newImage]);
-    }
-
-    const facility = [
-        {
-            "name": "Free Wi-Fi",
-            "icon_url": "https://i.ibb.co/ySJrtVd/008-wifi.png"
-        },
-        {
-            "name": "Air Conditioning",
-            "icon_url": "https://i.ibb.co/F4H9P4H/005-air-conditioning.png"
-        },
-        {
-            "name": "Television",
-            "icon_url": "https://i.ibb.co/tMwkhM0/003-smart-tv.png"
-        },
-        {
-            "name": "Washing Machine",
-            "icon_url": "https://i.ibb.co/8r7RJ6g/washing.png"
-        },
-        {
-            "name": "Coffee Maker",
-            "icon_url": "https://i.ibb.co/vv1KVKJ/coffee-machine.png"
-        },
-        {
-            "name": "Safe",
-            "icon_url": "https://i.ibb.co/ZTkwbvz/shield.png"
-        }
-    ];
-
-
-    const onSubmit = async (data) => {
-        console.log(data);
-        const { title, status, price, rating, description, short_description, room_size, room_bed, occupancy, view, location, guest, bed, bath , thumbnail} = data;
-        // const imageFile =await  {thumb :thumbnail[0]};
+        const file = e.currentTarget.files[0];
         const formData = new FormData();
-        formData.append('image', thumbnail[0]);
+        formData.append('image', file);
         const res = await publicAxios.post(image_hosting_api, formData, {
             headers:{
                 'Content-Type':'multipart/form-data'
             },
             withCredentials: false
         })
-        console.log(res.data);
+        const image = res.data.data.display_url;
+        
+        setGallery([...gallery, image]);
+    }
+
+
+
+    const onSubmit = async (data) => {
+        // Basic Admin Validation
+        if(!isAdmin){
+            Swal.fire({
+                title: "Error",
+                text: "Only admin can create rooms",
+                icon: "error"
+              });
+            return;
+        }
+
+        // Gallery image Validation
+
+        if(gallery.length < 3 ){
+            alert('');
+            Swal.fire({
+                title: "Error",
+                text: "Please select at least 3 gallery images",
+                icon: "error"
+              });
+            return;
+        }
+
+        const { title, status, price, rating, description, short_description, room_size, room_bed, occupancy, view, location, guest, bed, bath , thumbnail} = data;
+        const formData = new FormData();
+        formData.append('image', thumbnail[0]);
+
+        // Image hosting to image bb
+        const res = await publicAxios.post(image_hosting_api, formData, {
+            headers:{
+                'Content-Type':'multipart/form-data'
+            },
+            withCredentials: false
+        })
+        const image = res.data.data;
+        const thumb = image?.display_url;
+        
         const newRoom = {
             title,
             status,
@@ -84,9 +93,55 @@ const RoomForm = () => {
                 bed,
                 bath
             },
-            facility,
-    
+            thumb,
+            facility : [
+                {
+                    "name": "Free Wi-Fi",
+                    "icon_url": "https://i.ibb.co/ySJrtVd/008-wifi.png"
+                },
+                {
+                    "name": "Air Conditioning",
+                    "icon_url": "https://i.ibb.co/F4H9P4H/005-air-conditioning.png"
+                },
+                {
+                    "name": "Television",
+                    "icon_url": "https://i.ibb.co/tMwkhM0/003-smart-tv.png"
+                },
+                {
+                    "name": "Washing Machine",
+                    "icon_url": "https://i.ibb.co/8r7RJ6g/washing.png"
+                },
+                {
+                    "name": "Coffee Maker",
+                    "icon_url": "https://i.ibb.co/vv1KVKJ/coffee-machine.png"
+                },
+                {
+                    "name": "Safe",
+                    "icon_url": "https://i.ibb.co/ZTkwbvz/shield.png"
+                }
+            ],
+            photo_gallery: gallery
         };
+
+        secureAxios.post('rooms', newRoom)
+        .then(res=>{
+            const result = res.data;
+            if(result?.insertedId){
+                Swal.fire({
+                    title: "Success",
+                    text: "Room created successfully",
+                    icon: "success"
+                });
+            }
+        })
+        .catch(err=>{
+            const message = err.message;
+            Swal.fire({
+                title: "Error",
+                text: message,
+                icon: "error"
+              });
+        })
 
     }
 
@@ -246,11 +301,15 @@ const RoomForm = () => {
                         {errors.thumbnail && <span className='text-red-500'>This field is required</span>}
                     </div>
 
-                    {/* <div className='w-1/2'>
-                        <label htmlFor="status" className='text-white font-semibold '>Status :</label>
-                        <input placeholder='Status' id='status' {...register("status", { required: true })} className='border px-5 py-3 w-full bg-slate-100 rounded-md mt-2' />
-                        {errors.status && <span className='text-red-500'>This field is required</span>}
-                    </div> */}
+                    <div className='w-1/2'>
+                        <label htmlFor="Gallery" className='text-white font-semibold '>Gallery( 3-photos) :</label>
+                        <input type='file' id='Gallery' onChange={handleGalleryImageChange} className='border px-5 py-3 w-full bg-slate-100 rounded-md mt-2' />
+                        <div>
+                            {gallery.map((image, index) => (
+                                <li key={index} className='text-white list-decimal'>{image}</li>
+                            ))}
+                        </div>
+                    </div>
                 </div>
 
                 <input type="submit" />
