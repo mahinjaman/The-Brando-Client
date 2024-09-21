@@ -14,6 +14,8 @@
     "@egjs/flicking-plugins": "^4.7.1",
     "@egjs/react-flicking": "^4.11.3",
     "@emailjs/browser": "^4.4.1",
+    "@stripe/react-stripe-js": "^2.8.0",
+    "@stripe/stripe-js": "^4.5.0",
     "@tanstack/react-query": "^5.45.1",
     "aos": "^2.3.4",
     "axios": "^1.7.2",

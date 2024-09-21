@@ -40,14 +40,11 @@ const Dashboard = () => {
 
         <li className='py-2.5 px-5 bg-slate-100 list-none font-semibold rounded-md duration-300 text-[#0f172a] hover:bg-[#fdba74]'><NavLink className={'flex gap-2 items-center'} to={'/dashboard/admin'}> <span className=''><IoHomeOutline /></span> Admin Home</NavLink></li>
 
-        <li className='py-2.5 px-5 bg-slate-100 list-none font-semibold rounded-md duration-300 text-[#0f172a] hover:bg-[#fdba74]'><NavLink className={'flex gap-2 items-center'} to={'/dashboard/manageBooking'}> <span className=''><FaRegCalendarAlt /></span>Manage Booking</NavLink></li>
+        <li className='py-2.5 px-5 bg-slate-100 list-none font-semibold rounded-md duration-300 text-[#0f172a] hover:bg-[#fdba74]'><NavLink className={'flex gap-2 items-center'} to={'/dashboard/manageBooking'}> <span className=''><FaRegCalendarAlt /></span>Manage Rooms</NavLink></li>
 
         <li className='py-2.5 px-5 bg-slate-100 list-none font-semibold rounded-md duration-300 text-[#0f172a] hover:bg-[#fdba74]'><NavLink className={'flex gap-2 items-center'} to={'/dashboard/users'}> <span className=''><FaUsers /></span>All users</NavLink></li>
 
         <li className='py-2.5 px-5 bg-slate-100 list-none font-semibold rounded-md duration-300 text-[#0f172a] hover:bg-[#fdba74]'><NavLink className={'flex gap-2 items-center'} to={'/dashboard/addRoom'}> <span className=''><FcHome /></span>Add Room</NavLink></li>
-
-        <li className='py-2.5 px-5 bg-slate-100 list-none font-semibold rounded-md duration-300 text-[#0f172a] hover:bg-[#fdba74]'><NavLink className={'flex gap-2 items-center'} to={'/dashboard/add_menu'}> <span className=''><MdChecklist /></span>Add Menu</NavLink></li>
-
 
         <div className='divider divider-neutral'></div>
 

@@ -6,17 +6,15 @@ import useSecureAxios from '../../../Hooks/useSecureAxios';
 import { useEffect, useState } from 'react';
 import useAuthInfo from '../../../Hooks/useAuthInfo';
 import ErrorImage from '../../../Components/ErrorImage';
+import { MdOutlinePayment } from "react-icons/md";
+import { Link } from 'react-router-dom';
 
 const Carts = () => {
-    // const [displayBookings, setDisplayBookings] = useState([]);
     const [loading, setLoading] = useState(true);
     const [bookingsRoom, refetch] = useBookingsRooms();
+
     const secureAxios = useSecureAxios();
     const { user } = useAuthInfo();
-
-    // useEffect(() => {
-    //     setDisplayBookings(bookingsRoom)
-    // }, [bookingsRoom])
 
     setTimeout(() => {
         setLoading(false)
@@ -64,7 +62,19 @@ const Carts = () => {
     const totalPrice = bookingsRoom.reduce((sum, room) => sum + room?.price, 0);
 
     return (
-        <div>
+        <div className='p-5'>
+            <div className='flex justify-between my-5 '>
+                <h1 className='font-bold primary-font text-xl'>Total Order: {bookingsRoom?.length}</h1>
+                <h1 className='font-bold primary-font text-xl'>Total Order: {totalPrice}$</h1>
+                {
+                    bookingsRoom?.length < 1 ?
+                        <button disabled className='py-3 px-5 bg-green-500 rounded-md flex items-center gap-2 font-semibold'><span><MdOutlinePayment /></span> Pay Now</button>
+
+                        :
+                        <button disabled><Link to={'/dashboard/payment'} className='py-3 px-5 bg-green-500 rounded-md flex items-center gap-2 font-semibold'><span><MdOutlinePayment /></span> Pay Now</Link></button>
+                }
+            </div>
+
             <div>
                 {
                     loading ? <div><RoomSkeleton /> </div> :
@@ -97,11 +107,7 @@ const Carts = () => {
                 }
             </div>
 
-            <div>
-                <h4>Total Price: ${totalPrice}</h4>
-                <button className="btn btn-primary">Checkout</button>
-                <button className="btn btn-danger ml-2">Delete All</button>
-            </div>
+
         </div>
     );
 };

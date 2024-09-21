@@ -13,9 +13,11 @@ import Bookings from "../Pages/Bookings/Bookings";
 import Dashboard from "../Layout/Dashboard";
 import Carts from "../Pages/Dashboard/Cart/Carts";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
-import ManageBooking from "../Pages/Dashboard/ManageBooking/ManageBooking";
 import AdminRoutes from "../AdminRoutes/AdminRoutes";
 import AddRoom from "../Pages/Dashboard/AddRoom/AddRoom";
+import UpdateRoom from "../Pages/Dashboard/UpdateRoom/UpdateRoom";
+import ManageRooms from "../Pages/Dashboard/ManageRooms/ManageRooms";
+import Payment from "../Pages/Dashboard/Payment/Payment";
 
 const routes = createBrowserRouter([
     {
@@ -69,6 +71,10 @@ const routes = createBrowserRouter([
                 path:'bookings',
                 element: <Carts />
             },
+            {
+                path: 'payment',
+                element: <Payment />
+            },
 
             // Admin Routes
 
@@ -78,11 +84,15 @@ const routes = createBrowserRouter([
             },
             {
                 path:'manageBooking',
-                element: <AdminRoutes><ManageBooking /></AdminRoutes>
+                element: <AdminRoutes><ManageRooms /></AdminRoutes>
             },
             {
                 path:'addRoom',
                 element: <AdminRoutes><AddRoom /></AdminRoutes>
+            },
+            {
+                path:'updateRoom/:roomId',
+                element: <AdminRoutes><UpdateRoom /></AdminRoutes>
             }
         ]
     }

@@ -76,11 +76,14 @@ const AuthContext = ({ children }) => {
 
                 const currentDate = new Date(room?.currentDate);
                 const bookedDate = new Date(room?.bookDate.slice(0, 10));
-                const diffInCurrentBook = today - currentDate;
-                const diffInDaysCurrent = diffInCurrentBook / (1000 * 60 * 60 * 24);
-                const diffInBookDate = today - bookedDate;
-                const diffInDaysBook = diffInBookDate / (1000 * 60 * 60 * 24);
 
+                const diffInCurrentBook = today - currentDate;
+                const diffInBookDate = today - bookedDate;
+
+                const diffInDaysCurrent = diffInCurrentBook / (1000 * 60 * 60 * 24);
+                const diffInDaysBook = diffInBookDate / (1000 * 60 * 60 * 24);
+                console.log(diffInDaysBook, diffInDaysCurrent);
+                
 
                 if (currentDate < today && diffInDaysCurrent >= 1 && orderStatus !== 'Confirmed' && orderStatus !== 'Completed') {
                     publicAxios.patch(`/bookingStatus/${_id}?status=Cancelled`)
@@ -102,7 +105,7 @@ const AuthContext = ({ children }) => {
                 }
             })
         }
-    }, 600000)
+    }, 60000)
 
     // Manage User
 

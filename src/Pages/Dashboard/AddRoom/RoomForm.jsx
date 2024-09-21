@@ -4,16 +4,17 @@ import { useForm } from "react-hook-form"
 import useIsAdmin from '../../../Hooks/useIsAdmin';
 import Swal from 'sweetalert2';
 import useSecureAxios from '../../../Hooks/useSecureAxios';
+import axios from 'axios';
+import { RxCross1 } from "react-icons/rx";
 
-const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
-const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
+const apiKey = import.meta.env.VITE_IMAGE_HOSTING_KEY;
+const imageHostingApi = `https://api.imgbb.com/1/upload?key=${apiKey}`;
 
 const RoomForm = () => {
     const [gallery, setGallery] = useState([]);
-    const secureAxios = useSecureAxios()
+    const secureAxios = useSecureAxios();
     const publicAxios = usePublicAxios();
     const isAdmin = useIsAdmin();
-    
     const {
         register,
         handleSubmit,
@@ -21,60 +22,67 @@ const RoomForm = () => {
     } = useForm()
 
 
-     const handleGalleryImageChange = async e => {
+    const handleGalleryImageChange = async e => {
         const file = e.currentTarget.files[0];
         const formData = new FormData();
         formData.append('image', file);
-        const res = await publicAxios.post(image_hosting_api, formData, {
-            headers:{
-                'Content-Type':'multipart/form-data'
-            },
-            withCredentials: false
-        })
-        const image = res.data.data.display_url;
+        try {
+            const res = await axios.post(imageHostingApi, formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+                withCredentials: false,
+            });
+    
+            if (res.data.success) {
+                const imageUrl = res.data.data.url;
+                setGallery([imageUrl , ...gallery]);
+            } else {
+                console.error('Error uploading image:', res.data.error.message);
+            }
+        } catch (error) {
+            console.error('Error uploading image:', error.message);
+        }
         
-        setGallery([...gallery, image]);
     }
-
 
 
     const onSubmit = async (data) => {
         // Basic Admin Validation
-        if(!isAdmin){
+        if (!isAdmin) {
             Swal.fire({
                 title: "Error",
                 text: "Only admin can create rooms",
                 icon: "error"
-              });
+            });
             return;
         }
 
         // Gallery image Validation
 
-        if(gallery.length < 3 ){
-            alert('');
+        if (gallery.length < 3) {
             Swal.fire({
                 title: "Error",
                 text: "Please select at least 3 gallery images",
                 icon: "error"
-              });
+            });
             return;
         }
 
-        const { title, status, price, rating, description, short_description, room_size, room_bed, occupancy, view, location, guest, bed, bath , thumbnail} = data;
+        const { title, status, price, rating, description, short_description, room_size, room_bed, occupancy, view, location, guest, bed, bath, thumbnail } = data;
         const formData = new FormData();
         formData.append('image', thumbnail[0]);
 
         // Image hosting to image bb
-        const res = await publicAxios.post(image_hosting_api, formData, {
-            headers:{
-                'Content-Type':'multipart/form-data'
+        const res = await publicAxios.post(imageHostingApi, formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
             },
             withCredentials: false
         })
         const image = res.data.data;
         const thumb = image?.display_url;
-        
+
         const newRoom = {
             title,
             status,
@@ -94,7 +102,7 @@ const RoomForm = () => {
                 bath
             },
             thumb,
-            facility : [
+            facility: [
                 {
                     "name": "Free Wi-Fi",
                     "icon_url": "https://i.ibb.co/ySJrtVd/008-wifi.png"
@@ -124,31 +132,27 @@ const RoomForm = () => {
         };
 
         secureAxios.post('rooms', newRoom)
-        .then(res=>{
-            const result = res.data;
-            if(result?.insertedId){
+            .then(res => {
+                const result = res.data;
+                if (result?.insertedId) {
+                    Swal.fire({
+                        title: "Success",
+                        text: "Room created successfully",
+                        icon: "success"
+                    });
+                }
+            })
+            .catch(err => {
+                const message = err.message;
                 Swal.fire({
-                    title: "Success",
-                    text: "Room created successfully",
-                    icon: "success"
+                    title: "Error",
+                    text: message,
+                    icon: "error"
                 });
-            }
-        })
-        .catch(err=>{
-            const message = err.message;
-            Swal.fire({
-                title: "Error",
-                text: message,
-                icon: "error"
-              });
-        })
+            })
 
     }
 
-   
-
-
-    
 
 
     return (
@@ -306,13 +310,15 @@ const RoomForm = () => {
                         <input type='file' id='Gallery' onChange={handleGalleryImageChange} className='border px-5 py-3 w-full bg-slate-100 rounded-md mt-2' />
                         <div>
                             {gallery.map((image, index) => (
-                                <li key={index} className='text-white list-decimal'>{image}</li>
+                                <li key={index} className='text-white list-decimal mb-3'>{image} <span><RxCross1 /></span></li>
                             ))}
                         </div>
                     </div>
                 </div>
 
-                <input type="submit" />
+                <div>
+                    <input className='bg-[#FDBA74] w-[20%] mx-auto px-10 py-2.5 rounded-md text-gray-950 font-semibold cursor-pointer' type="submit" value="Create Room" />
+                </div>
             </form>
         </div>
     );
