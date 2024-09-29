@@ -21,7 +21,7 @@ const Dashboard = () => {
 
         <li className='py-2.5 px-5 bg-slate-100 list-none font-semibold rounded-md duration-300 text-[#0f172a] hover:bg-[#fdba74]'><NavLink className={'flex gap-2 items-center'} to={'/reservation'}> <span className=''><FaRegCalendarAlt /></span>Reservation</NavLink></li>
 
-        <li className='py-2.5 px-5 bg-slate-100 list-none font-semibold rounded-md duration-300 text-[#0f172a] hover:bg-[#fdba74]'><NavLink className={'flex gap-2 items-center'} to={'/dashboard/bookings'}> <span className=''><IoCartOutline /></span>My Bookings</NavLink></li>
+        <li className='py-2.5 px-5 bg-slate-100 list-none font-semibold rounded-md duration-300 text-[#0f172a] hover:bg-[#fdba74]'><NavLink className={'flex gap-2 items-center'} to={'/dashboard/bookings'}> <span className=''><IoCartOutline /></span>My Carts</NavLink></li>
 
         <li className='py-2.5 px-5 bg-slate-100 list-none font-semibold rounded-md duration-300 text-[#0f172a] hover:bg-[#fdba74]'><NavLink className={'flex gap-2 items-center'} to={'/add_review'}> <span className=''><VscOpenPreview /></span>Add Review</NavLink></li>
 
@@ -36,6 +36,7 @@ const Dashboard = () => {
 
         
         </>
+
     const adminMenu = <>
 
         <li className='py-2.5 px-5 bg-slate-100 list-none font-semibold rounded-md duration-300 text-[#0f172a] hover:bg-[#fdba74]'><NavLink className={'flex gap-2 items-center'} to={'/dashboard/admin'}> <span className=''><IoHomeOutline /></span> Admin Home</NavLink></li>

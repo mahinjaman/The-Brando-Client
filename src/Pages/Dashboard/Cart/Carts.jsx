@@ -5,16 +5,20 @@ import TableRow from '../../Bookings/TableRow';
 import useSecureAxios from '../../../Hooks/useSecureAxios';
 import { useEffect, useState } from 'react';
 import useAuthInfo from '../../../Hooks/useAuthInfo';
-import ErrorImage from '../../../Components/ErrorImage';
 import { MdOutlinePayment } from "react-icons/md";
-import { Link } from 'react-router-dom';
+import { Elements } from '@stripe/react-stripe-js';
+import CheckOutForm from './Payment/CheckOutForm';
+import { loadStripe } from '@stripe/stripe-js';
 
 const Carts = () => {
     const [loading, setLoading] = useState(true);
     const [bookingsRoom, refetch] = useBookingsRooms();
-
+    const [showPayment, setShowPayment] = useState(false)
+    const [ clientSecret, setClientSecret ] = useState('')
     const secureAxios = useSecureAxios();
     const { user } = useAuthInfo();
+
+
 
     setTimeout(() => {
         setLoading(false)
@@ -61,6 +65,25 @@ const Carts = () => {
 
     const totalPrice = bookingsRoom.reduce((sum, room) => sum + room?.price, 0);
 
+    const stripePromise = loadStripe(import.meta.env.VITE_PAYMENT_PUBLIC_KEY);
+
+    useEffect(()=>{
+        {
+            totalPrice > 0 && 
+            secureAxios.post('/create-payment-intent', {price: totalPrice})
+            .then(res =>{
+                console.log('client secret: ' , res.data);
+                const { clientSecret } = res.data;
+                setClientSecret(clientSecret); 
+            })
+
+            .catch(err =>{
+                console.log('error while creating payment intent', err);
+            })
+        }
+    },[secureAxios, totalPrice])
+    
+
     return (
         <div className='p-5'>
             <div className='flex justify-between my-5 '>
@@ -71,7 +94,7 @@ const Carts = () => {
                         <button disabled className='py-3 px-5 bg-green-500 rounded-md flex items-center gap-2 font-semibold'><span><MdOutlinePayment /></span> Pay Now</button>
 
                         :
-                        <button disabled><Link to={'/dashboard/payment'} className='py-3 px-5 bg-green-500 rounded-md flex items-center gap-2 font-semibold'><span><MdOutlinePayment /></span> Pay Now</Link></button>
+                        <button onClick={() => setShowPayment(true)} className='py-3 px-5 bg-green-500 rounded-md flex items-center gap-2 font-semibold'><span><MdOutlinePayment /></span> Pay Now</button>
                 }
             </div>
 
@@ -107,6 +130,16 @@ const Carts = () => {
                 }
             </div>
 
+            {
+                showPayment &&
+                <div className='fixed top-0 left-0 w-full h-screen bg-black bg-opacity-70 flex justify-center items-center'>
+                    <div className='p-10 w-full max-w-md'>
+                        <Elements stripe={stripePromise}>
+                            <CheckOutForm client_secret={clientSecret} setShowPayment={setShowPayment} />
+                        </Elements>
+                    </div>
+                </div>
+            }
 
         </div>
     );

@@ -9,10 +9,10 @@ import RoomSlider from './RoomSlider';
 import { FaPeopleGroup } from "react-icons/fa6";
 import { LuBedDouble } from "react-icons/lu";
 import { MdBathtub } from "react-icons/md";
-import BookingNow from '../../Components/Shared/BookingNow';
 import { Helmet } from 'react-helmet-async';
 import RoomSkeleton from '../../Components/Shared/RoomSkeleton';
 import ErrorImage from '../../Components/ErrorImage';
+import AddToCart from '../../Components/Shared/AddToCard';
 const RoomDetails = () => {
     const { id } = useParams();
     const secureAxios = useSecureAxios();
@@ -96,9 +96,9 @@ const RoomDetails = () => {
                     {/* Booking Field */}
                     <div className='text-white'>
                         <div className='md:w-8/12 mx-auto'>
-                            <BookingNow room={room}>
+                            <AddToCart room={room}>
                                 Booking Now
-                            </BookingNow>
+                            </AddToCart>
                         </div>
                     </div>
                 </div>

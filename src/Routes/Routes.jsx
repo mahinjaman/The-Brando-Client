@@ -17,7 +17,6 @@ import AdminRoutes from "../AdminRoutes/AdminRoutes";
 import AddRoom from "../Pages/Dashboard/AddRoom/AddRoom";
 import UpdateRoom from "../Pages/Dashboard/UpdateRoom/UpdateRoom";
 import ManageRooms from "../Pages/Dashboard/ManageRooms/ManageRooms";
-import Payment from "../Pages/Dashboard/Payment/Payment";
 
 const routes = createBrowserRouter([
     {
@@ -70,10 +69,6 @@ const routes = createBrowserRouter([
             {
                 path:'bookings',
                 element: <Carts />
-            },
-            {
-                path: 'payment',
-                element: <Payment />
             },
 
             // Admin Routes

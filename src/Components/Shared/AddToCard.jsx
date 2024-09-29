@@ -10,7 +10,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from 'moment';
 import useIsAdmin from "../../Hooks/useIsAdmin";
-const BookingNow = ({ children, room }) => {
+const AddToCart = ({ children, room }) => {
 
   const [guest, setGuest] = useState(1);
   const secureAxios = useSecureAxios();
@@ -243,7 +243,7 @@ const BookingNow = ({ children, room }) => {
 
             <input
               type="submit"
-              value="Booking Now"
+              value="Add To Cart"
               className="text-black tracking-wider py-3 rounded cursor-pointer bg-orange-300 font-semibold w-full"
             />
           </div>
@@ -253,9 +253,9 @@ const BookingNow = ({ children, room }) => {
   );
 };
 
-BookingNow.propTypes = {
+AddToCart.propTypes = {
   children: PropTypes.string.isRequired,
   room: PropTypes.object.isRequired,
 };
 
-export default BookingNow;
+export default AddToCart;

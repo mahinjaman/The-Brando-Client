@@ -2,7 +2,6 @@ import React, { createContext, useEffect, useState } from 'react';
 import PropTypes from "prop-types";
 import { createUserWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import Auth from '../Firebase/Firebase.config';
-import useSecureAxios from '../Hooks/useSecureAxios';
 import moment from 'moment'
 import usePublicAxios from '../Hooks/usePublicAxios';
 export const UserContext = createContext(null)
@@ -12,7 +11,6 @@ const AuthContext = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [bookings, setBookings] = useState([])
-    const secureAxios = useSecureAxios();
     const publicAxios = usePublicAxios()
 
     const date = moment().format('YYYY-MM-DD');
@@ -59,7 +57,7 @@ const AuthContext = ({ children }) => {
 
 
     setInterval(() => {
-        
+                
         
         publicAxios.get('/all_bookings')
             .then(res => {
@@ -82,7 +80,8 @@ const AuthContext = ({ children }) => {
 
                 const diffInDaysCurrent = diffInCurrentBook / (1000 * 60 * 60 * 24);
                 const diffInDaysBook = diffInBookDate / (1000 * 60 * 60 * 24);
-                console.log(diffInDaysBook, diffInDaysCurrent);
+
+                console.log('t1',diffInDaysBook >= 3, 't2', orderStatus === "Confirmed", 't3', orderStatus !== 'Cancelled', 't4', orderStatus !== 'Completed');
                 
 
                 if (currentDate < today && diffInDaysCurrent >= 1 && orderStatus !== 'Confirmed' && orderStatus !== 'Completed') {

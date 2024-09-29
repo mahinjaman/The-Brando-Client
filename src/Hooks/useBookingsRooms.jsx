@@ -17,7 +17,7 @@ const useBookingsRooms = () => {
             if (user?.email) {
                 try {
                     const response = await secureAxios.get(`/booking/?email=${user?.email}`);
-                    return response.data;
+                    return response?.data;
                 } catch (err) {
                     console.log('error while fetching bookings room', err);
                     throw err; // This will properly handle the error in the useQuery hook
@@ -25,8 +25,6 @@ const useBookingsRooms = () => {
             }
         },
     });
-
-    
 
 
     // useEffect(()=>{
