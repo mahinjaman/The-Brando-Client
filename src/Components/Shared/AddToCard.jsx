@@ -99,7 +99,7 @@ const AddToCart = ({ children, room }) => {
       orderStatus: 'pending'
     }
 
-    secureAxios.post('/booking', data)
+    secureAxios.post('/cart', data)
       .then((res) => {
         const result = res.data;
         if (result?.insertedId) {

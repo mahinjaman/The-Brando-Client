@@ -59,7 +59,7 @@ const AuthContext = ({ children }) => {
     setInterval(() => {
                 
         
-        publicAxios.get('/all_bookings')
+        publicAxios.get('/all_carts')
             .then(res => {
                 const result = res?.data;
                 setBookings(result);
@@ -81,7 +81,6 @@ const AuthContext = ({ children }) => {
                 const diffInDaysCurrent = diffInCurrentBook / (1000 * 60 * 60 * 24);
                 const diffInDaysBook = diffInBookDate / (1000 * 60 * 60 * 24);
 
-                console.log('t1',diffInDaysBook >= 3, 't2', orderStatus === "Confirmed", 't3', orderStatus !== 'Cancelled', 't4', orderStatus !== 'Completed');
                 
 
                 if (currentDate < today && diffInDaysCurrent >= 1 && orderStatus !== 'Confirmed' && orderStatus !== 'Completed') {
@@ -104,7 +103,7 @@ const AuthContext = ({ children }) => {
                 }
             })
         }
-    }, 60000)
+    }, 100000)
 
     // Manage User
 

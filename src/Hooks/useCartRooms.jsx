@@ -3,7 +3,7 @@ import useSecureAxios from './useSecureAxios';
 import { useContext} from 'react';
 import { UserContext } from '../AuthProvider/AuthContext';
 
-const useBookingsRooms = () => {
+const useCartRooms = () => {
     // const [bookingsRoom, setBookingRooms ] = useState([])
     const { user } = useContext(UserContext);
 
@@ -11,12 +11,12 @@ const useBookingsRooms = () => {
     const secureAxios = useSecureAxios()
 
 
-    const { data: bookingsRoom = [], refetch } = useQuery({
-        queryKey: ['bookings', user?.email],
+    const { data: cartRooms = [], refetch } = useQuery({
+        queryKey: ['carts', user?.email],
         queryFn: async () => {
             if (user?.email) {
                 try {
-                    const response = await secureAxios.get(`/booking/?email=${user?.email}`);
+                    const response = await secureAxios.get(`/carts/?email=${user?.email}`);
                     return response?.data;
                 } catch (err) {
                     console.log('error while fetching bookings room', err);
@@ -38,7 +38,7 @@ const useBookingsRooms = () => {
     // },[secureAxios ,user?.email])
 
 
-    return [bookingsRoom,refetch];
+    return [cartRooms,refetch];
 };
 
-export default useBookingsRooms;
+export default useCartRooms;

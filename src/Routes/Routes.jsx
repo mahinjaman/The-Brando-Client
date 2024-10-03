@@ -17,6 +17,7 @@ import AdminRoutes from "../AdminRoutes/AdminRoutes";
 import AddRoom from "../Pages/Dashboard/AddRoom/AddRoom";
 import UpdateRoom from "../Pages/Dashboard/UpdateRoom/UpdateRoom";
 import ManageRooms from "../Pages/Dashboard/ManageRooms/ManageRooms";
+import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 
 const routes = createBrowserRouter([
     {
@@ -67,8 +68,12 @@ const routes = createBrowserRouter([
         children: [
             // Users Routes
             {
-                path:'bookings',
+                path:'carts',
                 element: <Carts />
+            },
+            {
+                path: 'payment-history',
+                element: <PaymentHistory />
             },
 
             // Admin Routes

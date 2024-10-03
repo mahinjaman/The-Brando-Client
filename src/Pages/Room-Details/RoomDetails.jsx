@@ -97,7 +97,7 @@ const RoomDetails = () => {
                     <div className='text-white'>
                         <div className='md:w-8/12 mx-auto'>
                             <AddToCart room={room}>
-                                Booking Now
+                                Add To Cart
                             </AddToCart>
                         </div>
                     </div>

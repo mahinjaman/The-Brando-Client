@@ -145,7 +145,7 @@ const Navbar = () => {
           </div>
           <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 z-50">
             <li>
-              <Link to={`${isAdmin ? '/dashboard/users' : '/dashboard/bookings'}`}>Dashboard</Link>
+              <Link to={`${isAdmin ? '/dashboard/users' : '/dashboard/carts'}`}>Dashboard</Link>
             </li>
             {
               user?.email ? <li><button onClick={handleLogOut}>Log Out</button></li> : <li><Link to={'/login'}>Log In</Link></li>
