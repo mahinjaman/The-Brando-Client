@@ -17,7 +17,24 @@ const CheckoutForm = ({ clientSecret, setPaymentError, setTransitionId , setShow
     console.log(date);
     
     const totalPrice = cartRooms.reduce((total, item)=> total + item?.price,0);
-    console.log(totalPrice);
+    
+    const confirmBookingRooms = cartRooms.map(room =>{
+        return (
+            {
+                room_id: room?.room_id,
+                cart_id: room?._id,
+                email: user?.email,
+                price: room?.price,
+                Payment_status: 'Paid',
+                status: 'Confirmed',
+                thumb: room?.thumb,
+                room_name: room?.room_name,
+                bookDate: room?.bookDate.slice(0, 10),
+                currentDate: room?.currentDate,
+                guests: room?.guests,
+            }
+        )
+    })
     
 
     const handleSubmit = async (e) => {
@@ -100,7 +117,7 @@ const CheckoutForm = ({ clientSecret, setPaymentError, setTransitionId , setShow
                         date
                     }
                     
-                    secureAxios.post('/payment', payment)
+                    secureAxios.post('/payment', {payment, confirmBookingRooms})
                     .then(res=>{
                         const result = res.data;
                         console.log(result);

@@ -2,6 +2,8 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import useSecureAxios from '../../../Hooks/useSecureAxios';
 import useAuthInfo from '../../../Hooks/useAuthInfo';
+import RoomSkeleton from '../../../Components/Shared/RoomSkeleton';
+import ErrorImage from '../../../Components/ErrorImage';
 
 const PaymentHistory = () => {
 
@@ -16,9 +18,16 @@ const PaymentHistory = () => {
         }
     })
 
+    if(isPending){
+        return <RoomSkeleton />
+    }
+
+    if(error){
+        return <ErrorImage />
+    }
+
     return (
         <div>
-            <h1>Payment History: {paymentHistory.length}</h1>
             <div className="overflow-x-auto">
                 <table className="table table-zebra">
                     {/* head */}

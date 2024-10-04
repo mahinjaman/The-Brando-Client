@@ -103,22 +103,14 @@ const AddToCart = ({ children, room }) => {
       .then((res) => {
         const result = res.data;
         if (result?.insertedId) {
-          secureAxios.patch(`/room_status/${room?._id}?status=Booking`)
-            .then(res => {
-              if (res.data.modifiedCount > 0) {
-                Swal.fire({
-                  title: 'Booking Successful!',
-                  text: 'Your booking has been submitted successfully.',
-                  icon: 'success',
-                  confirmButtonText: 'Okay'
-                });
-                form.reset();
-                navigate('/rooms')
-              }
-
-            })
-
-
+          Swal.fire({
+            title: 'Booking Successful!',
+            text: 'Your booking has been submitted successfully.',
+            icon: 'success',
+            confirmButtonText: 'Okay'
+          });
+          form.reset();
+          navigate('/rooms')
         }
 
       })

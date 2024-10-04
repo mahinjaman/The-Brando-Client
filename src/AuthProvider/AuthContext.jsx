@@ -56,54 +56,54 @@ const AuthContext = ({ children }) => {
 
 
 
-    setInterval(() => {
+    // setInterval(() => {
                 
         
-        publicAxios.get('/all_carts')
-            .then(res => {
-                const result = res?.data;
-                setBookings(result);
-            })
-            .catch(err => {
-                console.log('error while getting bookings', err);
-            })
-        if (bookings) {
+    //     publicAxios.get('/all_carts')
+    //         .then(res => {
+    //             const result = res?.data;
+    //             setBookings(result);
+    //         })
+    //         .catch(err => {
+    //             console.log('error while getting bookings', err);
+    //         })
+    //     if (bookings) {
             
-            bookings.map(room => {
-                const { _id, room_id, orderStatus } = room;
+    //         bookings.map(room => {
+    //             const { _id, room_id, orderStatus } = room;
 
-                const currentDate = new Date(room?.currentDate);
-                const bookedDate = new Date(room?.bookDate.slice(0, 10));
+    //             const currentDate = new Date(room?.currentDate);
+    //             const bookedDate = new Date(room?.bookDate.slice(0, 10));
 
-                const diffInCurrentBook = today - currentDate;
-                const diffInBookDate = today - bookedDate;
+    //             const diffInCurrentBook = today - currentDate;
+    //             const diffInBookDate = today - bookedDate;
 
-                const diffInDaysCurrent = diffInCurrentBook / (1000 * 60 * 60 * 24);
-                const diffInDaysBook = diffInBookDate / (1000 * 60 * 60 * 24);
+    //             const diffInDaysCurrent = diffInCurrentBook / (1000 * 60 * 60 * 24);
+    //             const diffInDaysBook = diffInBookDate / (1000 * 60 * 60 * 24);
 
                 
 
-                if (currentDate < today && diffInDaysCurrent >= 1 && orderStatus !== 'Confirmed' && orderStatus !== 'Completed') {
-                    publicAxios.patch(`/bookingStatus/${_id}?status=Cancelled`)
-                        .then(() => {
-                            publicAxios.patch(`/room_status/${room_id}?status=Available`)
-                        })
-                }
+    //             if (currentDate < today && diffInDaysCurrent >= 1 && orderStatus !== 'Confirmed' && orderStatus !== 'Completed') {
+    //                 publicAxios.patch(`/bookingStatus/${_id}?status=Cancelled`)
+    //                     .then(() => {
+    //                         publicAxios.patch(`/room_status/${room_id}?status=Available`)
+    //                     })
+    //             }
 
-                if (diffInDaysBook >= 3 && orderStatus === "Confirmed" && orderStatus !== 'Cancelled' && orderStatus !== 'Completed') {
+    //             if (diffInDaysBook >= 3 && orderStatus === "Confirmed" && orderStatus !== 'Cancelled' && orderStatus !== 'Completed') {
 
-                    publicAxios.delete(`/booking/${_id}`)
-                        .then(res => {
-                            const result = res.data;
-                            if (result.deletedCount > 0) {
-                                publicAxios.patch(`/room_status/${room_id}?status=Available`)
-                            }
-                        })
+    //                 publicAxios.delete(`/booking/${_id}`)
+    //                     .then(res => {
+    //                         const result = res.data;
+    //                         if (result.deletedCount > 0) {
+    //                             publicAxios.patch(`/room_status/${room_id}?status=Available`)
+    //                         }
+    //                     })
 
-                }
-            })
-        }
-    }, 100000)
+    //             }
+    //         })
+    //     }
+    // }, 100000)
 
     // Manage User
 

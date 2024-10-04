@@ -19,9 +19,9 @@ const Dashboard = () => {
 
         <li className='py-2.5 px-5 bg-slate-100 list-none font-semibold rounded-md duration-300 text-[#0f172a] hover:bg-[#fdba74]'><NavLink className={'flex gap-2 items-center'} to={'/'}> <span className=''><IoHomeOutline /></span> User Home</NavLink></li>
 
-        <li className='py-2.5 px-5 bg-slate-100 list-none font-semibold rounded-md duration-300 text-[#0f172a] hover:bg-[#fdba74]'><NavLink className={'flex gap-2 items-center'} to={'/reservation'}> <span className=''><FaRegCalendarAlt /></span>Reservation</NavLink></li>
-
         <li className='py-2.5 px-5 bg-slate-100 list-none font-semibold rounded-md duration-300 text-[#0f172a] hover:bg-[#fdba74]'><NavLink className={'flex gap-2 items-center'} to={'/dashboard/carts'}> <span className=''><IoCartOutline /></span>My Carts</NavLink></li>
+
+        <li className='py-2.5 px-5 bg-slate-100 list-none font-semibold rounded-md duration-300 text-[#0f172a] hover:bg-[#fdba74]'><NavLink className={'flex gap-2 items-center'} to={'/dashboard/bookings'}> <span className=''><FaRegCalendarAlt /></span>My Bookings</NavLink></li>
 
         <li className='py-2.5 px-5 bg-slate-100 list-none font-semibold rounded-md duration-300 text-[#0f172a] hover:bg-[#fdba74]'><NavLink className={'flex gap-2 items-center'} to={'/dashboard/payment-history'}> <span className=''><VscOpenPreview /></span>Payment History</NavLink></li>
 
