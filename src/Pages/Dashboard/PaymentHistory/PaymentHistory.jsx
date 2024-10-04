@@ -8,9 +8,9 @@ const PaymentHistory = () => {
     const secureAxios = useSecureAxios();
     const { user } = useAuthInfo();
 
-    const {isPending , data:paymentHistory = [] ,error, } = useQuery({
+    const { isPending, data: paymentHistory = [], error, } = useQuery({
         queryKey: ['payment'],
-        queryFn: async ()=>{
+        queryFn: async () => {
             const res = await secureAxios.get(`/payment-history/${user?.email}`)
             return res.data;
         }
@@ -19,6 +19,37 @@ const PaymentHistory = () => {
     return (
         <div>
             <h1>Payment History: {paymentHistory.length}</h1>
+            <div className="overflow-x-auto">
+                <table className="table table-zebra">
+                    {/* head */}
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Date</th>
+                            <th>Method</th>
+                            <th>Amount</th>
+                            <th>Transition ID</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            paymentHistory.map((payment, index) => {
+                                return(
+                                    <tr key={payment._id}>
+                                    <th className='font-semibold '>{index+1}</th>
+                                    <td className='font-semibold '>{payment?.date}</td>
+                                    <td className='font-semibold capitalize'>{payment.paymentMethod[0]}</td>
+                                    <td className='font-semibold '>${payment?.amount}</td>
+                                    <td className='font-semibold '><mark>{payment?.transition_id}</mark></td>
+                                    <td className='font-semibold text-green-500'>{payment?.status}</td>
+                                </tr>
+                                )
+                            })
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 };
