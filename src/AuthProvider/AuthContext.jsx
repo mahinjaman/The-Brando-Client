@@ -4,17 +4,25 @@ import { createUserWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider,
 import Auth from '../Firebase/Firebase.config';
 import moment from 'moment'
 import usePublicAxios from '../Hooks/usePublicAxios';
-export const UserContext = createContext(null)
+
+
+export const UserContext = createContext(null);
+
+
+const adminSecret = import.meta.env.VITE_ADMIN_SECRET_TOKEN;
+
 
 const AuthContext = ({ children }) => {
 
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [bookings, setBookings] = useState([])
-    const publicAxios = usePublicAxios()
+    const publicAxios = usePublicAxios();
 
-    const date = moment().format('YYYY-MM-DD');
-    const today = new Date(date);
+
+
+    const today_date = moment().format('YYYY-MM-DD');
+
 
     // create user
     const createUser = (email, password) => {
@@ -56,54 +64,39 @@ const AuthContext = ({ children }) => {
 
 
 
-    // setInterval(() => {
+    setInterval(() => {
+
+
+
+        publicAxios.get(`/all-bookings/${adminSecret}`)
+            .then(res => {
+                const result = res?.data;
+                setBookings(result);
+            })
+            .catch(err => {
+                console.log('error while getting bookings', err);
+            })
+        if (bookings) {
+
+            bookings.map(room => {
+
+                const bookingDate = room?.bookDate;
+
+                const newDate1 = new Date(today_date);
+                const newDate2 = new Date(bookingDate);
+
+                const DifferenceInMs = newDate1 - newDate2;
+
+                const differenceDay = DifferenceInMs / (1000 * 3600 * 24);
+
+                if (differenceDay > 1 && room?.status === 'Confirmed' && room?.status !== 'Complete') {
+                    publicAxios.patch(`/room_status/${room?.room_id}?status=Available`)
+                    publicAxios.patch(`/update-bookings/${room._id}?status=Completed`)
+                }
                 
-        
-    //     publicAxios.get('/all_carts')
-    //         .then(res => {
-    //             const result = res?.data;
-    //             setBookings(result);
-    //         })
-    //         .catch(err => {
-    //             console.log('error while getting bookings', err);
-    //         })
-    //     if (bookings) {
-            
-    //         bookings.map(room => {
-    //             const { _id, room_id, orderStatus } = room;
-
-    //             const currentDate = new Date(room?.currentDate);
-    //             const bookedDate = new Date(room?.bookDate.slice(0, 10));
-
-    //             const diffInCurrentBook = today - currentDate;
-    //             const diffInBookDate = today - bookedDate;
-
-    //             const diffInDaysCurrent = diffInCurrentBook / (1000 * 60 * 60 * 24);
-    //             const diffInDaysBook = diffInBookDate / (1000 * 60 * 60 * 24);
-
-                
-
-    //             if (currentDate < today && diffInDaysCurrent >= 1 && orderStatus !== 'Confirmed' && orderStatus !== 'Completed') {
-    //                 publicAxios.patch(`/bookingStatus/${_id}?status=Cancelled`)
-    //                     .then(() => {
-    //                         publicAxios.patch(`/room_status/${room_id}?status=Available`)
-    //                     })
-    //             }
-
-    //             if (diffInDaysBook >= 3 && orderStatus === "Confirmed" && orderStatus !== 'Cancelled' && orderStatus !== 'Completed') {
-
-    //                 publicAxios.delete(`/booking/${_id}`)
-    //                     .then(res => {
-    //                         const result = res.data;
-    //                         if (result.deletedCount > 0) {
-    //                             publicAxios.patch(`/room_status/${room_id}?status=Available`)
-    //                         }
-    //                     })
-
-    //             }
-    //         })
-    //     }
-    // }, 100000)
+            })
+        }
+    }, 240000)
 
     // Manage User
 

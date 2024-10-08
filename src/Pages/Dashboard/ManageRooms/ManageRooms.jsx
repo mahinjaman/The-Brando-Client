@@ -68,7 +68,6 @@ const ManageRooms = () => {
 
     return (
         <div>
-            <h1>Hello Booking: {totalRooms.length}</h1>
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}

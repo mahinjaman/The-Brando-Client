@@ -5,7 +5,7 @@ import RoomForm from './RoomForm';
 
 const AddRoom = () => {
     return (
-        <div className='py-20 bg-slate-950 rounded-md text-white '>
+        <div className='py-20  rounded-md text-black '>
             <div className='text-center py-5'>
                 <h1 className='text-xl font-semibold primary-font'>Add Room</h1>
                 <h1 className='text-2xl italic'>Please Make Sure Your Room Details</h1>

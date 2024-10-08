@@ -47,7 +47,7 @@ const UserRow = ({ user, serial, refetch }) => {
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!"
+            confirmButtonText: `Yes, ${role} Now`
         }).then((result) => {
             if (result.isConfirmed) {
                 publicAxios.patch(`/users/${id}?role=${role}`)

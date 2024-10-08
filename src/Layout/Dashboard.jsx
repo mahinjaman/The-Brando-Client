@@ -14,7 +14,6 @@ const Dashboard = () => {
 
     const [isAdmin] = useIsAdmin();
 
-
     const userMenu = <>
 
         <li className='py-2.5 px-5 bg-slate-100 list-none font-semibold rounded-md duration-300 text-[#0f172a] hover:bg-[#fdba74]'><NavLink className={'flex gap-2 items-center'} to={'/'}> <span className=''><IoHomeOutline /></span> User Home</NavLink></li>
@@ -39,7 +38,7 @@ const Dashboard = () => {
 
     const adminMenu = <>
 
-        <li className='py-2.5 px-5 bg-slate-100 list-none font-semibold rounded-md duration-300 text-[#0f172a] hover:bg-[#fdba74]'><NavLink className={'flex gap-2 items-center'} to={'/dashboard/admin'}> <span className=''><IoHomeOutline /></span> Admin Home</NavLink></li>
+        <li className='py-2.5 px-5 bg-slate-100 list-none font-semibold rounded-md duration-300 text-[#0f172a] hover:bg-[#fdba74]'><NavLink className={'flex gap-2 items-center'} to={'/dashboard/admin-dashboard'}> <span className=''><IoHomeOutline /></span> Admin Dashboard</NavLink></li>
 
         <li className='py-2.5 px-5 bg-slate-100 list-none font-semibold rounded-md duration-300 text-[#0f172a] hover:bg-[#fdba74]'><NavLink className={'flex gap-2 items-center'} to={'/dashboard/manageBooking'}> <span className=''><FaRegCalendarAlt /></span>Manage Rooms</NavLink></li>
 
@@ -59,7 +58,7 @@ const Dashboard = () => {
         </>
 
     return (
-        <div className='flex'>
+        <div className='flex '>
             <div className='w-[15%] min-h-screen p-5 bg-[#0f172a]'>
                 <ul className='flex flex-col gap-3'>
                     {
@@ -68,7 +67,7 @@ const Dashboard = () => {
                 </ul>
             </div>
             {/* content */}
-            <div className='w-full flex-1 mx-10'>
+            <div className='w-full flex-1 mx-10 bg-slate-200'>
                 <Outlet></Outlet>
             </div>
         </div>

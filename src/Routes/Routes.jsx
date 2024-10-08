@@ -15,10 +15,11 @@ import Carts from "../Pages/Dashboard/Cart/Carts";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import AdminRoutes from "../AdminRoutes/AdminRoutes";
 import AddRoom from "../Pages/Dashboard/AddRoom/AddRoom";
-import UpdateRoom from "../Pages/Dashboard/UpdateRoom/UpdateRoom";
 import ManageRooms from "../Pages/Dashboard/ManageRooms/ManageRooms";
 import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 import BookingRooms from "../Pages/Dashboard/BookingRooms/BookingRooms";
+import AdminDashboard from "../Pages/Dashboard/AdminDashboard/AdminDashboard";
+import UpdateRoom from "../Pages/Dashboard/UpdateRoom/UpdateRoom";
 
 const routes = createBrowserRouter([
     {
@@ -81,6 +82,10 @@ const routes = createBrowserRouter([
                 element: <BookingRooms />
             },
             // Admin Routes
+            {
+                path:'admin-dashboard',
+                element: <AdminRoutes><AdminDashboard /></AdminRoutes>
+            },
 
             {
                 path:'users',
